@@ -1,0 +1,167 @@
+🇺🇸 U.S. Citizenship Practice App — Developer Guide
+A modern bilingual web app to help users prepare for the U.S. Naturalization Test with quizzes, reading/writing practice, and progress tracking.
+⚡ Built for ease-of-use, with free and premium plans.
+
+🧱 Core Tech Stack
+Area	Tech
+Framework	Next.js (App Router)
+Auth	Auth0 or NextAuth.js
+DB	MongoDB (via Atlas)
+Hosting	Vercel or Render
+Payments	Stripe (future)
+i18n	next-intl
+UI	Tailwind CSS (suggested)
+Optional CMS	Notion/JSON/manual (for questions)
+
+🗂️ Project Structure
+bash
+Copier
+Modifier
+├── app/
+│   ├── [locale]/
+│   │   ├── layout.tsx         # Locale-aware layout
+│   │   └── page.tsx           # Home page
+├── components/
+│   ├── Quiz.tsx
+│   ├── LanguageSwitcher.tsx
+│   └── Navbar.tsx
+├── lib/
+│   ├── auth.ts                # Auth helper
+│   ├── db.ts                  # MongoDB client
+├── models/
+│   └── User.ts                # Mongoose schema
+├── pages/
+│   └── api/
+│       ├── get-question.ts
+│       ├── auth/
+│       └── stripe/ (future)
+├── messages/
+│   ├── en.json
+│   └── es.json
+✅ Features & Milestones
+🔐 1. Authentication
+ Integrate Auth0 or NextAuth
+
+ Store user info in MongoDB with plan, auth0Id, dailyQuestionUsage
+
+ Auto-create user on first login
+
+🌐 2. i18n Setup
+ Next.js i18n config (defaultLocale: 'es')
+
+ Add next-intl and translations
+
+ Create /messages/es.json and /messages/en.json
+
+ Add language toggle component
+
+❓ 3. Quiz Engine
+ Create questions.json or use MongoDB collection
+
+ Show 1 question per API call
+
+ Track daily usage for free users (max 5/day)
+
+ Display correct/incorrect feedback
+
+🧠 4. User Data & Progress
+ Track quiz history (optional)
+
+ Save favorites / starred questions (premium)
+
+ Store per-day usage in MongoDB
+
+💰 5. Subscription Infrastructure (future)
+ Add stripeCustomerId, plan, subscriptionStatus to User model
+
+ Build /api/upgrade endpoint (manual toggle)
+
+ Set up Stripe Checkout + Webhooks (future)
+
+ Show upsell banners when user hits daily limit
+
+📱 6. UI/UX Design
+ Build mobile-friendly layout
+
+ Include:
+
+Welcome page
+
+Quiz interface
+
+Result screen
+
+Progress bar (optional)
+
+ Use Tailwind CSS for rapid styling
+
+📝 7. Reading & Writing Test Section
+ Add list of common reading/writing vocab (USCIS)
+
+ Practice page with flashcard-like design
+
+ Premium-only section (optional)
+
+⚙️ 8. Admin/Dev Tools
+ Add admin route to import or edit questions
+
+ Add user test route: GET /api/debug/user
+
+🧪 Example Milestone Plan
+Week	Focus
+1	Setup Next.js, Mongo, Auth0, i18n
+2	Quiz logic + API daily limit
+3	UI polishing + language toggle
+4	Premium checks + upsell UI
+5	Reading/Writing practice + deploy
+6	Stripe (optional) + final polish
+
+🗄️ MongoDB User Schema (Starter)
+ts
+Copier
+Modifier
+{
+  _id: ObjectId,
+  auth0Id: string,
+  email: string,
+  name: string,
+  plan: 'free' | 'premium',
+  stripeCustomerId: string,
+  subscriptionStatus: string,
+  dailyQuestionUsage: {
+    count: number,
+    date: string
+  },
+  createdAt: Date
+}
+🧰 Tools & Services
+Tool	Purpose
+MongoDB Atlas	Free DB hosting
+Auth0	Easy user auth
+Vercel	Next.js hosting
+Stripe	Subscription billing
+USCIS Study Materials	Content source
+
+✅ Launch Checklist
+ Responsive UI
+
+ English & Spanish translations complete
+
+ Question limit working
+
+ Free vs premium logic gated
+
+ Auth + DB storage
+
+ SEO tags and app name
+
+ Domain + deploy
+
+Would you like me to generate:
+
+A GitHub-ready boilerplate repo with i18n + auth + Mongo setup?
+
+The quiz JSON file in English and Spanish?
+
+Mock designs or wireframes?
+

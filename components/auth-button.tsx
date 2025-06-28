@@ -1,28 +1,38 @@
-import Link from "next/link";
-import { Button } from "./ui/button";
-import { createClient } from "@/lib/supabase/server";
-import { LogoutButton } from "./logout-button";
+import { auth0 } from '@/lib/auth0';
 
 export async function AuthButton() {
-  const supabase = await createClient();
+  const session = await auth0.getSession();
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  return user ? (
+  if (session) {
+    return (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
-      <LogoutButton />
+        <span className="text-sm">
+          Hey, {session.user.name || session.user.email}!
+        </span>
+        <a
+          href="/auth/logout"
+          className="py-2 px-3 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover text-sm"
+        >
+          Logout
+        </a>
     </div>
-  ) : (
-    <div className="flex gap-2">
-      <Button asChild size="sm" variant={"outline"}>
-        <Link href="/auth/login">Sign in</Link>
-      </Button>
-      <Button asChild size="sm" variant={"default"}>
-        <Link href="/auth/sign-up">Sign up</Link>
-      </Button>
+    );
+  }
+
+  return (
+    <div className="flex items-center gap-2">
+      <a
+        href="/auth/login"
+        className="py-2 px-3 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover text-sm"
+      >
+        Login
+      </a>
+      <a
+        href="/auth/login?screen_hint=signup"
+        className="py-2 px-3 rounded-md no-underline bg-primary text-primary-foreground hover:bg-primary/90 text-sm"
+      >
+        Sign up
+      </a>
     </div>
   );
 }
