@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import { auth0 } from "@/lib/auth0";
+import { UserInfo } from "@/components/user-info";
 import { InfoIcon } from "lucide-react";
 
 export default async function ProtectedPage() {
@@ -8,6 +9,9 @@ export default async function ProtectedPage() {
   if (!session) {
     redirect("/auth/login");
   }
+
+  // Note: UserInfo component will automatically handle user creation in Supabase
+  // via the UserProvider in the layout
 
   return (
     <div className="flex-1 w-full flex flex-col gap-12 max-w-5xl mx-auto p-5">
@@ -21,9 +25,12 @@ export default async function ProtectedPage() {
       <div className="flex flex-col gap-2 items-start">
         <h1 className="font-bold text-3xl mb-4">🇺🇸 Practice Dashboard</h1>
         <p className="text-lg text-muted-foreground mb-6">
-          Welcome back, {session.user.email}! Ready to continue your citizenship journey?
+          Ready to continue your citizenship journey?
         </p>
       </div>
+
+      {/* User Info Component - automatically creates user in Supabase if needed */}
+      <UserInfo />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="p-6 border rounded-lg">
