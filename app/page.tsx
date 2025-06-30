@@ -32,11 +32,11 @@ export default async function Home() {
         
         <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
           <div className="flex flex-col gap-16 items-center">
-            <div className="text-center">
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6">
+            <div className="flex flex-col gap-4 items-center justify-center text-center">
+              <h1 className="text-4xl lg:text-5xl font-bold mb-6">
                 {t('hero.title')}
               </h1>
-              <p className="text-xl lg:text-2xl text-muted-foreground max-w-2xl">
+              <p className="text-xl lg:text-xl text-muted-foreground max-w-2xl">
                 {t('hero.subtitle')}
               </p>
             </div>
@@ -69,7 +69,7 @@ export default async function Home() {
             
             <div className="text-center">
               <Link 
-                href="/protected" 
+                href="/protected/practice" 
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
               >
                 {t('startPracticing')}

@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import { auth0 } from "@/lib/auth0";
-import { UserInfo } from "@/components/user-info";
 import { getTranslations } from "@/lib/translations";
 import { getCurrentLanguage } from "@/lib/language-actions";
-import { InfoIcon } from "lucide-react";
+import { InfoIcon, BookOpen, Settings, BarChart3, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default async function ProtectedPage() {
   const session = await auth0.getSession();
@@ -12,8 +12,6 @@ export default async function ProtectedPage() {
     redirect("/auth/login");
   }
 
-  // Note: UserInfo component will automatically handle user creation in Supabase
-  // via the UserProvider in the layout
   const language = await getCurrentLanguage();
   const { t } = getTranslations(language);
 
@@ -33,47 +31,96 @@ export default async function ProtectedPage() {
         </p>
       </div>
 
-      {/* User Info Component - automatically creates user in Supabase if needed */}
-      <UserInfo />
-
+      {/* Quick Navigation Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="p-6 border rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">{t('dashboard.civicsTest.title')}</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            {t('dashboard.civicsTest.description')}
+        <Link 
+          href="/protected/practice" 
+          className="group p-6 border rounded-lg hover:shadow-lg transition-all hover:border-primary"
+        >
+          <div className="flex items-start justify-between mb-4">
+            <div className="p-2 bg-blue-100 rounded-lg">
+              <BookOpen className="h-6 w-6 text-blue-600" />
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </div>
+          <h3 className="text-lg font-semibold mb-2">Practice Center</h3>
+          <p className="text-sm text-muted-foreground">
+            Access all quizzes and practice exercises in one place
           </p>
-          <button className="w-full bg-primary text-primary-foreground rounded-md py-2 px-4 text-sm hover:bg-primary/90">
-            {t('startQuiz')}
-          </button>
-        </div>
+        </Link>
 
-        <div className="p-6 border rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">{t('dashboard.readingTest.title')}</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            {t('dashboard.readingTest.description')}
+        <Link 
+          href="/protected/settings" 
+          className="group p-6 border rounded-lg hover:shadow-lg transition-all hover:border-primary"
+        >
+          <div className="flex items-start justify-between mb-4">
+            <div className="p-2 bg-green-100 rounded-lg">
+              <Settings className="h-6 w-6 text-green-600" />
+            </div>
+            <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+          </div>
+          <h3 className="text-lg font-semibold mb-2">User Settings</h3>
+          <p className="text-sm text-muted-foreground">
+            Manage your account, preferences, and profile information
           </p>
-          <button className="w-full bg-primary text-primary-foreground rounded-md py-2 px-4 text-sm hover:bg-primary/90">
-            {t('practiceReading')}
-          </button>
-        </div>
+        </Link>
 
-        <div className="p-6 border rounded-lg">
-          <h3 className="text-lg font-semibold mb-2">{t('dashboard.writingTest.title')}</h3>
-          <p className="text-sm text-muted-foreground mb-4">
-            {t('dashboard.writingTest.description')}
+        <div className="p-6 border rounded-lg bg-muted/50">
+          <div className="flex items-start justify-between mb-4">
+            <div className="p-2 bg-purple-100 rounded-lg">
+              <BarChart3 className="h-6 w-6 text-purple-600" />
+            </div>
+          </div>
+          <h3 className="text-lg font-semibold mb-2">Progress Tracking</h3>
+          <p className="text-sm text-muted-foreground">
+            View your learning progress and achievements (Coming Soon)
           </p>
-          <button className="w-full bg-primary text-primary-foreground rounded-md py-2 px-4 text-sm hover:bg-primary/90">
-            {t('practiceWriting')}
-          </button>
         </div>
       </div>
 
-      <div className="mt-8">
-        <h2 className="font-bold text-2xl mb-4">{t('dashboard.progressTitle')}</h2>
-        <div className="p-6 border rounded-lg bg-muted/50">
-          <p className="text-center text-muted-foreground">
-            {t('dashboard.progressComingSoon')}
-          </p>
+      {/* Quick Start Options */}
+      <div className="space-y-6">
+        <h2 className="font-bold text-2xl">Quick Start</h2>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="p-6 border rounded-lg">
+            <h3 className="text-lg font-semibold mb-2">{t('dashboard.civicsTest.title')}</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              {t('dashboard.civicsTest.description')}
+            </p>
+                         <Link 
+               href="/protected/practice/civics"
+               className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+             >
+               {t('startQuiz')}
+             </Link>
+          </div>
+
+          <div className="p-6 border rounded-lg">
+            <h3 className="text-lg font-semibold mb-2">{t('dashboard.readingTest.title')}</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              {t('dashboard.readingTest.description')}
+            </p>
+            <Link 
+              href="/protected/practice"
+              className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+            >
+              {t('practiceReading')}
+            </Link>
+          </div>
+
+          <div className="p-6 border rounded-lg">
+            <h3 className="text-lg font-semibold mb-2">{t('dashboard.writingTest.title')}</h3>
+            <p className="text-sm text-muted-foreground mb-4">
+              {t('dashboard.writingTest.description')}
+            </p>
+            <Link 
+              href="/protected/practice"
+              className="inline-flex w-full items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+            >
+              {t('practiceWriting')}
+            </Link>
+          </div>
         </div>
       </div>
     </div>

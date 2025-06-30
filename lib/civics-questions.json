@@ -1,0 +1,1442 @@
+{
+  "sections": {
+    "principles": {
+      "title": "Principles of American Democracy",
+      "range": "1-12"
+    },
+    "government": {
+      "title": "System of Government", 
+      "range": "13-47"
+    },
+    "rights": {
+      "title": "Rights and Responsibilities",
+      "range": "48-57"
+    },
+    "colonial": {
+      "title": "Colonial Period and Independence",
+      "range": "58-70"
+    },
+    "1800s": {
+      "title": "1800s",
+      "range": "71-77"
+    },
+    "modern": {
+      "title": "Recent American History",
+      "range": "78-87"
+    },
+    "geography": {
+      "title": "Geography",
+      "range": "88-95"
+    },
+    "symbols": {
+      "title": "Symbols",
+      "range": "96-98"
+    },
+    "holidays": {
+      "title": "Holidays",
+      "range": "99-100"
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "section": "principles",
+      "question": "What is the supreme law of the land?",
+      "options": [
+        "The Constitution",
+        "The Declaration of Independence",
+        "The Bill of Rights",
+        "The Amendments"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Constitution is the supreme law of the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 2,
+      "section": "principles",
+      "question": "What does the Constitution do?",
+      "options": [
+        "Protects basic rights of Americans",
+        "Sets up the government",
+        "Defines the government and protects basic rights",
+        "Creates laws"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Constitution sets up the government, defines the government, and protects basic rights of Americans.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 3,
+      "section": "principles",
+      "question": "The idea of self-government is in the first three words of the Constitution. What are these words?",
+      "options": [
+        "We the People",
+        "Life, Liberty, and",
+        "We hold these",
+        "In Congress assembled"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Constitution begins with 'We the People', establishing the principle of self-government.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 4,
+      "section": "principles",
+      "question": "What is an amendment?",
+      "options": [
+        "A law",
+        "A change or addition to the Constitution",
+        "A court decision",
+        "A presidential order"
+      ],
+      "correctAnswer": 1,
+      "explanation": "An amendment is a change or addition to the Constitution.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 5,
+      "section": "principles",
+      "question": "What do we call the first ten amendments to the Constitution?",
+      "options": [
+        "The Declaration of Rights",
+        "The Bill of Rights",
+        "The Constitution Rights",
+        "The Basic Rights"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The first ten amendments to the Constitution are called the Bill of Rights.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 6,
+      "section": "principles",
+      "question": "What is one right or freedom from the First Amendment?",
+      "options": [
+        "Right to bear arms",
+        "Freedom of speech",
+        "Right to vote",
+        "Right to trial by jury"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The First Amendment protects freedom of speech, religion, assembly, press, and petition the government.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 7,
+      "section": "principles",
+      "question": "How many amendments does the Constitution have?",
+      "options": [
+        "Twenty-five (25)",
+        "Twenty-six (26)",
+        "Twenty-seven (27)",
+        "Twenty-eight (28)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Constitution has twenty-seven (27) amendments.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 8,
+      "section": "principles",
+      "question": "What did the Declaration of Independence do?",
+      "options": [
+        "Created the Constitution",
+        "Announced our independence from Great Britain",
+        "Established the Bill of Rights",
+        "Created the three branches of government"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Declaration of Independence announced our independence from Great Britain.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 9,
+      "section": "principles",
+      "question": "What are two rights in the Declaration of Independence?",
+      "options": [
+        "Life and liberty",
+        "Freedom and justice",
+        "Peace and prosperity",
+        "Safety and security"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Declaration of Independence mentions life, liberty, and the pursuit of happiness.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 10,
+      "section": "principles",
+      "question": "What is freedom of religion?",
+      "options": [
+        "You must practice Christianity",
+        "You can practice any religion, or not practice a religion",
+        "You can only practice approved religions",
+        "You must attend religious services"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Freedom of religion means you can practice any religion, or not practice a religion.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 11,
+      "section": "principles",
+      "question": "What is the economic system in the United States?",
+      "options": [
+        "Socialist economy",
+        "Communist economy",
+        "Capitalist economy",
+        "Traditional economy"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The United States has a capitalist economy, also called a market economy.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 12,
+      "section": "principles",
+      "question": "What is the 'rule of law'?",
+      "options": [
+        "Only citizens must follow the law",
+        "Everyone must follow the law",
+        "Only the government makes laws",
+        "Laws can be ignored sometimes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The rule of law means everyone must follow the law, including leaders and government. No one is above the law.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 13,
+      "section": "government",
+      "question": "Name one branch or part of the government.",
+      "options": [
+        "Congress",
+        "The Military",
+        "The Supreme Court",
+        "The Cabinet"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The three branches of government are: Congress (legislative), President (executive), and the courts (judicial).",
+      "elderlyOnly": true
+    },
+    {
+      "id": 14,
+      "section": "government",
+      "question": "What stops one branch of government from becoming too powerful?",
+      "options": [
+        "The Constitution",
+        "Checks and balances",
+        "The Bill of Rights",
+        "The Supreme Court"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Checks and balances and separation of powers prevent any one branch from becoming too powerful.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 15,
+      "section": "government",
+      "question": "Who is in charge of the executive branch?",
+      "options": [
+        "The Supreme Court",
+        "Congress",
+        "The President",
+        "The Vice President"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The President is in charge of the executive branch.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 16,
+      "section": "government",
+      "question": "Who makes federal laws?",
+      "options": [
+        "The President",
+        "The Supreme Court",
+        "Congress",
+        "The Cabinet"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Congress makes federal laws. Congress includes the Senate and House of Representatives.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 17,
+      "section": "government",
+      "question": "What are the two parts of the U.S. Congress?",
+      "options": [
+        "The Senate and House of Representatives",
+        "The House and the Court",
+        "The Upper and Lower House",
+        "The Congress and Senate"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The two parts of the U.S. Congress are the Senate and House of Representatives.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 18,
+      "section": "government",
+      "question": "How many U.S. Senators are there?",
+      "options": [
+        "Fifty (50)",
+        "One hundred (100)",
+        "Four hundred thirty-five (435)",
+        "Two hundred (200)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "There are one hundred (100) U.S. Senators.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 19,
+      "section": "government",
+      "question": "We elect a U.S. Senator for how many years?",
+      "options": [
+        "Two (2)",
+        "Four (4)",
+        "Six (6)",
+        "Eight (8)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "We elect a U.S. Senator for six (6) years.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 20,
+      "section": "government",
+      "question": "Who is one of your state's U.S. Senators now?",
+      "options": [
+        "Answers will vary by state",
+        "The Governor",
+        "The President",
+        "The Speaker of the House"
+      ],
+      "correctAnswer": 0,
+      "explanation": "This answer will vary depending on your state. District of Columbia residents should answer that D.C. has no U.S. Senators.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 21,
+      "section": "government",
+      "question": "The House of Representatives has how many voting members?",
+      "options": [
+        "One hundred (100)",
+        "Two hundred (200)",
+        "Four hundred thirty-five (435)",
+        "Five hundred (500)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The House of Representatives has four hundred thirty-five (435) voting members.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 22,
+      "section": "government",
+      "question": "We elect a U.S. Representative for how many years?",
+      "options": [
+        "Two (2)",
+        "Four (4)",
+        "Six (6)",
+        "Eight (8)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "We elect a U.S. Representative for two (2) years.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 23,
+      "section": "government",
+      "question": "Name your U.S. Representative.",
+      "options": [
+        "Answers will vary by district",
+        "The Governor",
+        "The President",
+        "The Senator"
+      ],
+      "correctAnswer": 0,
+      "explanation": "This answer will vary depending on your congressional district.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 24,
+      "section": "government",
+      "question": "Who does a U.S. Senator represent?",
+      "options": [
+        "Only the people who voted for them",
+        "All people of the state",
+        "Only people in their party",
+        "Only people in their city"
+      ],
+      "correctAnswer": 1,
+      "explanation": "A U.S. Senator represents all people of the state.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 25,
+      "section": "government",
+      "question": "Why do some states have more Representatives than other states?",
+      "options": [
+        "Because of the state's population",
+        "Because of the state's size",
+        "Because of the state's wealth",
+        "Because of the state's age"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Some states have more Representatives because of the state's population - they have more people.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 26,
+      "section": "government",
+      "question": "We elect a President for how many years?",
+      "options": [
+        "Two (2)",
+        "Four (4)",
+        "Six (6)",
+        "Eight (8)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "We elect a President for four (4) years.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 27,
+      "section": "government",
+      "question": "In what month do we vote for President?",
+      "options": [
+        "October",
+        "November",
+        "December",
+        "January"
+      ],
+      "correctAnswer": 1,
+      "explanation": "We vote for President in November.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 28,
+      "section": "government",
+      "question": "What is the name of the President of the United States now?",
+      "options": [
+        "Visit uscis.gov/citizenship/testupdates",
+        "George Washington",
+        "Abraham Lincoln",
+        "Thomas Jefferson"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visit uscis.gov/citizenship/testupdates for the current President's name.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 29,
+      "section": "government",
+      "question": "What is the name of the Vice President of the United States now?",
+      "options": [
+        "Visit uscis.gov/citizenship/testupdates",
+        "The Speaker of the House",
+        "The Chief Justice",
+        "The Secretary of State"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visit uscis.gov/citizenship/testupdates for the current Vice President's name.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 30,
+      "section": "government",
+      "question": "If the President can no longer serve, who becomes President?",
+      "options": [
+        "The Speaker of the House",
+        "The Vice President",
+        "The Chief Justice",
+        "The Secretary of State"
+      ],
+      "correctAnswer": 1,
+      "explanation": "If the President can no longer serve, the Vice President becomes President.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 31,
+      "section": "government",
+      "question": "If both the President and the Vice President can no longer serve, who becomes President?",
+      "options": [
+        "The Speaker of the House",
+        "The Chief Justice",
+        "The Secretary of State",
+        "The Secretary of Defense"
+      ],
+      "correctAnswer": 0,
+      "explanation": "If both the President and the Vice President can no longer serve, the Speaker of the House becomes President.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 32,
+      "section": "government",
+      "question": "Who is the Commander in Chief of the military?",
+      "options": [
+        "The Secretary of Defense",
+        "The President",
+        "The Vice President",
+        "The Chairman of the Joint Chiefs"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The President is the Commander in Chief of the military.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 33,
+      "section": "government",
+      "question": "Who signs bills to become laws?",
+      "options": [
+        "The Supreme Court",
+        "The Speaker of the House",
+        "The President",
+        "The Vice President"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The President signs bills to become laws.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 34,
+      "section": "government",
+      "question": "Who vetoes bills?",
+      "options": [
+        "The Supreme Court",
+        "The President",
+        "The Speaker of the House",
+        "The Senate"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The President vetoes bills.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 35,
+      "section": "government",
+      "question": "What does the President's Cabinet do?",
+      "options": [
+        "Makes laws",
+        "Advises the President",
+        "Interprets laws",
+        "Commands the military"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The President's Cabinet advises the President.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 36,
+      "section": "government",
+      "question": "What are two Cabinet-level positions?",
+      "options": [
+        "Secretary of State and Secretary of Defense",
+        "Speaker of House and Chief Justice",
+        "Senator and Representative",
+        "Governor and Mayor"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Cabinet-level positions include Secretary of State, Secretary of Defense, Attorney General, and many others.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 37,
+      "section": "government",
+      "question": "What does the judicial branch do?",
+      "options": [
+        "Makes laws",
+        "Enforces laws",
+        "Reviews laws and resolves disputes",
+        "Commands the military"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The judicial branch reviews laws, explains laws, resolves disputes, and decides if a law goes against the Constitution.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 38,
+      "section": "government",
+      "question": "What is the highest court in the United States?",
+      "options": [
+        "The Federal Court",
+        "The Supreme Court",
+        "The Appeals Court",
+        "The District Court"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Supreme Court is the highest court in the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 39,
+      "section": "government",
+      "question": "How many justices are on the Supreme Court?",
+      "options": [
+        "Visit uscis.gov/citizenship/testupdates",
+        "Seven (7)",
+        "Nine (9)",
+        "Eleven (11)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visit uscis.gov/citizenship/testupdates for the current number of justices on the Supreme Court.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 40,
+      "section": "government",
+      "question": "Who is the Chief Justice of the United States now?",
+      "options": [
+        "Visit uscis.gov/citizenship/testupdates",
+        "The President",
+        "The Vice President",
+        "The Speaker of the House"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visit uscis.gov/citizenship/testupdates for the name of the current Chief Justice of the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 41,
+      "section": "government",
+      "question": "What is one power of the federal government?",
+      "options": [
+        "Provide schooling and education",
+        "To print money",
+        "Give a driver's license",
+        "Provide police protection"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Powers of the federal government include: to print money, to declare war, to create an army, and to make treaties.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 42,
+      "section": "government",
+      "question": "What is one power of the states?",
+      "options": [
+        "To print money",
+        "To declare war",
+        "Provide schooling and education",
+        "To make treaties"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Powers of the states include: provide schooling and education, provide protection (police), provide safety (fire departments), give driver's licenses, and approve zoning and land use.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 43,
+      "section": "government",
+      "question": "Who is the Governor of your state now?",
+      "options": [
+        "Answers will vary by state",
+        "The President",
+        "The Mayor",
+        "The Senator"
+      ],
+      "correctAnswer": 0,
+      "explanation": "This answer will vary depending on your state. District of Columbia residents should answer that D.C. does not have a Governor.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 44,
+      "section": "government",
+      "question": "What is the capital of your state?",
+      "options": [
+        "Answers will vary by state",
+        "Washington, D.C.",
+        "New York",
+        "Los Angeles"
+      ],
+      "correctAnswer": 0,
+      "explanation": "This answer will vary depending on your state. District of Columbia residents should answer that D.C. is not a state and does not have a capital.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 45,
+      "section": "government",
+      "question": "What are the two major political parties in the United States?",
+      "options": [
+        "Democratic and Republican",
+        "Liberal and Conservative",
+        "Federalist and Anti-Federalist",
+        "Progressive and Traditional"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The two major political parties in the United States are Democratic and Republican.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 46,
+      "section": "government",
+      "question": "What is the political party of the President now?",
+      "options": [
+        "Visit uscis.gov/citizenship/testupdates",
+        "Democratic",
+        "Republican",
+        "Independent"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visit uscis.gov/citizenship/testupdates for the political party of the current President.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 47,
+      "section": "government",
+      "question": "What is the name of the Speaker of the House of Representatives now?",
+      "options": [
+        "Visit uscis.gov/citizenship/testupdates",
+        "The President",
+        "The Vice President",
+        "The Chief Justice"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visit uscis.gov/citizenship/testupdates for the name of the current Speaker of the House of Representatives.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 48,
+      "section": "rights",
+      "question": "There are four amendments to the Constitution about who can vote. Describe one of them.",
+      "options": [
+        "Citizens eighteen (18) and older can vote",
+        "Only men can vote",
+        "Only property owners can vote",
+        "Only college graduates can vote"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Voting amendments include: Citizens eighteen (18) and older can vote; You don't have to pay a poll tax to vote; Any citizen can vote (women and men); A male citizen of any race can vote.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 49,
+      "section": "rights",
+      "question": "What is one responsibility that is only for United States citizens?",
+      "options": [
+        "Pay taxes",
+        "Serve on a jury",
+        "Obey the law",
+        "Attend school"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Responsibilities only for U.S. citizens include: serve on a jury and vote in a federal election.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 50,
+      "section": "rights",
+      "question": "Name one right only for United States citizens.",
+      "options": [
+        "Freedom of speech",
+        "Vote in a federal election",
+        "Freedom of religion",
+        "Right to bear arms"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Rights only for United States citizens include: vote in a federal election and run for federal office.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 51,
+      "section": "rights",
+      "question": "What are two rights of everyone living in the United States?",
+      "options": [
+        "Freedom of expression and freedom of speech",
+        "Right to vote and right to run for office",
+        "Right to a job and right to housing",
+        "Right to drive and right to travel"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Rights of everyone living in the United States include: freedom of expression, freedom of speech, freedom of assembly, freedom to petition the government, freedom of religion, and the right to bear arms.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 52,
+      "section": "rights",
+      "question": "What do we show loyalty to when we say the Pledge of Allegiance?",
+      "options": [
+        "The President",
+        "The United States and the flag",
+        "The Constitution",
+        "The military"
+      ],
+      "correctAnswer": 1,
+      "explanation": "When we say the Pledge of Allegiance, we show loyalty to the United States and the flag.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 53,
+      "section": "rights",
+      "question": "What is one promise you make when you become a United States citizen?",
+      "options": [
+        "To get a job",
+        "Give up loyalty to other countries",
+        "To learn English perfectly",
+        "To move to a different state"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Promises made when becoming a U.S. citizen include: give up loyalty to other countries, defend the Constitution and laws of the United States, obey the laws of the United States, serve in the U.S. military (if needed), serve the nation (if needed), and be loyal to the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 54,
+      "section": "rights",
+      "question": "How old do citizens have to be to vote for President?",
+      "options": [
+        "Sixteen (16) and older",
+        "Eighteen (18) and older",
+        "Twenty-one (21) and older",
+        "Twenty-five (25) and older"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Citizens have to be eighteen (18) and older to vote for President.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 55,
+      "section": "rights",
+      "question": "What are two ways that Americans can participate in their democracy?",
+      "options": [
+        "Vote and join a political party",
+        "Pay taxes and follow laws",
+        "Work and go to school",
+        "Drive and travel"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Ways Americans can participate in democracy include: vote, join a political party, help with a campaign, join a civic group, join a community group, give an elected official your opinion on an issue, call Senators and Representatives, publicly support or oppose an issue or policy, run for office, and write to a newspaper.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 56,
+      "section": "rights",
+      "question": "When is the last day you can send in federal income tax forms?",
+      "options": [
+        "March 15",
+        "April 15",
+        "May 15",
+        "June 15"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The last day you can send in federal income tax forms is April 15.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 57,
+      "section": "rights",
+      "question": "When must all men register for the Selective Service?",
+      "options": [
+        "At age sixteen (16)",
+        "At age eighteen (18)",
+        "At age twenty-one (21)",
+        "At age twenty-five (25)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "All men must register for the Selective Service at age eighteen (18), between eighteen (18) and twenty-six (26).",
+      "elderlyOnly": false
+    },
+    {
+      "id": 58,
+      "section": "colonial",
+      "question": "What is one reason colonists came to America?",
+      "options": [
+        "Freedom",
+        "Gold",
+        "Fame",
+        "Adventure"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Reasons colonists came to America include: freedom, political liberty, religious freedom, economic opportunity, practice their religion, and escape persecution.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 59,
+      "section": "colonial",
+      "question": "Who lived in America before the Europeans arrived?",
+      "options": [
+        "Vikings",
+        "American Indians",
+        "Spanish",
+        "French"
+      ],
+      "correctAnswer": 1,
+      "explanation": "American Indians (Native Americans) lived in America before the Europeans arrived.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 60,
+      "section": "colonial",
+      "question": "What group of people was taken to America and sold as slaves?",
+      "options": [
+        "Europeans",
+        "Africans",
+        "Asians",
+        "Native Americans"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Africans (people from Africa) were taken to America and sold as slaves.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 61,
+      "section": "colonial",
+      "question": "Why did the colonists fight the British?",
+      "options": [
+        "Because of high taxes (taxation without representation)",
+        "Because they wanted more land",
+        "Because they wanted independence from France",
+        "Because they wanted to expand trade"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The colonists fought the British because of high taxes (taxation without representation), because the British army stayed in their houses (boarding, quartering), and because they didn't have self-government.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 62,
+      "section": "colonial",
+      "question": "Who wrote the Declaration of Independence?",
+      "options": [
+        "George Washington",
+        "Thomas Jefferson",
+        "Benjamin Franklin",
+        "John Adams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thomas Jefferson wrote the Declaration of Independence.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 63,
+      "section": "colonial",
+      "question": "When was the Declaration of Independence adopted?",
+      "options": [
+        "July 4, 1775",
+        "July 4, 1776",
+        "July 4, 1777",
+        "July 4, 1778"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Declaration of Independence was adopted on July 4, 1776.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 64,
+      "section": "colonial",
+      "question": "There were 13 original states. Name three.",
+      "options": [
+        "Virginia, Massachusetts, and New York",
+        "California, Texas, and Florida",
+        "Ohio, Illinois, and Michigan",
+        "Washington, Oregon, and Nevada"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The 13 original states were: New Hampshire, Massachusetts, Rhode Island, Connecticut, New York, New Jersey, Pennsylvania, Delaware, Maryland, Virginia, North Carolina, South Carolina, and Georgia.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 65,
+      "section": "colonial",
+      "question": "What happened at the Constitutional Convention?",
+      "options": [
+        "The Declaration of Independence was written",
+        "The Constitution was written",
+        "The Bill of Rights was written",
+        "The Emancipation Proclamation was written"
+      ],
+      "correctAnswer": 1,
+      "explanation": "At the Constitutional Convention, the Constitution was written. The Founding Fathers wrote the Constitution.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 66,
+      "section": "colonial",
+      "question": "When was the Constitution written?",
+      "options": [
+        "1776",
+        "1787",
+        "1791",
+        "1800"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Constitution was written in 1787.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 67,
+      "section": "colonial",
+      "question": "The Federalist Papers supported the passage of the U.S. Constitution. Name one of the writers.",
+      "options": [
+        "James Madison",
+        "George Washington",
+        "Thomas Jefferson",
+        "John Adams"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Writers of the Federalist Papers include: James Madison, Alexander Hamilton, John Jay, and Publius.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 68,
+      "section": "colonial",
+      "question": "What is one thing Benjamin Franklin is famous for?",
+      "options": [
+        "Being the first President",
+        "U.S. diplomat",
+        "Writing the Constitution",
+        "Leading the Continental Army"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Benjamin Franklin is famous for being a U.S. diplomat, oldest member of the Constitutional Convention, first Postmaster General of the United States, writer of 'Poor Richard's Almanac', and starting the first free libraries.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 69,
+      "section": "colonial",
+      "question": "Who is the 'Father of Our Country'?",
+      "options": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Benjamin Franklin",
+        "John Adams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "George Washington is the 'Father of Our Country'.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 70,
+      "section": "colonial",
+      "question": "Who was the first President?",
+      "options": [
+        "John Adams",
+        "George Washington",
+        "Thomas Jefferson",
+        "Benjamin Franklin"
+      ],
+      "correctAnswer": 1,
+      "explanation": "George Washington was the first President.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 71,
+      "section": "1800s",
+      "question": "What territory did the United States buy from France in 1803?",
+      "options": [
+        "The Florida Territory",
+        "The Louisiana Territory",
+        "The Texas Territory",
+        "The California Territory"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The United States bought the Louisiana Territory from France in 1803.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 72,
+      "section": "1800s",
+      "question": "Name one war fought by the United States in the 1800s.",
+      "options": [
+        "World War I",
+        "Civil War",
+        "World War II",
+        "Korean War"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Wars fought by the United States in the 1800s include: War of 1812, Mexican-American War, Civil War, and Spanish-American War.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 73,
+      "section": "1800s",
+      "question": "Name the U.S. war between the North and the South.",
+      "options": [
+        "The Revolutionary War",
+        "The Civil War",
+        "The War of 1812",
+        "The Spanish-American War"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The U.S. war between the North and the South was the Civil War, also called the War between the States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 74,
+      "section": "1800s",
+      "question": "Name one problem that led to the Civil War.",
+      "options": [
+        "Slavery",
+        "Taxation",
+        "Trade disputes",
+        "Border conflicts"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Problems that led to the Civil War include: slavery, economic reasons, and states' rights.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 75,
+      "section": "1800s",
+      "question": "What was one important thing that Abraham Lincoln did?",
+      "options": [
+        "Led the Continental Army",
+        "Freed the slaves (Emancipation Proclamation)",
+        "Wrote the Constitution",
+        "Bought the Louisiana Territory"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Important things Abraham Lincoln did include: freed the slaves (Emancipation Proclamation), saved (or preserved) the Union, and led the United States during the Civil War.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 76,
+      "section": "1800s",
+      "question": "What did the Emancipation Proclamation do?",
+      "options": [
+        "Ended the Civil War",
+        "Freed the slaves",
+        "Created new states",
+        "Established voting rights"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The Emancipation Proclamation freed the slaves, freed slaves in the Confederacy, freed slaves in the Confederate states, and freed slaves in most Southern states.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 77,
+      "section": "1800s",
+      "question": "What did Susan B. Anthony do?",
+      "options": [
+        "Fought for women's rights",
+        "Led the Underground Railroad",
+        "Was a Civil War nurse",
+        "Wrote Uncle Tom's Cabin"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Susan B. Anthony fought for women's rights and fought for civil rights.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 78,
+      "section": "modern",
+      "question": "Name one war fought by the United States in the 1900s.",
+      "options": [
+        "World War I",
+        "The Civil War",
+        "The Revolutionary War",
+        "The War of 1812"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Wars fought by the United States in the 1900s include: World War I, World War II, Korean War, Vietnam War, and (Persian) Gulf War.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 79,
+      "section": "modern",
+      "question": "Who was President during World War I?",
+      "options": [
+        "Theodore Roosevelt",
+        "Woodrow Wilson",
+        "Franklin Roosevelt",
+        "Harry Truman"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Woodrow Wilson was President during World War I.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 80,
+      "section": "modern",
+      "question": "Who was President during the Great Depression and World War II?",
+      "options": [
+        "Theodore Roosevelt",
+        "Franklin Roosevelt",
+        "Harry Truman",
+        "Dwight Eisenhower"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Franklin Roosevelt was President during the Great Depression and World War II.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 81,
+      "section": "modern",
+      "question": "Who did the United States fight in World War II?",
+      "options": [
+        "Japan, Germany, and Italy",
+        "Russia, China, and France",
+        "England, Spain, and Portugal",
+        "Mexico, Canada, and Brazil"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The United States fought Japan, Germany, and Italy in World War II.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 82,
+      "section": "modern",
+      "question": "Before he was President, Eisenhower was a general. What war was he in?",
+      "options": [
+        "World War I",
+        "World War II",
+        "Korean War",
+        "Vietnam War"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Before he was President, Eisenhower was a general in World War II.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 83,
+      "section": "modern",
+      "question": "During the Cold War, what was the main concern of the United States?",
+      "options": [
+        "Fascism",
+        "Communism",
+        "Terrorism",
+        "Economic depression"
+      ],
+      "correctAnswer": 1,
+      "explanation": "During the Cold War, the main concern of the United States was Communism.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 84,
+      "section": "modern",
+      "question": "What movement tried to end racial discrimination?",
+      "options": [
+        "The labor movement",
+        "The civil rights movement",
+        "The women's suffrage movement",
+        "The temperance movement"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The civil rights movement tried to end racial discrimination.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 85,
+      "section": "modern",
+      "question": "What did Martin Luther King, Jr. do?",
+      "options": [
+        "Led the Continental Army",
+        "Fought for civil rights",
+        "Was the first African American President",
+        "Invented the telephone"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Martin Luther King, Jr. fought for civil rights and worked for equality for all Americans.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 86,
+      "section": "modern",
+      "question": "What major event happened on September 11, 2001, in the United States?",
+      "options": [
+        "The Civil War ended",
+        "Terrorists attacked the United States",
+        "World War II began",
+        "The Constitution was signed"
+      ],
+      "correctAnswer": 1,
+      "explanation": "On September 11, 2001, terrorists attacked the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 87,
+      "section": "modern",
+      "question": "Name one American Indian tribe in the United States.",
+      "options": [
+        "Cherokee",
+        "Vikings",
+        "Pilgrims",
+        "Puritans"
+      ],
+      "correctAnswer": 0,
+      "explanation": "American Indian tribes include: Cherokee, Navajo, Sioux, Chippewa, Choctaw, Pueblo, Apache, Iroquois, Creek, Blackfeet, Seminole, Cheyenne, Arawak, Shawnee, Mohegan, Huron, Oneida, Lakota, Crow, Teton, Hopi, and Inuit.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 88,
+      "section": "geography",
+      "question": "Name one of the two longest rivers in the United States.",
+      "options": [
+        "Missouri River",
+        "Colorado River",
+        "Hudson River",
+        "Rio Grande"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The two longest rivers in the United States are the Missouri River and the Mississippi River.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 89,
+      "section": "geography",
+      "question": "What ocean is on the West Coast of the United States?",
+      "options": [
+        "Arctic Ocean",
+        "Atlantic Ocean",
+        "Pacific Ocean",
+        "Indian Ocean"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The Pacific Ocean is on the West Coast of the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 90,
+      "section": "geography",
+      "question": "What ocean is on the East Coast of the United States?",
+      "options": [
+        "Atlantic Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean",
+        "Indian Ocean"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Atlantic Ocean is on the East Coast of the United States.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 91,
+      "section": "geography",
+      "question": "Name one U.S. territory.",
+      "options": [
+        "Puerto Rico",
+        "Hawaii",
+        "Alaska",
+        "Washington D.C."
+      ],
+      "correctAnswer": 0,
+      "explanation": "U.S. territories include: Puerto Rico, U.S. Virgin Islands, American Samoa, Northern Mariana Islands, and Guam.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 92,
+      "section": "geography",
+      "question": "Name one state that borders Canada.",
+      "options": [
+        "California",
+        "Alaska",
+        "Texas",
+        "Florida"
+      ],
+      "correctAnswer": 1,
+      "explanation": "States that border Canada include: Maine, New Hampshire, Vermont, New York, Pennsylvania, Ohio, Michigan, Minnesota, North Dakota, Montana, Idaho, Washington, and Alaska.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 93,
+      "section": "geography",
+      "question": "Name one state that borders Mexico.",
+      "options": [
+        "Nevada",
+        "Texas",
+        "Oklahoma",
+        "Louisiana"
+      ],
+      "correctAnswer": 1,
+      "explanation": "States that border Mexico include: California, Arizona, New Mexico, and Texas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 94,
+      "section": "geography",
+      "question": "What is the capital of the United States?",
+      "options": [
+        "New York",
+        "Washington, D.C.",
+        "Philadelphia",
+        "Boston"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Washington, D.C. is the capital of the United States.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 95,
+      "section": "geography",
+      "question": "Where is the Statue of Liberty?",
+      "options": [
+        "New York Harbor",
+        "Boston Harbor",
+        "San Francisco Bay",
+        "Chesapeake Bay"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The Statue of Liberty is in New York Harbor, on Liberty Island. Also acceptable are New Jersey, near New York City, and on the Hudson River.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 96,
+      "section": "symbols",
+      "question": "Why does the flag have 13 stripes?",
+      "options": [
+        "Because there were 13 original colonies",
+        "Because there were 13 signers of the Constitution",
+        "Because there were 13 Presidents",
+        "Because there were 13 amendments"
+      ],
+      "correctAnswer": 0,
+      "explanation": "The flag has 13 stripes because there were 13 original colonies and the stripes represent the original colonies.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 97,
+      "section": "symbols",
+      "question": "Why does the flag have 50 stars?",
+      "options": [
+        "Because there are 50 territories",
+        "Because there are 50 states",
+        "Because there are 50 senators",
+        "Because there are 50 signers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The flag has 50 stars because there is one star for each state, each star represents a state, and there are 50 states.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 98,
+      "section": "symbols",
+      "question": "What is the name of the national anthem?",
+      "options": [
+        "America the Beautiful",
+        "God Bless America",
+        "The Star-Spangled Banner",
+        "My Country 'Tis of Thee"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The name of the national anthem is The Star-Spangled Banner.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 99,
+      "section": "holidays",
+      "question": "When do we celebrate Independence Day?",
+      "options": [
+        "July 3",
+        "July 4",
+        "July 5",
+        "August 4"
+      ],
+      "correctAnswer": 1,
+      "explanation": "We celebrate Independence Day on July 4.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 100,
+      "section": "holidays",
+      "question": "Name two national U.S. holidays.",
+      "options": [
+        "New Year's Day and Independence Day",
+        "Valentine's Day and Halloween",
+        "Mother's Day and Father's Day",
+        "Earth Day and Arbor Day"
+      ],
+      "correctAnswer": 0,
+      "explanation": "National U.S. holidays include: New Year's Day, Martin Luther King Jr. Day, Presidents' Day, Memorial Day, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving, and Christmas.",
+      "elderlyOnly": false
+    }
+  ]
+} 
