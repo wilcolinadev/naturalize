@@ -1,14 +1,14 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, RotateCcw, Trophy, CheckCircle, XCircle, Crown, Lock } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, Trophy, CheckCircle, XCircle, Crown, Lock, BookOpen } from "lucide-react";
 import Link from "next/link";
 import { useUserContext } from '@/components/user-provider';
 import { TextToSpeech } from '@/components/text-to-speech';
 import civicsData from '@/lib/civics-questions.json';
 
 // Function to get questions based on user plan
-const getQuestionsForUser = (userPlan: string, dailyCount: number) => {
+const getQuestionsForUser = (userPlan: string) => {
   const allQuestions = civicsData.questions;
   
   // Shuffle questions for all users to ensure random order
@@ -18,31 +18,23 @@ const getQuestionsForUser = (userPlan: string, dailyCount: number) => {
     // Premium users get all 100 questions in random order
     return shuffled;
   } else {
-    // Free users get limited random questions
-    const maxFreeQuestions = Math.min(10, 5 - dailyCount); // Max 10, but respect daily limit
-    if (maxFreeQuestions <= 0) {
-      return [];
-    }
-    
-    return shuffled.slice(0, maxFreeQuestions);
+    // Free users cannot access the full civics test - redirect to upgrade
+    return [];
   }
 };
 
 export default function CivicsQuizPage() {
   const { supabaseUser, loading, error } = useUserContext();
   
-  // Calculate available questions based on user plan and daily usage
-  const today = new Date().toISOString().split('T')[0];
-  const isToday = supabaseUser?.daily_question_usage.date === today;
-  const dailyCount = isToday ? supabaseUser?.daily_question_usage.count || 0 : 0;
+  // No need to calculate daily usage since free users are now blocked from full civics test
   
   // State for triggering question reshuffling
   const [restartKey, setRestartKey] = useState(0);
   
   // Memoize questions to prevent reshuffling on every render
   const CIVICS_QUESTIONS = useMemo(() => {
-    return supabaseUser ? getQuestionsForUser(supabaseUser.plan, dailyCount) : [];
-  }, [supabaseUser?.plan, dailyCount, restartKey]);
+    return supabaseUser ? getQuestionsForUser(supabaseUser.plan) : [];
+  }, [supabaseUser?.plan, restartKey]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [answers, setAnswers] = useState<(number | null)[]>(() => new Array(CIVICS_QUESTIONS.length).fill(null));
@@ -127,10 +119,10 @@ export default function CivicsQuizPage() {
     );
   }
 
-  // No questions available (free user hit daily limit)
-  if (CIVICS_QUESTIONS.length === 0) {
+  // No questions available (free users cannot access full civics test)
+  if (CIVICS_QUESTIONS.length === 0 && supabaseUser.plan === 'free') {
     return (
-              <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
+      <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
         {/* Breadcrumb */}
         <div className="flex items-center gap-2 text-sm text-muted-foreground">
           <Link href="/protected" className="hover:text-foreground">Dashboard</Link>
@@ -140,34 +132,81 @@ export default function CivicsQuizPage() {
           <span className="text-foreground">Civics Quiz</span>
         </div>
 
-        <div className="text-center py-12">
-          <Lock className="h-16 w-16 mx-auto mb-6 text-muted-foreground" />
-          <h1 className="font-bold text-3xl mb-4">Daily Limit Reached</h1>
-          <p className="text-lg text-muted-foreground mb-6">
-            You&apos;ve used all your free questions for today. Upgrade to Premium for unlimited access!
-          </p>
-          
-          <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border border-yellow-200 rounded-lg p-6 max-w-md mx-auto mb-6">
-            <Crown className="h-8 w-8 text-yellow-600 mx-auto mb-3" />
-            <h3 className="font-semibold text-lg mb-2">Premium Benefits</h3>
-            <ul className="text-sm text-left space-y-2">
-              <li>• Access to all 100 official civics questions</li>
-              <li>• Unlimited daily practice</li>
-              <li>• Full-length practice exams</li>
-              <li>• Detailed progress tracking</li>
-            </ul>
-          </div>
+        <div className="min-h-[60vh] flex items-center justify-center">
+          <div className="text-center max-w-2xl mx-auto px-6">
+            {/* Animated Icon */}
+            <div className="mb-8">
+              <div className="relative inline-block">
+                <div className="w-32 h-32 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-950/30 dark:to-indigo-950/30 rounded-full flex items-center justify-center shadow-lg animate-pulse">
+                  <Lock className="h-16 w-16 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full p-3 shadow-lg animate-bounce">
+                  <BookOpen className="h-6 w-6 text-white" />
+                </div>
+              </div>
+            </div>
+            
+            {/* Title and Description */}
+            <div className="mb-10">
+              <h1 className="font-bold text-4xl md:text-5xl mb-6 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Premium Feature
+              </h1>
+              <p className="text-xl text-muted-foreground leading-relaxed">
+                The full 100-question civics test is available exclusively for Premium members.
+              </p>
+            </div>
+            
+            {/* Premium Benefits Card */}
+            <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-blue-950/20 dark:via-indigo-950/20 dark:to-purple-950/20 border-2 border-blue-200 dark:border-blue-800 rounded-2xl p-8 max-w-lg mx-auto mb-10 shadow-xl hover:shadow-2xl transition-all duration-300">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full flex items-center justify-center mx-auto shadow-lg">
+                  <Crown className="h-8 w-8 text-white" />
+                </div>
+              </div>
+              
+              <h3 className="font-bold text-2xl mb-6 text-gray-900 dark:text-gray-100">Premium Civics Test</h3>
+              
+              <div className="grid grid-cols-1 gap-4 text-left">
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">All 100 official USCIS questions</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">Full-length practice exams</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">Detailed answer explanations</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full"></div>
+                  <span className="text-gray-700 dark:text-gray-300 font-medium">Progress tracking & analytics</span>
+                </div>
+              </div>
+              
+              <div className="mt-6 p-4 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                <p className="text-sm text-blue-800 dark:text-blue-200 font-medium">
+                  💡 Try our Quick Quiz feature for free practice questions!
+                </p>
+              </div>
+            </div>
 
-          <div className="flex gap-4 justify-center">
-            <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-md py-3 px-6 font-semibold hover:from-yellow-600 hover:to-orange-600">
-              Upgrade to Premium
-            </button>
-            <Link
-              href="/protected/practice"
-              className="border border-primary text-primary rounded-md py-3 px-6 hover:bg-primary/10"
-            >
-              Back to Practice
-            </Link>
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="group bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-xl py-4 px-8 font-bold text-lg hover:from-blue-600 hover:to-indigo-600 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200">
+                <span className="flex items-center justify-center gap-2">
+                  <Crown className="h-5 w-5 group-hover:animate-pulse" />
+                  Upgrade to Premium
+                </span>
+              </button>
+              <Link
+                href="/protected/practice/quick-quiz"
+                className="border-2 border-blue-500 text-blue-600 dark:text-blue-400 rounded-xl py-4 px-8 font-bold text-lg hover:bg-blue-50 hover:dark:bg-blue-950/20 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
+              >
+                Try Quick Quiz
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -283,30 +322,7 @@ export default function CivicsQuizPage() {
         <span className="text-foreground">Civics Quiz</span>
       </div>
 
-      {/* Plan Status Banner */}
-      {supabaseUser.plan === 'free' && (
-        <div className="bg-gradient-to-r from-blue-100 to-purple-100 border-2 border-blue-300 rounded-xl p-5 shadow-sm">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <div className="p-2 bg-blue-600 rounded-lg">
-                <Lock className="h-5 w-5 text-white" />
-              </div>
-              <div>
-                <p className="font-semibold text-base text-gray-900">Free Plan - Limited Practice</p>
-                <p className="text-sm text-gray-700 font-medium">
-                  {CIVICS_QUESTIONS.length} random questions available today
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <Crown className="h-5 w-5 text-yellow-600" />
-              <button className="text-sm font-semibold bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-lg py-2 px-4 hover:from-yellow-600 hover:to-orange-600 shadow-md transition-all duration-200 hover:shadow-lg">
-                Upgrade for 100 Questions
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Plan Status Banner - Only shown for premium users since free users are blocked */}
 
       {supabaseUser.plan === 'premium' && (
         <div className="bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-400 rounded-xl p-5 shadow-sm">
