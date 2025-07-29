@@ -3,14 +3,14 @@ export type Language = 'en' | 'es';
 export const translations = {
   en: {
     // Navigation
-    siteTitle: '🇺🇸 U.S. Citizenship Practice',
+    siteTitle: 'U.S. Citizenship Practice',
     login: 'Login',
     signup: 'Sign up',
     logout: 'Logout',
     
     // Home page
     hero: {
-      title: '🇺🇸 U.S. Citizenship Practice',
+      title: 'U.S. Citizenship Practice',
       subtitle: 'Master the U.S. Naturalization Test with interactive quizzes, reading practice, and progress tracking.'
     },
     
@@ -39,7 +39,7 @@ export const translations = {
     // Protected page
     dashboard: {
       welcome: 'Welcome to your citizenship practice dashboard!',
-      title: '🇺🇸 Practice Dashboard',
+      title: 'Practice Dashboard',
       subtitle: 'Ready to continue your citizenship journey?',
       civicsTest: {
         title: '📚 Civics Test',
@@ -70,7 +70,7 @@ export const translations = {
   },
   es: {
     // Navigation
-    siteTitle: '🇺🇸 Práctica de Ciudadanía Estadounidense',
+    siteTitle: 'Práctica de Ciudadanía Estadounidense',
     login: 'Iniciar Sesión',
     signup: 'Registrarse',
     logout: 'Cerrar Sesión',
@@ -106,7 +106,7 @@ export const translations = {
     // Protected page
     dashboard: {
       welcome: '¡Bienvenido a tu panel de práctica de ciudadanía!',
-      title: '🇺🇸 Panel de Práctica',
+      title: 'Panel de Práctica',
       subtitle: '¿Listo para continuar tu viaje hacia la ciudadanía?',
       civicsTest: {
         title: '📚 Examen Cívico',

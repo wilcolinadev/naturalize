@@ -1,0 +1,1442 @@
+{
+  "sections": {
+    "principles": {
+      "title": "Principios de la Democracia Americana",
+      "range": "1-12"
+    },
+    "government": {
+      "title": "Sistema de Gobierno",
+      "range": "13-47"
+    },
+    "rights": {
+      "title": "Derechos y Responsabilidades",
+      "range": "48-57"
+    },
+    "colonial": {
+      "title": "Período Colonial e Independencia",
+      "range": "58-70"
+    },
+    "1800s": {
+      "title": "Los años 1800",
+      "range": "71-77"
+    },
+    "modern": {
+      "title": "Historia Americana Reciente",
+      "range": "78-87"
+    },
+    "geography": {
+      "title": "Geografía",
+      "range": "88-95"
+    },
+    "symbols": {
+      "title": "Símbolos",
+      "range": "96-98"
+    },
+    "holidays": {
+      "title": "Días Festivos",
+      "range": "99-100"
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "section": "principles",
+      "question": "¿Cuál es la ley suprema de la nación?",
+      "options": [
+        "La Constitución",
+        "La Declaración de Independencia",
+        "La Carta de Derechos",
+        "Las Enmiendas"
+      ],
+      "correctAnswer": 0,
+      "explanation": "La Constitución es la ley suprema de los Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 2,
+      "section": "principles",
+      "question": "¿Qué hace la Constitución?",
+      "options": [
+        "Protege los derechos básicos de los estadounidenses",
+        "Establece el gobierno",
+        "Define el gobierno y protege los derechos básicos",
+        "Crea leyes"
+      ],
+      "correctAnswer": 2,
+      "explanation": "La Constitución establece el gobierno, define el gobierno y protege los derechos básicos de los estadounidenses.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 3,
+      "section": "principles",
+      "question": "La idea del autogobierno está en las primeras tres palabras de la Constitución. ¿Cuáles son estas palabras?",
+      "options": [
+        "Nosotros el Pueblo",
+        "Vida, Libertad y",
+        "Nosotros sostenemos",
+        "En Congreso reunido"
+      ],
+      "correctAnswer": 0,
+      "explanation": "La Constitución comienza con 'Nosotros el Pueblo', estableciendo el principio de autogobierno.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 4,
+      "section": "principles",
+      "question": "¿Qué es una enmienda?",
+      "options": [
+        "Una ley",
+        "Un cambio o adición a la Constitución",
+        "Una decisión judicial",
+        "Una orden presidencial"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Una enmienda es un cambio o adición a la Constitución.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 5,
+      "section": "principles",
+      "question": "¿Cómo llamamos a las primeras diez enmiendas a la Constitución?",
+      "options": [
+        "La Declaración de Derechos",
+        "La Carta de Derechos",
+        "Los Derechos Constitucionales",
+        "Los Derechos Básicos"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las primeras diez enmiendas a la Constitución se llaman la Carta de Derechos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 6,
+      "section": "principles",
+      "question": "¿Cuál es un derecho o libertad de la Primera Enmienda?",
+      "options": [
+        "Derecho a portar armas",
+        "Libertad de expresión",
+        "Derecho al voto",
+        "Derecho a un juicio por jurado"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La Primera Enmienda protege la libertad de expresión, religión, reunión, prensa y petición al gobierno.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 7,
+      "section": "principles",
+      "question": "¿Cuántas enmiendas tiene la Constitución?",
+      "options": [
+        "Veinticinco (25)",
+        "Veintiséis (26)",
+        "Veintisiete (27)",
+        "Veintiocho (28)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "La Constitución tiene veintisiete (27) enmiendas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 8,
+      "section": "principles",
+      "question": "¿Qué hizo la Declaración de Independencia?",
+      "options": [
+        "Creó la Constitución",
+        "Anunció nuestra independencia de Gran Bretaña",
+        "Estableció la Carta de Derechos",
+        "Creó las tres ramas del gobierno"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La Declaración de Independencia anunció nuestra independencia de Gran Bretaña.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 9,
+      "section": "principles",
+      "question": "¿Cuáles son dos derechos en la Declaración de Independencia?",
+      "options": [
+        "La vida y la libertad",
+        "Libertad y justicia",
+        "Paz y prosperidad",
+        "Seguridad y protección"
+      ],
+      "correctAnswer": 0,
+      "explanation": "La Declaración de Independencia menciona la vida, la libertad y la búsqueda de la felicidad.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 10,
+      "section": "principles",
+      "question": "¿Qué es la libertad de religión?",
+      "options": [
+        "Debes practicar el cristianismo",
+        "Puedes practicar cualquier religión, o no practicar ninguna",
+        "Solo puedes practicar religiones aprobadas",
+        "Debes asistir a servicios religiosos"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La libertad de religión significa que puedes practicar cualquier religión, o no practicar ninguna.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 11,
+      "section": "principles",
+      "question": "¿Cuál es el sistema económico de los Estados Unidos?",
+      "options": [
+        "Economía socialista",
+        "Economía comunista",
+        "Economía capitalista",
+        "Economía tradicional"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Los Estados Unidos tiene una economía capitalista, también llamada economía de mercado.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 12,
+      "section": "principles",
+      "question": "¿Qué es el 'estado de derecho'?",
+      "options": [
+        "Solo los ciudadanos deben seguir la ley",
+        "Todos deben seguir la ley",
+        "Solo el gobierno hace las leyes",
+        "Las leyes pueden ignorarse a veces"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El estado de derecho significa que todos deben seguir la ley, incluyendo los líderes y el gobierno. Nadie está por encima de la ley.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 13,
+      "section": "government",
+      "question": "Nombre una rama o parte del gobierno.",
+      "options": [
+        "El Congreso",
+        "El Ejército",
+        "La Corte Suprema",
+        "El Gabinete"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las tres ramas del gobierno son: el Congreso (legislativa), el Presidente (ejecutiva) y los tribunales (judicial).",
+      "elderlyOnly": true
+    },
+    {
+      "id": 14,
+      "section": "government",
+      "question": "¿Qué impide que una rama del gobierno se vuelva demasiado poderosa?",
+      "options": [
+        "La Constitución",
+        "Los controles y equilibrios",
+        "La Carta de Derechos",
+        "La Corte Suprema"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los controles y equilibrios y la separación de poderes evitan que cualquier rama se vuelva demasiado poderosa.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 15,
+      "section": "government",
+      "question": "¿Quién está a cargo de la rama ejecutiva?",
+      "options": [
+        "La Corte Suprema",
+        "El Congreso",
+        "El Presidente",
+        "El Vicepresidente"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El Presidente está a cargo de la rama ejecutiva.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 16,
+      "section": "government",
+      "question": "¿Quién hace las leyes federales?",
+      "options": [
+        "El Presidente",
+        "La Corte Suprema",
+        "El Congreso",
+        "El Gabinete"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El Congreso hace las leyes federales. El Congreso incluye el Senado y la Cámara de Representantes.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 17,
+      "section": "government",
+      "question": "¿Cuáles son las dos partes del Congreso de los Estados Unidos?",
+      "options": [
+        "El Senado y la Cámara de Representantes",
+        "La Cámara y la Corte",
+        "La Cámara Alta y la Cámara Baja",
+        "El Congreso y el Senado"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las dos partes del Congreso de los Estados Unidos son el Senado y la Cámara de Representantes.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 18,
+      "section": "government",
+      "question": "¿Cuántos Senadores de los Estados Unidos hay?",
+      "options": [
+        "Cincuenta (50)",
+        "Cien (100)",
+        "Cuatrocientos treinta y cinco (435)",
+        "Doscientos (200)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Hay cien (100) Senadores de los Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 19,
+      "section": "government",
+      "question": "¿Por cuántos años elegimos a un Senador de los Estados Unidos?",
+      "options": [
+        "Dos (2)",
+        "Cuatro (4)",
+        "Seis (6)",
+        "Ocho (8)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Elegimos a un Senador de los Estados Unidos por seis (6) años.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 20,
+      "section": "government",
+      "question": "¿Quién es uno de los Senadores de su estado ahora?",
+      "options": [
+        "Las respuestas varían según el estado",
+        "El Gobernador",
+        "El Presidente",
+        "El Presidente de la Cámara"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Esta respuesta variará según su estado. Los residentes del Distrito de Columbia deben responder que D.C. no tiene Senadores de los Estados Unidos.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 21,
+      "section": "government",
+      "question": "¿Cuántos miembros votantes tiene la Cámara de Representantes?",
+      "options": [
+        "Cien (100)",
+        "Doscientos (200)",
+        "Cuatrocientos treinta y cinco (435)",
+        "Quinientos (500)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "La Cámara de Representantes tiene cuatrocientos treinta y cinco (435) miembros votantes.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 22,
+      "section": "government",
+      "question": "¿Por cuántos años elegimos a un Representante de los Estados Unidos?",
+      "options": [
+        "Dos (2)",
+        "Cuatro (4)",
+        "Seis (6)",
+        "Ocho (8)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Elegimos a un Representante de los Estados Unidos por dos (2) años.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 23,
+      "section": "government",
+      "question": "Nombre a su Representante de los Estados Unidos.",
+      "options": [
+        "Las respuestas varían según el distrito",
+        "El Gobernador",
+        "El Presidente",
+        "El Senador"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Esta respuesta variará según su distrito congresional.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 24,
+      "section": "government",
+      "question": "¿A quién representa un Senador de los Estados Unidos?",
+      "options": [
+        "Solo a las personas que votaron por él/ella",
+        "A todas las personas del estado",
+        "Solo a las personas de su partido",
+        "Solo a las personas de su ciudad"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Un Senador de los Estados Unidos representa a todas las personas del estado.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 25,
+      "section": "government",
+      "question": "¿Por qué algunos estados tienen más Representantes que otros?",
+      "options": [
+        "Por la población del estado",
+        "Por el tamaño del estado",
+        "Por la riqueza del estado",
+        "Por la antigüedad del estado"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Algunos estados tienen más Representantes debido a la población del estado - tienen más personas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 26,
+      "section": "government",
+      "question": "¿Por cuántos años elegimos al Presidente?",
+      "options": [
+        "Dos (2)",
+        "Cuatro (4)",
+        "Seis (6)",
+        "Ocho (8)"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Elegimos al Presidente por cuatro (4) años.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 27,
+      "section": "government",
+      "question": "¿En qué mes votamos por Presidente?",
+      "options": [
+        "Octubre",
+        "Noviembre",
+        "Diciembre",
+        "Enero"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Votamos por Presidente en noviembre.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 28,
+      "section": "government",
+      "question": "¿Cuál es el nombre del Presidente de los Estados Unidos ahora?",
+      "options": [
+        "Visite uscis.gov/citizenship/testupdates",
+        "George Washington",
+        "Abraham Lincoln",
+        "Thomas Jefferson"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visite uscis.gov/citizenship/testupdates para el nombre del Presidente actual.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 29,
+      "section": "government",
+      "question": "¿Cuál es el nombre del Vicepresidente de los Estados Unidos ahora?",
+      "options": [
+        "Visite uscis.gov/citizenship/testupdates",
+        "El Presidente de la Cámara",
+        "El Presidente de la Corte Suprema",
+        "El Secretario de Estado"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visite uscis.gov/citizenship/testupdates para el nombre del Vicepresidente actual.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 30,
+      "section": "government",
+      "question": "Si el Presidente ya no puede servir, ¿quién se convierte en Presidente?",
+      "options": [
+        "El Presidente de la Cámara",
+        "El Vicepresidente",
+        "El Presidente de la Corte Suprema",
+        "El Secretario de Estado"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Si el Presidente ya no puede servir, el Vicepresidente se convierte en Presidente.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 31,
+      "section": "government",
+      "question": "Si tanto el Presidente como el Vicepresidente ya no pueden servir, ¿quién se convierte en Presidente?",
+      "options": [
+        "El Presidente de la Cámara",
+        "El Presidente de la Corte Suprema",
+        "El Secretario de Estado",
+        "El Secretario de Defensa"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Si tanto el Presidente como el Vicepresidente ya no pueden servir, el Presidente de la Cámara se convierte en Presidente.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 32,
+      "section": "government",
+      "question": "¿Quién es el Comandante en Jefe de las fuerzas armadas?",
+      "options": [
+        "El Secretario de Defensa",
+        "El Presidente",
+        "El Vicepresidente",
+        "El Presidente del Estado Mayor Conjunto"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El Presidente es el Comandante en Jefe de las fuerzas armadas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 33,
+      "section": "government",
+      "question": "¿Quién firma los proyectos de ley para convertirlos en leyes?",
+      "options": [
+        "La Corte Suprema",
+        "El Presidente de la Cámara",
+        "El Presidente",
+        "El Vicepresidente"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El Presidente firma los proyectos de ley para convertirlos en leyes.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 34,
+      "section": "government",
+      "question": "¿Quién veta los proyectos de ley?",
+      "options": [
+        "La Corte Suprema",
+        "El Presidente",
+        "El Presidente de la Cámara",
+        "El Senado"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El Presidente veta los proyectos de ley.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 35,
+      "section": "government",
+      "question": "¿Qué hace el Gabinete del Presidente?",
+      "options": [
+        "Hace leyes",
+        "Aconseja al Presidente",
+        "Interpreta las leyes",
+        "Comanda las fuerzas armadas"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El Gabinete del Presidente aconseja al Presidente.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 36,
+      "section": "government",
+      "question": "¿Cuáles son dos puestos a nivel de Gabinete?",
+      "options": [
+        "Secretario de Estado y Secretario de Defensa",
+        "Presidente de la Cámara y Presidente de la Corte Suprema",
+        "Senador y Representante",
+        "Gobernador y Alcalde"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los puestos a nivel de Gabinete incluyen: Secretario de Estado, Secretario de Defensa, Fiscal General y muchos otros.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 37,
+      "section": "government",
+      "question": "¿Qué hace la rama judicial?",
+      "options": [
+        "Hace leyes",
+        "Hace cumplir las leyes",
+        "Revisa las leyes y resuelve disputas",
+        "Comanda las fuerzas armadas"
+      ],
+      "correctAnswer": 2,
+      "explanation": "La rama judicial revisa las leyes, explica las leyes, resuelve disputas y decide si una ley va en contra de la Constitución.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 38,
+      "section": "government",
+      "question": "¿Cuál es la corte más alta de los Estados Unidos?",
+      "options": [
+        "La Corte Federal",
+        "La Corte Suprema",
+        "La Corte de Apelaciones",
+        "La Corte de Distrito"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La Corte Suprema es la corte más alta de los Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 39,
+      "section": "government",
+      "question": "¿Cuántos jueces hay en la Corte Suprema?",
+      "options": [
+        "Visite uscis.gov/citizenship/testupdates",
+        "Siete (7)",
+        "Nueve (9)",
+        "Once (11)"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visite uscis.gov/citizenship/testupdates para el número actual de jueces en la Corte Suprema.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 40,
+      "section": "government",
+      "question": "¿Quién es el Presidente de la Corte Suprema de los Estados Unidos ahora?",
+      "options": [
+        "Visite uscis.gov/citizenship/testupdates",
+        "El Presidente",
+        "El Vicepresidente",
+        "El Presidente de la Cámara"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visite uscis.gov/citizenship/testupdates para el nombre del actual Presidente de la Corte Suprema de los Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 41,
+      "section": "government",
+      "question": "¿Cuál es un poder del gobierno federal?",
+      "options": [
+        "Proveer educación y escuelas",
+        "Imprimir dinero",
+        "Dar licencias de conducir",
+        "Proveer protección policial"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los poderes del gobierno federal incluyen: imprimir dinero, declarar la guerra, crear un ejército y hacer tratados.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 42,
+      "section": "government",
+      "question": "¿Cuál es un poder de los estados?",
+      "options": [
+        "Imprimir dinero",
+        "Declarar la guerra",
+        "Proveer escuelas y educación",
+        "Hacer tratados"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Los poderes de los estados incluyen: proveer escuelas y educación, proveer protección (policía), proveer seguridad (departamentos de bomberos), dar licencias de conducir y aprobar la zonificación y el uso de la tierra.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 43,
+      "section": "government",
+      "question": "¿Quién es el Gobernador de su estado ahora?",
+      "options": [
+        "Las respuestas varían según el estado",
+        "El Presidente",
+        "El Alcalde",
+        "El Senador"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Esta respuesta variará según su estado. Los residentes del Distrito de Columbia deben responder que D.C. no tiene Gobernador.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 44,
+      "section": "government",
+      "question": "¿Cuál es la capital de su estado?",
+      "options": [
+        "Las respuestas varían según el estado",
+        "Washington, D.C.",
+        "Nueva York",
+        "Los Ángeles"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Esta respuesta variará según su estado. Los residentes del Distrito de Columbia deben responder que D.C. no es un estado y no tiene capital.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 45,
+      "section": "government",
+      "question": "¿Cuáles son los dos principales partidos políticos en los Estados Unidos?",
+      "options": [
+        "Demócrata y Republicano",
+        "Liberal y Conservador",
+        "Federalista y Anti-Federalista",
+        "Progresista y Tradicional"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los dos principales partidos políticos en los Estados Unidos son el Demócrata y el Republicano.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 46,
+      "section": "government",
+      "question": "¿Cuál es el partido político del Presidente ahora?",
+      "options": [
+        "Visite uscis.gov/citizenship/testupdates",
+        "Demócrata",
+        "Republicano",
+        "Independiente"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visite uscis.gov/citizenship/testupdates para el partido político del Presidente actual.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 47,
+      "section": "government",
+      "question": "¿Cuál es el nombre del Presidente de la Cámara de Representantes ahora?",
+      "options": [
+        "Visite uscis.gov/citizenship/testupdates",
+        "El Presidente",
+        "El Vicepresidente",
+        "El Presidente de la Corte Suprema"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Visite uscis.gov/citizenship/testupdates para el nombre del actual Presidente de la Cámara de Representantes.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 48,
+      "section": "rights",
+      "question": "Hay cuatro enmiendas a la Constitución sobre quién puede votar. Describa una de ellas.",
+      "options": [
+        "Los ciudadanos de dieciocho (18) años y mayores pueden votar",
+        "Solo los hombres pueden votar",
+        "Solo los propietarios pueden votar",
+        "Solo los graduados universitarios pueden votar"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las enmiendas sobre el voto incluyen: Los ciudadanos de dieciocho (18) años y mayores pueden votar; No hay que pagar un impuesto para votar; Cualquier ciudadano puede votar (mujeres y hombres); Un ciudadano masculino de cualquier raza puede votar.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 49,
+      "section": "rights",
+      "question": "¿Cuál es una responsabilidad que es solo para los ciudadanos de los Estados Unidos?",
+      "options": [
+        "Pagar impuestos",
+        "Servir en un jurado",
+        "Obedecer la ley",
+        "Asistir a la escuela"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las responsabilidades solo para ciudadanos de los Estados Unidos incluyen: servir en un jurado y votar en una elección federal.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 50,
+      "section": "rights",
+      "question": "Nombre un derecho que es solo para los ciudadanos de los Estados Unidos.",
+      "options": [
+        "Libertad de expresión",
+        "Votar en una elección federal",
+        "Libertad de religión",
+        "Derecho a portar armas"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los derechos solo para ciudadanos de los Estados Unidos incluyen: votar en una elección federal y postularse para un cargo federal.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 51,
+      "section": "rights",
+      "question": "¿Cuáles son dos derechos de todas las personas que viven en los Estados Unidos?",
+      "options": [
+        "Libertad de expresión y libertad de palabra",
+        "Derecho a votar y derecho a postularse para un cargo",
+        "Derecho a un trabajo y derecho a vivienda",
+        "Derecho a conducir y derecho a viajar"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los derechos de todas las personas que viven en los Estados Unidos incluyen: libertad de expresión, libertad de palabra, libertad de reunión, libertad de petición al gobierno, libertad de religión y el derecho a portar armas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 52,
+      "section": "rights",
+      "question": "¿A qué mostramos lealtad cuando decimos el Juramento de Lealtad?",
+      "options": [
+        "Al Presidente",
+        "A los Estados Unidos y a la bandera",
+        "A la Constitución",
+        "A las fuerzas armadas"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Cuando decimos el Juramento de Lealtad, mostramos lealtad a los Estados Unidos y a la bandera.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 53,
+      "section": "rights",
+      "question": "¿Cuál es una promesa que hace cuando se convierte en ciudadano de los Estados Unidos?",
+      "options": [
+        "Conseguir un trabajo",
+        "Renunciar a la lealtad a otros países",
+        "Aprender inglés perfectamente",
+        "Mudarse a un estado diferente"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las promesas que se hacen al convertirse en ciudadano de los Estados Unidos incluyen: renunciar a la lealtad a otros países, defender la Constitución y las leyes de los Estados Unidos, obedecer las leyes de los Estados Unidos, servir en las fuerzas armadas de los Estados Unidos (si es necesario), servir a la nación (si es necesario) y ser leal a los Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 54,
+      "section": "rights",
+      "question": "¿Qué edad deben tener los ciudadanos para votar por Presidente?",
+      "options": [
+        "Dieciséis (16) años o más",
+        "Dieciocho (18) años o más",
+        "Veintiún (21) años o más",
+        "Veinticinco (25) años o más"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los ciudadanos deben tener dieciocho (18) años o más para votar por Presidente.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 55,
+      "section": "rights",
+      "question": "¿Cuáles son dos formas en que los estadounidenses pueden participar en su democracia?",
+      "options": [
+        "Votar y unirse a un partido político",
+        "Pagar impuestos y seguir las leyes",
+        "Trabajar y asistir a la escuela",
+        "Conducir y viajar"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las formas en que los estadounidenses pueden participar en su democracia incluyen: votar, unirse a un partido político, ayudar con una campaña, unirse a un grupo cívico, unirse a un grupo comunitario, dar su opinión sobre un tema a un funcionario electo, llamar a Senadores y Representantes, apoyar u oponerse públicamente a un tema o política, postularse para un cargo y escribir a un periódico.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 56,
+      "section": "rights",
+      "question": "¿Cuál es la fecha límite para enviar la declaración federal de impuestos?",
+      "options": [
+        "15 de marzo",
+        "15 de abril",
+        "15 de mayo",
+        "15 de junio"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La fecha límite para enviar la declaración federal de impuestos es el 15 de abril.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 57,
+      "section": "rights",
+      "question": "¿Cuándo deben registrarse todos los hombres para el Servicio Selectivo?",
+      "options": [
+        "A los dieciséis (16) años",
+        "A los dieciocho (18) años",
+        "A los veintiún (21) años",
+        "A los veinticinco (25) años"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Todos los hombres deben registrarse para el Servicio Selectivo a los dieciocho (18) años, entre los dieciocho (18) y veintiséis (26) años.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 58,
+      "section": "colonial",
+      "question": "¿Cuál es una razón por la que los colonos vinieron a América?",
+      "options": [
+        "Libertad",
+        "Oro",
+        "Fama",
+        "Aventura"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las razones por las que los colonos vinieron a América incluyen: libertad, libertad política, libertad religiosa, oportunidades económicas, practicar su religión y escapar de la persecución.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 59,
+      "section": "colonial",
+      "question": "¿Quién vivía en América antes de que llegaran los europeos?",
+      "options": [
+        "Vikingos",
+        "Indios americanos",
+        "Españoles",
+        "Franceses"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los indios americanos (nativos americanos) vivían en América antes de que llegaran los europeos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 60,
+      "section": "colonial",
+      "question": "¿Qué grupo de personas fue traído a América y vendido como esclavos?",
+      "options": [
+        "Europeos",
+        "Africanos",
+        "Asiáticos",
+        "Nativos americanos"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los africanos (personas de África) fueron traídos a América y vendidos como esclavos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 61,
+      "section": "colonial",
+      "question": "¿Por qué lucharon los colonos contra los británicos?",
+      "options": [
+        "Por los impuestos altos (impuestos sin representación)",
+        "Porque querían más tierra",
+        "Porque querían independencia de Francia",
+        "Porque querían expandir el comercio"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los colonos lucharon contra los británicos por los impuestos altos (impuestos sin representación), porque el ejército británico se quedaba en sus casas (alojamiento, acuartelamiento) y porque no tenían autogobierno.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 62,
+      "section": "colonial",
+      "question": "¿Quién escribió la Declaración de Independencia?",
+      "options": [
+        "George Washington",
+        "Thomas Jefferson",
+        "Benjamin Franklin",
+        "John Adams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Thomas Jefferson escribió la Declaración de Independencia.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 63,
+      "section": "colonial",
+      "question": "¿Cuándo fue adoptada la Declaración de Independencia?",
+      "options": [
+        "4 de julio de 1775",
+        "4 de julio de 1776",
+        "4 de julio de 1777",
+        "4 de julio de 1778"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La Declaración de Independencia fue adoptada el 4 de julio de 1776.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 64,
+      "section": "colonial",
+      "question": "Había 13 estados originales. Nombre tres.",
+      "options": [
+        "Virginia, Massachusetts y Nueva York",
+        "California, Texas y Florida",
+        "Ohio, Illinois y Michigan",
+        "Washington, Oregon y Nevada"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los 13 estados originales eran: New Hampshire, Massachusetts, Rhode Island, Connecticut, Nueva York, Nueva Jersey, Pennsylvania, Delaware, Maryland, Virginia, Carolina del Norte, Carolina del Sur y Georgia.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 65,
+      "section": "colonial",
+      "question": "¿Qué sucedió en la Convención Constitucional?",
+      "options": [
+        "Se escribió la Declaración de Independencia",
+        "Se escribió la Constitución",
+        "Se escribió la Carta de Derechos",
+        "Se escribió la Proclamación de Emancipación"
+      ],
+      "correctAnswer": 1,
+      "explanation": "En la Convención Constitucional, se escribió la Constitución. Los Padres Fundadores escribieron la Constitución.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 66,
+      "section": "colonial",
+      "question": "¿Cuándo fue escrita la Constitución?",
+      "options": [
+        "1776",
+        "1787",
+        "1791",
+        "1800"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La Constitución fue escrita en 1787.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 67,
+      "section": "colonial",
+      "question": "Los Documentos Federalistas apoyaron la aprobación de la Constitución de los Estados Unidos. Nombre uno de los escritores.",
+      "options": [
+        "James Madison",
+        "George Washington",
+        "Thomas Jefferson",
+        "John Adams"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los escritores de los Documentos Federalistas incluyen: James Madison, Alexander Hamilton, John Jay y Publius.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 68,
+      "section": "colonial",
+      "question": "¿Por qué es famoso Benjamin Franklin?",
+      "options": [
+        "Por ser el primer Presidente",
+        "Por ser diplomático de los Estados Unidos",
+        "Por escribir la Constitución",
+        "Por liderar el Ejército Continental"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Benjamin Franklin es famoso por ser diplomático de los Estados Unidos, el miembro más viejo de la Convención Constitucional, primer Director General de Correos de los Estados Unidos, escritor del 'Almanaque del Pobre Richard' y por iniciar las primeras bibliotecas gratuitas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 69,
+      "section": "colonial",
+      "question": "¿Quién es el 'Padre de Nuestra Patria'?",
+      "options": [
+        "Thomas Jefferson",
+        "George Washington",
+        "Benjamin Franklin",
+        "John Adams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "George Washington es el 'Padre de Nuestra Patria'.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 70,
+      "section": "colonial",
+      "question": "¿Quién fue el primer Presidente?",
+      "options": [
+        "John Adams",
+        "George Washington",
+        "Thomas Jefferson",
+        "Benjamin Franklin"
+      ],
+      "correctAnswer": 1,
+      "explanation": "George Washington fue el primer Presidente.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 71,
+      "section": "1800s",
+      "question": "¿Qué territorio compró Estados Unidos a Francia en 1803?",
+      "options": [
+        "El Territorio de Florida",
+        "El Territorio de Luisiana",
+        "El Territorio de Texas",
+        "El Territorio de California"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Estados Unidos compró el Territorio de Luisiana a Francia en 1803.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 72,
+      "section": "1800s",
+      "question": "Nombre una guerra peleada por Estados Unidos en los años 1800.",
+      "options": [
+        "La Primera Guerra Mundial",
+        "La Guerra Civil",
+        "La Segunda Guerra Mundial",
+        "La Guerra de Corea"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las guerras peleadas por Estados Unidos en los años 1800 incluyen: la Guerra de 1812, la Guerra México-Estadounidense, la Guerra Civil y la Guerra Hispano-Estadounidense.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 73,
+      "section": "1800s",
+      "question": "Nombre la guerra de Estados Unidos entre el Norte y el Sur.",
+      "options": [
+        "La Guerra Revolucionaria",
+        "La Guerra Civil",
+        "La Guerra de 1812",
+        "La Guerra Hispano-Estadounidense"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La guerra de Estados Unidos entre el Norte y el Sur fue la Guerra Civil, también llamada la Guerra entre los Estados.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 74,
+      "section": "1800s",
+      "question": "Nombre un problema que llevó a la Guerra Civil.",
+      "options": [
+        "La esclavitud",
+        "Los impuestos",
+        "Disputas comerciales",
+        "Conflictos fronterizos"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los problemas que llevaron a la Guerra Civil incluyen: la esclavitud, razones económicas y los derechos de los estados.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 75,
+      "section": "1800s",
+      "question": "¿Qué fue una cosa importante que hizo Abraham Lincoln?",
+      "options": [
+        "Lideró el Ejército Continental",
+        "Liberó a los esclavos (Proclamación de Emancipación)",
+        "Escribió la Constitución",
+        "Compró el Territorio de Luisiana"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Las cosas importantes que hizo Abraham Lincoln incluyen: liberó a los esclavos (Proclamación de Emancipación), salvó (o preservó) la Unión y lideró a Estados Unidos durante la Guerra Civil.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 76,
+      "section": "1800s",
+      "question": "¿Qué hizo la Proclamación de Emancipación?",
+      "options": [
+        "Terminó la Guerra Civil",
+        "Liberó a los esclavos",
+        "Creó nuevos estados",
+        "Estableció el derecho al voto"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La Proclamación de Emancipación liberó a los esclavos, liberó a los esclavos en la Confederación, liberó a los esclavos en los estados Confederados y liberó a los esclavos en la mayoría de los estados del Sur.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 77,
+      "section": "1800s",
+      "question": "¿Qué hizo Susan B. Anthony?",
+      "options": [
+        "Luchó por los derechos de las mujeres",
+        "Dirigió el Ferrocarril Subterráneo",
+        "Fue enfermera en la Guerra Civil",
+        "Escribió La Cabaña del Tío Tom"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Susan B. Anthony luchó por los derechos de las mujeres y luchó por los derechos civiles.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 78,
+      "section": "modern",
+      "question": "Nombre una guerra peleada por Estados Unidos en los años 1900.",
+      "options": [
+        "La Primera Guerra Mundial",
+        "La Guerra Civil",
+        "La Guerra Revolucionaria",
+        "La Guerra de 1812"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las guerras peleadas por Estados Unidos en los años 1900 incluyen: la Primera Guerra Mundial, la Segunda Guerra Mundial, la Guerra de Corea, la Guerra de Vietnam y la Guerra del Golfo (Pérsico).",
+      "elderlyOnly": true
+    },
+    {
+      "id": 79,
+      "section": "modern",
+      "question": "¿Quién era Presidente durante la Primera Guerra Mundial?",
+      "options": [
+        "Theodore Roosevelt",
+        "Woodrow Wilson",
+        "Franklin Roosevelt",
+        "Harry Truman"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Woodrow Wilson era Presidente durante la Primera Guerra Mundial.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 80,
+      "section": "modern",
+      "question": "¿Quién era Presidente durante la Gran Depresión y la Segunda Guerra Mundial?",
+      "options": [
+        "Theodore Roosevelt",
+        "Franklin Roosevelt",
+        "Harry Truman",
+        "Dwight Eisenhower"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Franklin Roosevelt era Presidente durante la Gran Depresión y la Segunda Guerra Mundial.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 81,
+      "section": "modern",
+      "question": "¿Contra quién peleó Estados Unidos en la Segunda Guerra Mundial?",
+      "options": [
+        "Japón, Alemania e Italia",
+        "Rusia, China y Francia",
+        "Inglaterra, España y Portugal",
+        "México, Canadá y Brasil"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Estados Unidos peleó contra Japón, Alemania e Italia en la Segunda Guerra Mundial.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 82,
+      "section": "modern",
+      "question": "Antes de ser Presidente, Eisenhower era general. ¿En qué guerra participó?",
+      "options": [
+        "La Primera Guerra Mundial",
+        "La Segunda Guerra Mundial",
+        "La Guerra de Corea",
+        "La Guerra de Vietnam"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Antes de ser Presidente, Eisenhower era general en la Segunda Guerra Mundial.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 83,
+      "section": "modern",
+      "question": "Durante la Guerra Fría, ¿cuál era la principal preocupación de Estados Unidos?",
+      "options": [
+        "El fascismo",
+        "El comunismo",
+        "El terrorismo",
+        "La depresión económica"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Durante la Guerra Fría, la principal preocupación de Estados Unidos era el comunismo.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 84,
+      "section": "modern",
+      "question": "¿Qué movimiento trató de terminar con la discriminación racial?",
+      "options": [
+        "El movimiento obrero",
+        "El movimiento de derechos civiles",
+        "El movimiento sufragista",
+        "El movimiento de la templanza"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El movimiento de derechos civiles trató de terminar con la discriminación racial.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 85,
+      "section": "modern",
+      "question": "¿Qué hizo Martin Luther King, Jr.?",
+      "options": [
+        "Lideró el Ejército Continental",
+        "Luchó por los derechos civiles",
+        "Fue el primer Presidente afroamericano",
+        "Inventó el teléfono"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Martin Luther King, Jr. luchó por los derechos civiles y trabajó por la igualdad para todos los estadounidenses.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 86,
+      "section": "modern",
+      "question": "¿Qué evento importante ocurrió el 11 de septiembre de 2001 en Estados Unidos?",
+      "options": [
+        "Terminó la Guerra Civil",
+        "Los terroristas atacaron Estados Unidos",
+        "Comenzó la Segunda Guerra Mundial",
+        "Se firmó la Constitución"
+      ],
+      "correctAnswer": 1,
+      "explanation": "El 11 de septiembre de 2001, los terroristas atacaron Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 87,
+      "section": "modern",
+      "question": "Nombre una tribu de indios americanos en Estados Unidos.",
+      "options": [
+        "Cherokee",
+        "Vikingos",
+        "Peregrinos",
+        "Puritanos"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Las tribus de indios americanos incluyen: Cherokee, Navajo, Sioux, Chippewa, Choctaw, Pueblo, Apache, Iroquois, Creek, Blackfeet, Seminole, Cheyenne, Arawak, Shawnee, Mohegan, Huron, Oneida, Lakota, Crow, Teton, Hopi e Inuit.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 88,
+      "section": "geography",
+      "question": "Nombre uno de los dos ríos más largos de Estados Unidos.",
+      "options": [
+        "Río Missouri",
+        "Río Colorado",
+        "Río Hudson",
+        "Río Grande"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los dos ríos más largos de Estados Unidos son el Río Missouri y el Río Mississippi.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 89,
+      "section": "geography",
+      "question": "¿Qué océano está en la Costa Oeste de Estados Unidos?",
+      "options": [
+        "El Océano Ártico",
+        "El Océano Atlántico",
+        "El Océano Pacífico",
+        "El Océano Índico"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El Océano Pacífico está en la Costa Oeste de Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 90,
+      "section": "geography",
+      "question": "¿Qué océano está en la Costa Este de Estados Unidos?",
+      "options": [
+        "El Océano Atlántico",
+        "El Océano Pacífico",
+        "El Océano Ártico",
+        "El Océano Índico"
+      ],
+      "correctAnswer": 0,
+      "explanation": "El Océano Atlántico está en la Costa Este de Estados Unidos.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 91,
+      "section": "geography",
+      "question": "Nombre un territorio de Estados Unidos.",
+      "options": [
+        "Puerto Rico",
+        "Hawái",
+        "Alaska",
+        "Washington D.C."
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los territorios de Estados Unidos incluyen: Puerto Rico, las Islas Vírgenes de Estados Unidos, Samoa Americana, las Islas Marianas del Norte y Guam.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 92,
+      "section": "geography",
+      "question": "Nombre un estado que comparte frontera con Canadá.",
+      "options": [
+        "California",
+        "Alaska",
+        "Texas",
+        "Florida"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los estados que comparten frontera con Canadá incluyen: Maine, New Hampshire, Vermont, Nueva York, Pennsylvania, Ohio, Michigan, Minnesota, Dakota del Norte, Montana, Idaho, Washington y Alaska.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 93,
+      "section": "geography",
+      "question": "Nombre un estado que comparte frontera con México.",
+      "options": [
+        "Nevada",
+        "Texas",
+        "Oklahoma",
+        "Luisiana"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Los estados que comparten frontera con México incluyen: California, Arizona, Nuevo México y Texas.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 94,
+      "section": "geography",
+      "question": "¿Cuál es la capital de Estados Unidos?",
+      "options": [
+        "Nueva York",
+        "Washington, D.C.",
+        "Filadelfia",
+        "Boston"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Washington, D.C. es la capital de Estados Unidos.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 95,
+      "section": "geography",
+      "question": "¿Dónde está la Estatua de la Libertad?",
+      "options": [
+        "Puerto de Nueva York",
+        "Puerto de Boston",
+        "Bahía de San Francisco",
+        "Bahía de Chesapeake"
+      ],
+      "correctAnswer": 0,
+      "explanation": "La Estatua de la Libertad está en el Puerto de Nueva York, en la Isla de la Libertad. También son aceptables Nueva Jersey, cerca de la Ciudad de Nueva York y en el Río Hudson.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 96,
+      "section": "symbols",
+      "question": "¿Por qué tiene la bandera 13 franjas?",
+      "options": [
+        "Porque había 13 colonias originales",
+        "Porque había 13 firmantes de la Constitución",
+        "Porque había 13 Presidentes",
+        "Porque había 13 enmiendas"
+      ],
+      "correctAnswer": 0,
+      "explanation": "La bandera tiene 13 franjas porque había 13 colonias originales y las franjas representan las colonias originales.",
+      "elderlyOnly": false
+    },
+    {
+      "id": 97,
+      "section": "symbols",
+      "question": "¿Por qué tiene la bandera 50 estrellas?",
+      "options": [
+        "Porque hay 50 territorios",
+        "Porque hay 50 estados",
+        "Porque hay 50 senadores",
+        "Porque hay 50 firmantes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "La bandera tiene 50 estrellas porque hay una estrella por cada estado, cada estrella representa un estado y hay 50 estados.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 98,
+      "section": "symbols",
+      "question": "¿Cómo se llama el himno nacional?",
+      "options": [
+        "América la Bella",
+        "Dios Bendiga a América",
+        "La Bandera de Estrellas",
+        "Mi País Es de Ti"
+      ],
+      "correctAnswer": 2,
+      "explanation": "El nombre del himno nacional es La Bandera de Estrellas (The Star-Spangled Banner).",
+      "elderlyOnly": false
+    },
+    {
+      "id": 99,
+      "section": "holidays",
+      "question": "¿Cuándo celebramos el Día de la Independencia?",
+      "options": [
+        "3 de julio",
+        "4 de julio",
+        "5 de julio",
+        "4 de agosto"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Celebramos el Día de la Independencia el 4 de julio.",
+      "elderlyOnly": true
+    },
+    {
+      "id": 100,
+      "section": "holidays",
+      "question": "Nombre dos días festivos nacionales de Estados Unidos.",
+      "options": [
+        "Año Nuevo y Día de la Independencia",
+        "Día de San Valentín y Halloween",
+        "Día de la Madre y Día del Padre",
+        "Día de la Tierra y Día del Árbol"
+      ],
+      "correctAnswer": 0,
+      "explanation": "Los días festivos nacionales de Estados Unidos incluyen: Año Nuevo, Día de Martin Luther King Jr., Día de los Presidentes, Día de los Caídos, Día de la Independencia, Día del Trabajo, Día de la Raza, Día de los Veteranos, Día de Acción de Gracias y Navidad.",
+      "elderlyOnly": false
+    }
+  ]
+} 
