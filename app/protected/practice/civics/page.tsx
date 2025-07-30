@@ -7,10 +7,14 @@ import { useUserContext } from '@/components/user-provider';
 import { TextToSpeech } from '@/components/text-to-speech';
 import { getQuestionsForUser, type CivicsQuestion } from '@/lib/questions';
 import { getCurrentLanguage } from '@/lib/language-actions';
+import { updatePracticeStats } from '@/lib/supabase/users';
+import { getTranslations } from '@/lib/translations';
 
 export default function CivicsQuizPage() {
   const { supabaseUser, loading, error } = useUserContext();
   const [language, setLanguage] = useState<'en' | 'es'>('en');
+  const [startTime, setStartTime] = useState<number>(Date.now());
+  const { t } = getTranslations(language);
   
   // State for triggering question reshuffling
   const [restartKey, setRestartKey] = useState(0);
@@ -25,14 +29,16 @@ export default function CivicsQuizPage() {
   const [answers, setAnswers] = useState<(number | null)[]>(() => new Array(CIVICS_QUESTIONS.length).fill(null));
   const [showResults, setShowResults] = useState(false);
 
-  // Load user's language preference
+  // Load user's language preference and reset timer
   useEffect(() => {
     getCurrentLanguage().then(setLanguage);
+    setStartTime(Date.now());
   }, []);
 
-  // Reset answers when questions change
+  // Reset answers and timer when questions change
   useEffect(() => {
     setAnswers(new Array(CIVICS_QUESTIONS.length).fill(null));
+    setStartTime(Date.now());
   }, [CIVICS_QUESTIONS.length]);
 
   const handleAnswerSelect = (answerIndex: number) => {
@@ -48,7 +54,22 @@ export default function CivicsQuizPage() {
       setSelectedAnswer(answers[currentQuestion + 1]);
     } else {
       setShowResults(true);
+      handleQuizCompletion();
     }
+  };
+
+  const handleQuizCompletion = async () => {
+    if (!supabaseUser) return;
+
+    const score = calculateScore();
+    const percentage = getScorePercentage();
+    const timeSpentMinutes = (Date.now() - startTime) / (1000 * 60);
+
+    await updatePracticeStats(supabaseUser.auth0_id, {
+      full_exams_completed: 1,
+      total_study_time_minutes: timeSpentMinutes,
+      score_percentage: percentage
+    });
   };
 
   const handlePrevious = () => {
@@ -64,6 +85,7 @@ export default function CivicsQuizPage() {
     setCurrentQuestion(0);
     setSelectedAnswer(null);
     setShowResults(false);
+    setStartTime(Date.now()); // Reset timer for new quiz
   };
 
   const calculateScore = (): number => {

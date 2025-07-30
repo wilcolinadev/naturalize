@@ -433,3 +433,91 @@ export async function checkQuickQuizLimit(auth0Id: string, plan: string = 'free'
 
   return usage.count < (limits[plan as keyof typeof limits] || limits.free);
 } 
+
+export async function updatePracticeStats(
+  auth0Id: string,
+  updates: {
+    full_exams_completed?: number;
+    quick_questions_answered?: number;
+    total_study_time_minutes?: number;
+    score_percentage?: number;
+  }
+): Promise<boolean> {
+  const supabase = await createClient();
+
+  // Get current stats
+  const { data: user, error: fetchError } = await supabase
+    .from('users')
+    .select('practice_stats')
+    .eq('auth0_id', auth0Id)
+    .single();
+
+  if (fetchError) {
+    console.error('Error fetching user practice stats:', fetchError);
+    return false;
+  }
+
+  const currentStats = user.practice_stats;
+  const today = new Date().toISOString().split('T')[0];
+
+  // Update streak
+  let currentStreak = currentStats.current_streak;
+  let longestStreak = currentStats.longest_streak;
+  
+  if (currentStats.last_practice_date === today) {
+    // Already practiced today, just update stats
+  } else if (
+    new Date(currentStats.last_practice_date).getTime() + 24 * 60 * 60 * 1000 >= new Date(today).getTime() ||
+    currentStats.last_practice_date === ''
+  ) {
+    // Either first practice or consecutive day
+    currentStreak++;
+    longestStreak = Math.max(currentStreak, longestStreak);
+  } else {
+    // Streak broken
+    currentStreak = 1;
+  }
+
+  // Calculate new average score if a score is provided
+  let averageScore = currentStats.average_score;
+  let bestScore = currentStats.best_score;
+  if (updates.score_percentage !== undefined) {
+    const totalQuestions = currentStats.full_exams_completed + currentStats.quick_questions_answered;
+    const newTotal = totalQuestions + (updates.full_exams_completed || 0) + (updates.quick_questions_answered || 0);
+    
+    if (newTotal > 0) {
+      averageScore = (
+        (averageScore * totalQuestions) + 
+        (updates.score_percentage * ((updates.full_exams_completed || 0) + (updates.quick_questions_answered || 0)))
+      ) / newTotal;
+    }
+    
+    bestScore = Math.max(bestScore, updates.score_percentage);
+  }
+
+  // Merge updates with current stats
+  const newStats = {
+    ...currentStats,
+    full_exams_completed: (currentStats.full_exams_completed || 0) + (updates.full_exams_completed || 0),
+    quick_questions_answered: (currentStats.quick_questions_answered || 0) + (updates.quick_questions_answered || 0),
+    total_study_time_minutes: (currentStats.total_study_time_minutes || 0) + (updates.total_study_time_minutes || 0),
+    average_score: averageScore,
+    best_score: bestScore,
+    current_streak: currentStreak,
+    longest_streak: longestStreak,
+    last_practice_date: today
+  };
+
+  // Update stats in database
+  const { error: updateError } = await supabase
+    .from('users')
+    .update({ practice_stats: newStats })
+    .eq('auth0_id', auth0Id);
+
+  if (updateError) {
+    console.error('Error updating practice stats:', updateError);
+    return false;
+  }
+
+  return true;
+} 

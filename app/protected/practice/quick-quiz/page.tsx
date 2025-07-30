@@ -5,7 +5,7 @@ import { CheckCircle, XCircle, Crown, Zap, RotateCcw, Home } from "lucide-react"
 import Link from "next/link";
 import { useUserContext } from '@/components/user-provider';
 import { TextToSpeech } from '@/components/text-to-speech';
-import { updateQuickQuizUsage } from '@/lib/supabase/users';
+import { updateQuickQuizUsage, updatePracticeStats } from '@/lib/supabase/users';
 import { getRandomQuestion, type CivicsQuestion } from '@/lib/questions';
 import { getCurrentLanguage } from '@/lib/language-actions';
 import { getTranslations } from '@/lib/translations';
@@ -17,27 +17,38 @@ export default function QuickQuizPage() {
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [language, setLanguage] = useState<'en' | 'es'>('en');
+  const [startTime, setStartTime] = useState<number>(Date.now());
   const { t } = getTranslations(language);
 
   useEffect(() => {
     // Load user's language preference
     getCurrentLanguage().then(setLanguage);
     
-    // Get first random question
+    // Get first random question and reset timer
     setCurrentQuestion(getRandomQuestion(language));
+    setStartTime(Date.now());
   }, [language]);
 
   const handleAnswerSelect = async (answerIndex: number) => {
-    if (isAnswered || !currentQuestion) return;
+    if (isAnswered || !currentQuestion || !supabaseUser) return;
     
+    const isCorrect = answerIndex === currentQuestion.correctAnswer;
     setSelectedAnswer(answerIndex);
     setIsAnswered(true);
-    setIsCorrect(answerIndex === currentQuestion.correctAnswer);
+    setIsCorrect(isCorrect);
 
-    // Update usage in Supabase if user is logged in
-    if (supabaseUser) {
-      await updateQuickQuizUsage(supabaseUser.auth0_id);
-    }
+    // Calculate time spent on this question
+    const timeSpentMinutes = (Date.now() - startTime) / (1000 * 60);
+
+    // Update practice stats
+    await updatePracticeStats(supabaseUser.auth0_id, {
+      quick_questions_answered: 1,
+      total_study_time_minutes: timeSpentMinutes,
+      score_percentage: isCorrect ? 100 : 0
+    });
+
+    // Update usage in Supabase
+    await updateQuickQuizUsage(supabaseUser.auth0_id);
   };
 
   const handleNextQuestion = () => {
@@ -45,6 +56,7 @@ export default function QuickQuizPage() {
     setSelectedAnswer(null);
     setIsAnswered(false);
     setIsCorrect(false);
+    setStartTime(Date.now()); // Reset timer for next question
   };
 
   // Loading state
