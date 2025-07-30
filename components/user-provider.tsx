@@ -1,7 +1,6 @@
 'use client';
 
 import { useSupabaseUser } from '@/lib/hooks/useSupabaseUser';
-import { useUser } from '@auth0/nextjs-auth0';
 import { createContext, useContext, ReactNode } from 'react';
 import { SupabaseUser } from '@/lib/supabase/users';
 
@@ -9,18 +8,14 @@ interface UserContextType {
   supabaseUser: SupabaseUser | null;
   loading: boolean;
   error: string | null;
-  auth0User: any | undefined; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export function UserProvider({ children }: { children: ReactNode }) {
-  const { user: auth0User } = useUser();
-  
   const { supabaseUser, loading, error } = useSupabaseUser();
 
   console.log('🔄 UserProvider render:', {
-    hasAuth0User: !!auth0User,
     hasSupabaseUser: !!supabaseUser,
     loading,
     error
@@ -30,7 +25,6 @@ export function UserProvider({ children }: { children: ReactNode }) {
     supabaseUser,
     loading,
     error,
-    auth0User,
   };
 
   return (
@@ -50,9 +44,9 @@ export function useUserContext() {
 
 // Loading component for when user is being created/fetched
 export function UserLoadingWrapper({ children }: { children: ReactNode }) {
-  const { loading, error, auth0User } = useUserContext();
+  const { loading, error } = useUserContext();
 
-  if (loading && auth0User) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center min-h-[200px]">
         <div className="text-center">

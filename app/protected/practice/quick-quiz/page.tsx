@@ -8,6 +8,7 @@ import { TextToSpeech } from '@/components/text-to-speech';
 import { updateQuickQuizUsage } from '@/lib/supabase/users';
 import { getRandomQuestion, type CivicsQuestion } from '@/lib/questions';
 import { getCurrentLanguage } from '@/lib/language-actions';
+import { getTranslations } from '@/lib/translations';
 
 export default function QuickQuizPage() {
   const { supabaseUser, loading, error } = useUserContext();
@@ -16,6 +17,7 @@ export default function QuickQuizPage() {
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [language, setLanguage] = useState<'en' | 'es'>('en');
+  const { t } = getTranslations(language);
 
   useEffect(() => {
     // Load user's language preference
@@ -52,7 +54,7 @@ export default function QuickQuizPage() {
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading quiz...</p>
+            <p className="text-muted-foreground">{t('quickQuiz.loading')}</p>
           </div>
         </div>
       </div>
@@ -65,9 +67,9 @@ export default function QuickQuizPage() {
       <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
-            <p className="text-red-500 mb-4">Unable to load quiz. Please try again.</p>
+            <p className="text-red-500 mb-4">{t('quickQuiz.error')}</p>
             <Link href="/protected/practice" className="text-primary hover:underline">
-              Back to Practice
+              {t('quickQuiz.backToPractice')}
             </Link>
           </div>
         </div>
@@ -82,7 +84,7 @@ export default function QuickQuizPage() {
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-            <p className="text-muted-foreground">Loading question...</p>
+            <p className="text-muted-foreground">{t('quickQuiz.loadingQuestion')}</p>
           </div>
         </div>
       </div>
@@ -95,14 +97,14 @@ export default function QuickQuizPage() {
       <div className="flex items-center justify-between pt-8">
         <h1 className="text-3xl font-bold flex items-center gap-3">
           <Zap className="h-8 w-8" />
-          Quick Quiz
+          {t('quickQuiz.title')}
         </h1>
         <Link 
           href="/protected/practice"
           className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
         >
           <Home className="h-5 w-5" />
-          Back to Practice
+          {t('quickQuiz.backToPractice')}
         </Link>
       </div>
 
@@ -125,14 +127,16 @@ export default function QuickQuizPage() {
               
               if (isAnswered) {
                 if (isCorrectAnswer) {
-                  optionClass += " bg-green-50 border-green-200";
+                  optionClass += " bg-green-500/10 dark:bg-green-500/20 border-green-500/50 text-green-700 dark:text-green-300";
                 } else if (isSelected) {
-                  optionClass += " bg-red-50 border-red-200";
+                  optionClass += " bg-red-500/10 dark:bg-red-500/20 border-red-500/50 text-red-700 dark:text-red-300";
+                } else {
+                  optionClass += " opacity-50";
                 }
               } else {
                 optionClass += isSelected 
-                  ? " border-primary bg-primary/5" 
-                  : " hover:border-primary/50";
+                  ? " border-primary bg-primary/10 dark:bg-primary/20" 
+                  : " hover:border-primary/50 hover:bg-primary/5 dark:hover:bg-primary/10";
               }
 
               return (
@@ -144,10 +148,10 @@ export default function QuickQuizPage() {
                   <div className="flex items-center justify-between">
                     <span className="flex-1">{option}</span>
                     {isAnswered && isCorrectAnswer && (
-                      <CheckCircle className="h-5 w-5 text-green-500" />
+                      <CheckCircle className="h-5 w-5 text-green-500 dark:text-green-400" />
                     )}
                     {isAnswered && isSelected && !isCorrectAnswer && (
-                      <XCircle className="h-5 w-5 text-red-500" />
+                      <XCircle className="h-5 w-5 text-red-500 dark:text-red-400" />
                     )}
                   </div>
                 </div>
@@ -157,11 +161,19 @@ export default function QuickQuizPage() {
 
           {/* Explanation (shown after answering) */}
           {isAnswered && (
-            <div className={`mt-6 p-4 rounded-lg ${isCorrect ? 'bg-green-50' : 'bg-red-50'}`}>
-              <p className={`font-medium mb-2 ${isCorrect ? 'text-green-700' : 'text-red-700'}`}>
+            <div className={`mt-6 p-4 rounded-lg ${
+              isCorrect 
+                ? 'bg-green-500/10 dark:bg-green-500/20 border border-green-500/50' 
+                : 'bg-red-500/10 dark:bg-red-500/20 border border-red-500/50'
+            }`}>
+              <p className={`font-medium mb-2 ${
+                isCorrect 
+                  ? 'text-green-700 dark:text-green-300' 
+                  : 'text-red-700 dark:text-red-300'
+              }`}>
                 {isCorrect ? '¡Correcto!' : 'Incorrecto'}
               </p>
-              <p className="text-muted-foreground">{currentQuestion.explanation}</p>
+              <p className="text-foreground/80">{currentQuestion.explanation}</p>
             </div>
           )}
 
@@ -172,7 +184,7 @@ export default function QuickQuizPage() {
               className="mt-6 w-full flex items-center justify-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors"
             >
               <RotateCcw className="h-5 w-5" />
-              Next Question
+              {t('quickQuiz.nextQuestion')}
             </button>
           )}
         </div>
@@ -186,16 +198,16 @@ export default function QuickQuizPage() {
               <Crown className="h-6 w-6 text-primary" />
             </div>
             <div className="flex-1">
-              <h3 className="text-lg font-semibold mb-2">Upgrade to Premium</h3>
-              <p className="text-muted-foreground mb-4">
-                Get unlimited access to all 100 civics test questions, progress tracking, and more.
+              <h3 className="text-lg font-semibold mb-2">{t('quickQuiz.upgradeToPremium.title')}</h3>
+              <p className="text-foreground/80 mb-4">
+                {t('quickQuiz.upgradeToPremium.description')}
               </p>
               <Link
                 href="/protected/upgrade"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors"
               >
                 <Crown className="h-5 w-5" />
-                Upgrade Now
+                {t('quickQuiz.upgradeToPremium.button')}
               </Link>
             </div>
           </div>

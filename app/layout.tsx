@@ -9,7 +9,7 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "U.S. Citizenship Practice App",
+  title: "NaturalizeUS",
   description: "Master the U.S. Naturalization Test with interactive quizzes, reading practice, and progress tracking. Available in English and Spanish.",
   keywords: ["U.S. Citizenship", "Naturalization Test", "USCIS", "Immigration", "Practice Test", "Bilingual"],
 };

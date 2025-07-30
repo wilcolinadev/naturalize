@@ -30,16 +30,16 @@ export default async function PracticePage() {
           {t('dashboard.title')}
         </Link>
         <span>/</span>
-        <span className="text-foreground">Practice</span>
+        <span className="text-foreground">{t('practice.title')}</span>
       </div>
 
       <div className="flex flex-col gap-4 items-start">
         <div className="flex items-center gap-3">
           <BookOpen className="h-8 w-8" />
-          <h1 className="font-bold text-3xl">Practice Center</h1>
+          <h1 className="font-bold text-3xl">{t('practice.title')}</h1>
         </div>
         <p className="text-lg text-muted-foreground">
-          Improve your English skills with interactive quizzes and exercises
+          {t('practice.subtitle')}
         </p>
       </div>
 
@@ -52,7 +52,7 @@ export default async function PracticePage() {
           <div className="text-2xl font-bold text-foreground">
             {user.practice_stats.full_exams_completed + user.practice_stats.quick_questions_answered}
           </div>
-          <div className="text-sm text-muted-foreground">Total Questions</div>
+          <div className="text-sm text-muted-foreground">{t('practice.stats.totalQuestions')}</div>
         </div>
         
         <div className="p-6 border rounded-lg text-center bg-card hover:shadow-lg transition-shadow">
@@ -62,7 +62,7 @@ export default async function PracticePage() {
           <div className="text-2xl font-bold text-foreground">
             {user.practice_stats.total_study_time_minutes}
           </div>
-          <div className="text-sm text-muted-foreground">Study Time (mins)</div>
+          <div className="text-sm text-muted-foreground">{t('practice.stats.studyTime')}</div>
         </div>
         
         <div className="p-6 border rounded-lg text-center bg-card hover:shadow-lg transition-shadow">
@@ -72,13 +72,13 @@ export default async function PracticePage() {
           <div className="text-2xl font-bold text-foreground">
             {user.practice_stats.best_score > 0 ? `${Math.round(user.practice_stats.best_score)}%` : '0%'}
           </div>
-          <div className="text-sm text-muted-foreground">Best Score</div>
+          <div className="text-sm text-muted-foreground">{t('practice.stats.bestScore')}</div>
         </div>
       </div>
 
       {/* Practice Categories */}
       <div className="space-y-8">
-        <h2 className="font-semibold text-2xl">Choose Your Practice</h2>
+        <h2 className="font-semibold text-2xl">{t('practice.chooseYourPractice')}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Quick Quiz */}
@@ -87,20 +87,20 @@ export default async function PracticePage() {
               <div className="p-3 bg-orange-100 dark:bg-orange-900/50 rounded-lg">
                 <Zap className="h-6 w-6 text-orange-600 dark:text-orange-400" />
               </div>
-              <h3 className="text-lg font-semibold text-foreground">Quick Quiz</h3>
+              <h3 className="text-lg font-semibold text-foreground">{t('practice.quickQuiz.title')}</h3>
             </div>
             <p className="text-sm text-muted-foreground mb-6">
-              Fast-paced single questions with instant feedback
+              {t('practice.quickQuiz.description')}
             </p>
             <div className="space-y-4">
               <Link 
                 href="/protected/practice/quick-quiz"
                 className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-md py-3 px-4 text-sm hover:from-orange-600 hover:to-red-600 inline-flex items-center justify-center font-medium shadow-sm hover:shadow-md transition-all"
               >
-                Start Quick Quiz
+                {t('practice.quickQuiz.start')}
               </Link>
               <div className="text-xs text-muted-foreground text-center">
-                Instant Feedback
+                {t('practice.quickQuiz.feedback')}
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default async function PracticePage() {
                 {t('startQuiz')}
               </Link>
               <div className="text-xs text-muted-foreground text-center">
-                100 Questions Available
+                {t('practice.questionsAvailable')}
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@ export default async function PracticePage() {
           {/* Reading Test */}
           <div className="relative p-6 border rounded-lg hover:shadow-lg transition-shadow bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800 opacity-75">
             <div className="absolute top-4 right-4 bg-yellow-500 dark:bg-yellow-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
-              Coming Soon
+              {t('practice.comingSoon')}
             </div>
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-green-100 dark:bg-green-900/50 rounded-lg">
@@ -151,7 +151,7 @@ export default async function PracticePage() {
                 {t('practiceReading')}
               </button>
               <div className="text-xs text-muted-foreground text-center">
-                Reading Comprehension Exercises
+                {t('practice.readingExercises')}
               </div>
             </div>
           </div>
@@ -159,7 +159,7 @@ export default async function PracticePage() {
           {/* Writing Test */}
           <div className="relative p-6 border rounded-lg hover:shadow-lg transition-shadow bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-950/20 dark:to-violet-950/20 border-purple-200 dark:border-purple-800 opacity-75">
             <div className="absolute top-4 right-4 bg-yellow-500 dark:bg-yellow-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
-              Coming Soon
+              {t('practice.comingSoon')}
             </div>
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-lg">
@@ -178,14 +178,12 @@ export default async function PracticePage() {
                 {t('practiceWriting')}
               </button>
               <div className="text-xs text-muted-foreground text-center">
-                Writing Practice Exercises
+                {t('practice.writingExercises')}
               </div>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   );
 } 

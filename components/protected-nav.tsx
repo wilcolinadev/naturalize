@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation'
 import { Home, BookOpen, Settings } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const navItems = [
+export const navItems = [
   {
     href: '/protected',
     label: 'Dashboard',
@@ -27,7 +27,7 @@ export function ProtectedNav() {
   const pathname = usePathname()
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="hidden md:flex items-center gap-1">
       {navItems.map((item) => {
         const Icon = item.icon
         const isActive = pathname === item.href
@@ -44,7 +44,7 @@ export function ProtectedNav() {
             )}
           >
             <Icon className="h-4 w-4" />
-            <span className="hidden sm:inline">{item.label}</span>
+            <span>{item.label}</span>
           </Link>
         )
       })}
