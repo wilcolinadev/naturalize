@@ -88,13 +88,17 @@ export async function GET() {
       }
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('💥 Unexpected error:', error);
+
+    const message = error instanceof Error ? error.message : 'Unexpected error occurred';
+    const stack = error instanceof Error ? error.stack : undefined;
+
     return NextResponse.json({
       success: false,
       error: 'Unexpected error occurred',
-      details: error.message,
-      stack: process.env.NODE_ENV === 'development' ? error.stack : undefined
+      details: message,
+      stack: process.env.NODE_ENV === 'development' ? stack : undefined
     }, { status: 500 });
   }
 }

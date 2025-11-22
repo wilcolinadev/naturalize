@@ -8,13 +8,13 @@ import { TextToSpeech } from '@/components/text-to-speech';
 import { getQuestionsForUser, type CivicsQuestion } from '@/lib/questions';
 import { getCurrentLanguage } from '@/lib/language-actions';
 import { updatePracticeStats } from '@/lib/supabase/users';
-import { getTranslations } from '@/lib/translations';
+
 
 export default function CivicsQuizPage() {
   const { supabaseUser, loading, error } = useUserContext();
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const [startTime, setStartTime] = useState<number>(Date.now());
-  const { t } = getTranslations(language);
+  
   
   // State for triggering question reshuffling
   const [restartKey, setRestartKey] = useState(0);
@@ -61,7 +61,6 @@ export default function CivicsQuizPage() {
   const handleQuizCompletion = async () => {
     if (!supabaseUser) return;
 
-    const score = calculateScore();
     const percentage = getScorePercentage();
     const timeSpentMinutes = (Date.now() - startTime) / (1000 * 60);
 
