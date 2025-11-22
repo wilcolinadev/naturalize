@@ -183,7 +183,7 @@ export default function QuickQuizPage() {
                   ? 'text-green-700 dark:text-green-300' 
                   : 'text-red-700 dark:text-red-300'
               }`}>
-                {isCorrect ? '¡Correcto!' : 'Incorrecto'}
+                {isCorrect ? t('quickQuiz.correct') : t('quickQuiz.incorrect')}
               </p>
               <p className="text-foreground/80">{currentQuestion.explanation}</p>
             </div>

@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
   name TEXT NOT NULL,
   plan TEXT NOT NULL DEFAULT 'free' CHECK (plan IN ('free', 'premium')),
   daily_question_usage JSONB NOT NULL DEFAULT '{"count": 0, "date": ""}'::jsonb,
+  daily_quick_quiz_usage JSONB NOT NULL DEFAULT '{"count": 0, "date": ""}'::jsonb,
   practice_stats JSONB NOT NULL DEFAULT '{
     "full_exams_completed": 0,
     "quick_questions_answered": 0,

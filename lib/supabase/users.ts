@@ -139,6 +139,8 @@ export async function findOrCreateUser(auth0User: Auth0UserData): Promise<Supaba
     .select()
     .single();
 
+ 
+
   if (createError) {
     console.error('💥 Error creating user:', createError);
     console.error('💥 Create error details:', {

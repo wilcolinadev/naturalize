@@ -73,6 +73,23 @@ export const translations = {
       writingExercises: 'Writing Practice Exercises'
     },
 
+    // Quick Quiz page
+    quickQuiz: {
+      title: 'Quick Quiz',
+      loading: 'Loading quiz...',
+      error: 'Unable to load quiz. Please try again.',
+      backToPractice: 'Back to Practice',
+      loadingQuestion: 'Loading question...',
+      nextQuestion: 'Next Question',
+      correct: 'Correct!',
+      incorrect: 'Incorrect',
+      upgradeToPremium: {
+        title: 'Upgrade to Premium',
+        description: 'Get unlimited quick quizzes, track your progress, and access all 100 civics questions.',
+        button: 'Upgrade Now'
+      }
+    },
+
     // Premium section
     premium: {
       title: 'Premium Benefits',
@@ -182,6 +199,23 @@ export const translations = {
       questionsAvailable: '100 Preguntas Disponibles',
       readingExercises: 'Ejercicios de Comprensión Lectora',
       writingExercises: 'Ejercicios de Práctica de Escritura'
+    },
+
+    // Quick Quiz page
+    quickQuiz: {
+      title: 'Cuestionario Rápido',
+      loading: 'Cargando cuestionario...',
+      error: 'No se pudo cargar el cuestionario. Por favor, inténtalo de nuevo.',
+      backToPractice: 'Volver a Práctica',
+      loadingQuestion: 'Cargando pregunta...',
+      nextQuestion: 'Siguiente Pregunta',
+      correct: '¡Correcto!',
+      incorrect: 'Incorrecto',
+      upgradeToPremium: {
+        title: 'Actualizar a Premium',
+        description: 'Obtén cuestionarios rápidos ilimitados, rastrea tu progreso y accede a todas las 100 preguntas cívicas.',
+        button: 'Actualizar Ahora'
+      }
     },
 
     // Premium section
