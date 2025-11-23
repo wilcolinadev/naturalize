@@ -22,10 +22,10 @@ export default async function Home() {
           <div className="w-full max-w-5xl flex justify-between items-center p-3 px-5 text-sm">
             <div className="flex gap-5 items-center font-semibold">
               <Link href={"/"} className="flex items-center transition-transform hover:scale-105">
-                <span className="bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent font-extrabold text-lg tracking-wider">
+                <span className="bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent font-extrabold text-sm md:text-lg tracking-wider">
                   NATURALIZE
                 </span>
-                <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold text-lg tracking-wider">
+                <span className="bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent font-extrabold text-sm md:text-lg tracking-wider">
                   US
                 </span>
               </Link>
@@ -74,28 +74,30 @@ export default async function Home() {
                 <span className="text-sm font-medium">100% Free Practice Questions</span>
               </div>
 
-              <h1 className="font-bold tracking-tighter text-5xl md:text-6xl lg:text-7xl flex flex-col md:flex-row items-center justify-center gap-2 md:gap-3 mb-6 animate-fade-in">
-                <span className="bg-gradient-to-r from-rose-500 via-rose-600 to-rose-500 bg-clip-text text-transparent font-extrabold animate-gradient-x">
-                  Naturalize
-                </span>
-                <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 bg-clip-text text-transparent font-extrabold animate-gradient-x">
-                  US
+              <h1 className="font-bold tracking-tighter text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 animate-fade-in">
+                <span className="flex flex-row items-center justify-center gap-2 md:gap-3 whitespace-nowrap">
+                  <span className="bg-gradient-to-r from-rose-500 via-rose-600 to-rose-500 bg-clip-text text-transparent font-extrabold animate-gradient-x">
+                    Naturalize
+                  </span>
+                  <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-blue-500 bg-clip-text text-transparent font-extrabold animate-gradient-x">
+                    US
+                  </span>
                 </span>
               </h1>
               <p className="max-w-2xl mx-auto text-xl md:text-2xl text-foreground/70 mb-10 leading-relaxed animate-fade-in">
                 {t('hero.subtitle')}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto animate-fade-in">
                 <Link
                   href="/protected/practice"
-                  className="group relative bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg hover:shadow-rose-500/50"
+                  className="group relative w-full sm:w-auto text-center bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg hover:shadow-rose-500/50"
                 >
                   <span className="relative z-10">{t('startPracticing')}</span>
                   <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-rose-600 to-rose-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
                 <Link
                   href="/auth/login?screen_hint=signup"
-                  className="group relative border-2 border-blue-500 hover:border-blue-600 text-blue-600 dark:text-blue-400 hover:text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:bg-blue-600 hover:shadow-lg"
+                  className="group relative w-full sm:w-auto text-center border-2 border-blue-500 hover:border-blue-600 text-blue-600 dark:text-blue-400 hover:text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:bg-blue-600 hover:shadow-lg"
                 >
                   {t('signup')}
                 </Link>
@@ -104,8 +106,8 @@ export default async function Home() {
               {/* Stats */}
               <div className="flex flex-wrap justify-center gap-8 md:gap-12 mt-16 animate-fade-in">
                 <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">100</div>
-                  <div className="text-sm text-muted-foreground mt-1">Official Questions</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-rose-500 to-rose-600 bg-clip-text text-transparent">128</div>
+                  <div className="text-sm text-muted-foreground mt-1">Official Civics Questions</div>
                 </div>
                 <div className="text-center">
                   <div className="text-3xl font-bold bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">2</div>

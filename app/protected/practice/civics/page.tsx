@@ -141,7 +141,7 @@ export default function CivicsQuizPage() {
             </div>
             <h2 className="text-2xl font-bold mb-4">Premium Feature</h2>
             <p className="text-muted-foreground mb-6">
-              The full civics test is available to premium users only. Upgrade to access all 100 questions and track your progress.
+              The full civics test is available to premium users only. Upgrade to access all 128 questions and track your progress.
             </p>
             <Link
               href="/protected/upgrade"
