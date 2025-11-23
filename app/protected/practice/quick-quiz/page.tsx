@@ -1,18 +1,19 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { CheckCircle, XCircle, Crown, Zap, RotateCcw, Home } from "lucide-react";
+import { CheckCircle, XCircle, Crown, Zap, RotateCcw, Home, Languages } from "lucide-react";
 import Link from "next/link";
 import { useUserContext } from '@/components/user-provider';
 import { TextToSpeech } from '@/components/text-to-speech';
 import { updateQuickQuizUsage, updatePracticeStats } from '@/lib/supabase/users';
-import { getRandomQuestion, type CivicsQuestion } from '@/lib/questions';
-import { getCurrentLanguage } from '@/lib/language-actions';
+import { getRandomQuestion, getCivicsData, type CivicsQuestion } from '@/lib/questions';
+import { getCurrentLanguage, setLanguage as saveLanguage } from '@/lib/language-actions';
 import { getTranslations } from '@/lib/translations';
 
 export default function QuickQuizPage() {
   const { supabaseUser, loading, error } = useUserContext();
   const [currentQuestion, setCurrentQuestion] = useState<CivicsQuestion | null>(null);
+  const [currentQuestionId, setCurrentQuestionId] = useState<number | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [isAnswered, setIsAnswered] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -21,13 +22,26 @@ export default function QuickQuizPage() {
   const { t } = getTranslations(language);
 
   useEffect(() => {
-    // Load user's language preference
-    getCurrentLanguage().then(setLanguage);
-    
-    // Get first random question and reset timer
-    setCurrentQuestion(getRandomQuestion(language));
-    setStartTime(Date.now());
-  }, [language]);
+    // Load user's language preference and get first question
+    getCurrentLanguage().then((lang) => {
+      setLanguage(lang);
+      const question = getRandomQuestion(lang);
+      setCurrentQuestion(question);
+      setCurrentQuestionId(question.id);
+      setStartTime(Date.now());
+    });
+  }, []);
+
+  // When language changes, load the same question ID in the new language
+  useEffect(() => {
+    if (currentQuestionId !== null) {
+      const questions = getCivicsData(language).questions;
+      const question = questions.find(q => q.id === currentQuestionId);
+      if (question) {
+        setCurrentQuestion(question);
+      }
+    }
+  }, [language, currentQuestionId]);
 
   const handleAnswerSelect = async (answerIndex: number) => {
     if (isAnswered || !currentQuestion || !supabaseUser) return;
@@ -52,11 +66,19 @@ export default function QuickQuizPage() {
   };
 
   const handleNextQuestion = () => {
-    setCurrentQuestion(getRandomQuestion(language));
+    const question = getRandomQuestion(language);
+    setCurrentQuestion(question);
+    setCurrentQuestionId(question.id);
     setSelectedAnswer(null);
     setIsAnswered(false);
     setIsCorrect(false);
     setStartTime(Date.now()); // Reset timer for next question
+  };
+
+  const handleLanguageToggle = async () => {
+    const newLanguage = language === 'en' ? 'es' : 'en';
+    setLanguage(newLanguage);
+    await saveLanguage(newLanguage);
   };
 
   // Loading state
@@ -111,13 +133,23 @@ export default function QuickQuizPage() {
           <Zap className="h-8 w-8" />
           {t('quickQuiz.title')}
         </h1>
-        <Link 
-          href="/protected/practice"
-          className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <Home className="h-5 w-5" />
-          {t('quickQuiz.backToPractice')}
-        </Link>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={handleLanguageToggle}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
+            title={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
+          >
+            <Languages className="h-4 w-4" />
+            <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
+          </button>
+          <Link 
+            href="/protected/practice"
+            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          >
+            <Home className="h-5 w-5" />
+            {t('quickQuiz.backToPractice')}
+          </Link>
+        </div>
       </div>
 
       {/* Question Card */}

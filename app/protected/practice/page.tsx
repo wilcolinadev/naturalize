@@ -60,7 +60,7 @@ export default async function PracticePage() {
             <Clock className="h-6 w-6 text-blue-600 dark:text-blue-400" />
           </div>
           <div className="text-2xl font-bold text-foreground">
-            {user.practice_stats.total_study_time_minutes}
+            {user.practice_stats.total_study_time_minutes.toFixed(2)}
           </div>
           <div className="text-sm text-muted-foreground">{t('practice.stats.studyTime')}</div>
         </div>
@@ -157,10 +157,7 @@ export default async function PracticePage() {
           </div>
 
           {/* Writing Test */}
-          <div className="relative p-6 border rounded-lg hover:shadow-lg transition-shadow bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-950/20 dark:to-violet-950/20 border-purple-200 dark:border-purple-800 opacity-75">
-            <div className="absolute top-4 right-4 bg-yellow-500 dark:bg-yellow-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
-              {t('practice.comingSoon')}
-            </div>
+          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-950/20 dark:to-violet-950/20 border-purple-200 dark:border-purple-800">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-purple-100 dark:bg-purple-900/50 rounded-lg">
                 <PenTool className="h-6 w-6 text-purple-600 dark:text-purple-400" />
@@ -171,12 +168,12 @@ export default async function PracticePage() {
               {t('dashboard.writingTest.description')}
             </p>
             <div className="space-y-4">
-              <button 
-                disabled 
-                className="w-full bg-gradient-to-r from-purple-500 to-violet-500 text-white rounded-md py-3 px-4 text-sm font-medium shadow-sm opacity-50 cursor-not-allowed"
+              <Link 
+                href="/protected/practice/writing"
+                className="block w-full bg-gradient-to-r from-purple-500 to-violet-500 text-white rounded-md py-3 px-4 text-sm font-medium shadow-sm hover:from-purple-600 hover:to-violet-600 transition-all text-center"
               >
                 {t('practiceWriting')}
-              </button>
+              </Link>
               <div className="text-xs text-muted-foreground text-center">
                 {t('practice.writingExercises')}
               </div>

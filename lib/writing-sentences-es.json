@@ -1,0 +1,267 @@
+{
+  "vocabulary": {
+    "people": [
+      "Adams",
+      "Lincoln",
+      "Washington",
+      "Jefferson",
+      "Madison",
+      "ciudadanos",
+      "gente",
+      "Presidente",
+      "Congreso",
+      "senadores"
+    ],
+    "civics": [
+      "Indígenas Americanos",
+      "capital",
+      "ciudadanos",
+      "Guerra Civil",
+      "Congreso",
+      "Padre de Nuestro País",
+      "bandera",
+      "libre",
+      "libertad de expresión",
+      "Presidente",
+      "derecho",
+      "Senadores",
+      "estado",
+      "Casa Blanca"
+    ],
+    "places": [
+      "Alaska",
+      "California",
+      "Canadá",
+      "Delaware",
+      "México",
+      "Nueva York",
+      "Estados Unidos",
+      "Washington",
+      "Washington, D.C."
+    ],
+    "holidays": [
+      "Día de los Presidentes",
+      "Día de los Caídos",
+      "Día de la Bandera",
+      "Día de la Independencia",
+      "Día del Trabajo",
+      "Día de Colón",
+      "Día de Acción de Gracias"
+    ],
+    "verbs": [
+      "puede",
+      "venir",
+      "hacer",
+      "elegir",
+      "tener",
+      "ser/estar",
+      "vivir/vivió",
+      "reunirse",
+      "nombrar",
+      "pagar",
+      "votar",
+      "querer"
+    ],
+    "other": [
+      "azul",
+      "billete de dólar",
+      "cincuenta/50",
+      "primero",
+      "más grande",
+      "muchos",
+      "mayoría",
+      "norte",
+      "uno",
+      "cien/100",
+      "gente",
+      "rojo",
+      "segundo",
+      "sur",
+      "impuestos",
+      "blanco"
+    ]
+  },
+  "practiceSentences": [
+    {
+      "id": 1,
+      "sentence": "Abraham Lincoln fue el Presidente durante la Guerra Civil.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "sentence": "George Washington fue el Padre de Nuestro País.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "sentence": "El Presidente vive en la Casa Blanca.",
+      "category": "government",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "sentence": "Los ciudadanos tienen derecho a votar.",
+      "category": "civics",
+      "difficulty": "easy"
+    },
+    {
+      "id": 5,
+      "sentence": "El Congreso se reúne en Washington, D.C.",
+      "category": "government",
+      "difficulty": "easy"
+    },
+    {
+      "id": 6,
+      "sentence": "Elegimos al Presidente en noviembre.",
+      "category": "government",
+      "difficulty": "medium"
+    },
+    {
+      "id": 7,
+      "sentence": "La bandera estadounidense tiene cincuenta estrellas.",
+      "category": "symbols",
+      "difficulty": "easy"
+    },
+    {
+      "id": 8,
+      "sentence": "La bandera estadounidense es roja, blanca y azul.",
+      "category": "symbols",
+      "difficulty": "easy"
+    },
+    {
+      "id": 9,
+      "sentence": "Los ciudadanos pagan impuestos.",
+      "category": "civics",
+      "difficulty": "easy"
+    },
+    {
+      "id": 10,
+      "sentence": "Alaska es el estado más grande.",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": 11,
+      "sentence": "California es un estado.",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": 12,
+      "sentence": "Canadá está al norte de Estados Unidos.",
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": 13,
+      "sentence": "México está al sur de Estados Unidos.",
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": 14,
+      "sentence": "Washington, D.C. es la capital de Estados Unidos.",
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": 15,
+      "sentence": "Celebramos el Día de la Independencia en julio.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 16,
+      "sentence": "El Día de los Presidentes es en febrero.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 17,
+      "sentence": "El Día de los Caídos es en mayo.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 18,
+      "sentence": "El Día del Trabajo es en septiembre.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 19,
+      "sentence": "El Día de Acción de Gracias es en noviembre.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 20,
+      "sentence": "El Día de Colón es en octubre.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 21,
+      "sentence": "La Casa Blanca está en Washington, D.C.",
+      "category": "government",
+      "difficulty": "medium"
+    },
+    {
+      "id": 22,
+      "sentence": "Delaware fue el primer estado.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 23,
+      "sentence": "George Washington fue el primer Presidente.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 24,
+      "sentence": "Estados Unidos tiene cincuenta estados.",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": 25,
+      "sentence": "Las personas tienen derecho a la libertad de expresión.",
+      "category": "civics",
+      "difficulty": "medium"
+    },
+    {
+      "id": 26,
+      "sentence": "Los Indígenas Americanos vivieron en América primero.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 27,
+      "sentence": "Thomas Jefferson fue un Presidente.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 28,
+      "sentence": "John Adams fue el segundo Presidente.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 29,
+      "sentence": "James Madison fue un Presidente.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 30,
+      "sentence": "La bandera tiene trece franjas.",
+      "category": "symbols",
+      "difficulty": "medium"
+    }
+  ]
+}
+

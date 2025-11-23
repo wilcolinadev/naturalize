@@ -1,12 +1,12 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, RotateCcw, Trophy, CheckCircle, XCircle, Crown, Lock, BookOpen } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, Trophy, CheckCircle, XCircle, Crown, Lock, BookOpen, Languages } from "lucide-react";
 import Link from "next/link";
 import { useUserContext } from '@/components/user-provider';
 import { TextToSpeech } from '@/components/text-to-speech';
 import { getQuestionsForUser, type CivicsQuestion } from '@/lib/questions';
-import { getCurrentLanguage } from '@/lib/language-actions';
+import { getCurrentLanguage, setLanguage as saveLanguage } from '@/lib/language-actions';
 import { updatePracticeStats } from '@/lib/supabase/users';
 
 
@@ -19,10 +19,27 @@ export default function CivicsQuizPage() {
   // State for triggering question reshuffling
   const [restartKey, setRestartKey] = useState(0);
   
+  // Store question IDs separately so we can keep the same questions when switching language
+  const [questionIds, setQuestionIds] = useState<number[]>([]);
+  
   // Memoize questions to prevent reshuffling on every render
   const CIVICS_QUESTIONS = useMemo(() => {
-    return supabaseUser ? getQuestionsForUser(supabaseUser.plan, language) : [];
-  }, [supabaseUser?.plan, restartKey, language]);
+    if (!supabaseUser) return [];
+    
+    const questions = getQuestionsForUser(supabaseUser.plan, language);
+    
+    // On first load or restart, capture the question IDs
+    if (questionIds.length === 0 && questions.length > 0) {
+      setQuestionIds(questions.map(q => q.id));
+    }
+    
+    // If we have stored IDs, reorder questions to match
+    if (questionIds.length > 0 && questions.length > 0) {
+      return questionIds.map(id => questions.find(q => q.id === id)).filter(Boolean) as CivicsQuestion[];
+    }
+    
+    return questions;
+  }, [supabaseUser?.plan, restartKey, language, questionIds]);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -81,10 +98,17 @@ export default function CivicsQuizPage() {
   const handleRestart = () => {
     // Update restart key to trigger new question generation
     setRestartKey(prev => prev + 1);
+    setQuestionIds([]); // Clear stored IDs to get new random questions
     setCurrentQuestion(0);
     setSelectedAnswer(null);
     setShowResults(false);
     setStartTime(Date.now()); // Reset timer for new quiz
+  };
+
+  const handleLanguageToggle = async () => {
+    const newLanguage = language === 'en' ? 'es' : 'en';
+    setLanguage(newLanguage);
+    await saveLanguage(newLanguage);
   };
 
   const calculateScore = (): number => {
@@ -170,13 +194,23 @@ export default function CivicsQuizPage() {
             <Trophy className="h-8 w-8" />
             Quiz Results
           </h1>
-          <button
-            onClick={handleRestart}
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <RotateCcw className="h-5 w-5" />
-            Start New Quiz
-          </button>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleLanguageToggle}
+              className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
+              title={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
+            >
+              <Languages className="h-4 w-4" />
+              <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
+            </button>
+            <button
+              onClick={handleRestart}
+              className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <RotateCcw className="h-5 w-5" />
+              Start New Quiz
+            </button>
+          </div>
         </div>
 
         {/* Score Card */}
@@ -269,6 +303,14 @@ export default function CivicsQuizPage() {
           <span className="text-muted-foreground">
             Question {currentQuestion + 1} of {CIVICS_QUESTIONS.length}
           </span>
+          <button
+            onClick={handleLanguageToggle}
+            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
+            title={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
+          >
+            <Languages className="h-4 w-4" />
+            <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
+          </button>
           <button
             onClick={handleRestart}
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"

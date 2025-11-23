@@ -90,6 +90,47 @@ export const translations = {
       }
     },
 
+    // Writing Test page
+    writingTest: {
+      title: 'Writing Test Practice',
+      loading: 'Loading writing practice...',
+      error: 'Unable to load writing practice. Please try again.',
+      loadingSentence: 'Loading sentence...',
+      backToPractice: 'Back to Practice',
+      instructions: {
+        title: 'How it works:',
+        step1: 'Click the speaker button to hear the sentence',
+        step2: 'Type what you hear in the text box below',
+        step3: 'Click "Check Answer" to see how you did',
+        step4: 'You need 80% accuracy or higher to pass'
+      },
+      playSentence: 'Play Sentence',
+      playing: 'Playing...',
+      showHint: 'Show Hint',
+      hideHint: 'Hide Hint',
+      category: 'Category',
+      wordCount: 'Word count',
+      words: 'words',
+      writePrompt: 'Write the sentence you heard:',
+      typePlaceholder: 'Type here...',
+      checkAnswer: 'Check Answer',
+      greatJob: 'Great job!',
+      keepPracticing: 'Keep practicing!',
+      passMessage: 'You passed! You need 80% or higher.',
+      failMessage: 'You need 80% or higher to pass. Try again!',
+      yourAnswer: 'Your answer:',
+      correctAnswer: 'Correct answer:',
+      nextSentence: 'Next Sentence',
+      tipsTitle: 'Writing Test Tips',
+      tips: {
+        tip1: 'Listen carefully to the entire sentence before writing',
+        tip2: 'You can replay the audio as many times as needed',
+        tip3: 'Capitalization and punctuation matter',
+        tip4: 'During the actual test, you have 3 chances to write 1 sentence correctly',
+        tip5: 'Practice regularly to improve your spelling and grammar'
+      }
+    },
+
     // Premium section
     premium: {
       title: 'Premium Benefits',
@@ -215,6 +256,47 @@ export const translations = {
         title: 'Actualizar a Premium',
         description: 'Obtén cuestionarios rápidos ilimitados, rastrea tu progreso y accede a todas las 128 preguntas cívicas.',
         button: 'Actualizar Ahora'
+      }
+    },
+
+    // Writing Test page
+    writingTest: {
+      title: 'Práctica de Examen de Escritura',
+      loading: 'Cargando práctica de escritura...',
+      error: 'No se pudo cargar la práctica de escritura. Por favor, inténtalo de nuevo.',
+      loadingSentence: 'Cargando oración...',
+      backToPractice: 'Volver a Práctica',
+      instructions: {
+        title: 'Cómo funciona:',
+        step1: 'Haz clic en el botón del altavoz para escuchar la oración',
+        step2: 'Escribe lo que escuchas en el cuadro de texto',
+        step3: 'Haz clic en "Verificar Respuesta" para ver cómo te fue',
+        step4: 'Necesitas un 80% de precisión o más para aprobar'
+      },
+      playSentence: 'Reproducir Oración',
+      playing: 'Reproduciendo...',
+      showHint: 'Mostrar Pista',
+      hideHint: 'Ocultar Pista',
+      category: 'Categoría',
+      wordCount: 'Conteo de palabras',
+      words: 'palabras',
+      writePrompt: 'Escribe la oración que escuchaste:',
+      typePlaceholder: 'Escribe aquí...',
+      checkAnswer: 'Verificar Respuesta',
+      greatJob: '¡Excelente trabajo!',
+      keepPracticing: '¡Sigue practicando!',
+      passMessage: '¡Aprobaste! Necesitas un 80% o más.',
+      failMessage: 'Necesitas un 80% o más para aprobar. ¡Inténtalo de nuevo!',
+      yourAnswer: 'Tu respuesta:',
+      correctAnswer: 'Respuesta correcta:',
+      nextSentence: 'Siguiente Oración',
+      tipsTitle: 'Consejos para el Examen de Escritura',
+      tips: {
+        tip1: 'Escucha cuidadosamente la oración completa antes de escribir',
+        tip2: 'Puedes reproducir el audio tantas veces como necesites',
+        tip3: 'Las mayúsculas y la puntuación son importantes',
+        tip4: 'Durante el examen real, tienes 3 oportunidades para escribir 1 oración correctamente',
+        tip5: 'Practica regularmente para mejorar tu ortografía y gramática'
       }
     },
 

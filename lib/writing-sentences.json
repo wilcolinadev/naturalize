@@ -1,0 +1,267 @@
+{
+  "vocabulary": {
+    "people": [
+      "Adams",
+      "Lincoln",
+      "Washington",
+      "Jefferson",
+      "Madison",
+      "citizens",
+      "people",
+      "President",
+      "Congress",
+      "senators"
+    ],
+    "civics": [
+      "American Indians",
+      "capital",
+      "citizens",
+      "Civil War",
+      "Congress",
+      "Father of Our Country",
+      "flag",
+      "free",
+      "freedom of speech",
+      "President",
+      "right",
+      "Senators",
+      "state",
+      "White House"
+    ],
+    "places": [
+      "Alaska",
+      "California",
+      "Canada",
+      "Delaware",
+      "Mexico",
+      "New York",
+      "United States",
+      "Washington",
+      "Washington, D.C."
+    ],
+    "holidays": [
+      "Presidents' Day",
+      "Memorial Day",
+      "Flag Day",
+      "Independence Day",
+      "Labor Day",
+      "Columbus Day",
+      "Thanksgiving"
+    ],
+    "verbs": [
+      "can",
+      "come",
+      "do/does",
+      "elect",
+      "have/has",
+      "is/are/was/be",
+      "lives/lived",
+      "meet",
+      "name",
+      "pay",
+      "vote",
+      "want"
+    ],
+    "other": [
+      "blue",
+      "dollar bill",
+      "fifty/50",
+      "first",
+      "largest",
+      "many",
+      "most",
+      "north",
+      "one",
+      "one hundred/100",
+      "people",
+      "red",
+      "second",
+      "south",
+      "taxes",
+      "white"
+    ]
+  },
+  "practiceSentences": [
+    {
+      "id": 1,
+      "sentence": "Abraham Lincoln was the President during the Civil War.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 2,
+      "sentence": "George Washington was the Father of Our Country.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 3,
+      "sentence": "The President lives in the White House.",
+      "category": "government",
+      "difficulty": "easy"
+    },
+    {
+      "id": 4,
+      "sentence": "Citizens have the right to vote.",
+      "category": "civics",
+      "difficulty": "easy"
+    },
+    {
+      "id": 5,
+      "sentence": "Congress meets in Washington, D.C.",
+      "category": "government",
+      "difficulty": "easy"
+    },
+    {
+      "id": 6,
+      "sentence": "We elect the President in November.",
+      "category": "government",
+      "difficulty": "medium"
+    },
+    {
+      "id": 7,
+      "sentence": "The American flag has fifty stars.",
+      "category": "symbols",
+      "difficulty": "easy"
+    },
+    {
+      "id": 8,
+      "sentence": "The American flag is red, white, and blue.",
+      "category": "symbols",
+      "difficulty": "easy"
+    },
+    {
+      "id": 9,
+      "sentence": "Citizens pay taxes.",
+      "category": "civics",
+      "difficulty": "easy"
+    },
+    {
+      "id": 10,
+      "sentence": "Alaska is the largest state.",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": 11,
+      "sentence": "California is a state.",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": 12,
+      "sentence": "Canada is north of the United States.",
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": 13,
+      "sentence": "Mexico is south of the United States.",
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": 14,
+      "sentence": "Washington, D.C. is the capital of the United States.",
+      "category": "geography",
+      "difficulty": "medium"
+    },
+    {
+      "id": 15,
+      "sentence": "We celebrate Independence Day in July.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 16,
+      "sentence": "Presidents' Day is in February.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 17,
+      "sentence": "Memorial Day is in May.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 18,
+      "sentence": "Labor Day is in September.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 19,
+      "sentence": "Thanksgiving is in November.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 20,
+      "sentence": "Columbus Day is in October.",
+      "category": "holidays",
+      "difficulty": "medium"
+    },
+    {
+      "id": 21,
+      "sentence": "The White House is in Washington, D.C.",
+      "category": "government",
+      "difficulty": "medium"
+    },
+    {
+      "id": 22,
+      "sentence": "Delaware was the first state.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 23,
+      "sentence": "George Washington was the first President.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 24,
+      "sentence": "The United States has fifty states.",
+      "category": "geography",
+      "difficulty": "easy"
+    },
+    {
+      "id": 25,
+      "sentence": "People have the right to freedom of speech.",
+      "category": "civics",
+      "difficulty": "medium"
+    },
+    {
+      "id": 26,
+      "sentence": "American Indians lived in America first.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 27,
+      "sentence": "Thomas Jefferson was a President.",
+      "category": "history",
+      "difficulty": "easy"
+    },
+    {
+      "id": 28,
+      "sentence": "John Adams was the second President.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 29,
+      "sentence": "James Madison was a President.",
+      "category": "history",
+      "difficulty": "medium"
+    },
+    {
+      "id": 30,
+      "sentence": "The flag has thirteen stripes.",
+      "category": "symbols",
+      "difficulty": "medium"
+    }
+  ]
+}
+
