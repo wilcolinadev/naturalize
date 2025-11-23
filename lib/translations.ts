@@ -39,7 +39,7 @@ export const translations = {
       subtitle: 'Ready to continue your citizenship journey?',
       civicsTest: {
         title: '📚 Civics Test',
-        description: 'Practice the 100 civics questions for the naturalization test'
+        description: 'Practice the 128 civics questions for the naturalization test'
       },
       readingTest: {
         title: '✍️ Reading Test',
@@ -68,7 +68,7 @@ export const translations = {
         feedback: 'Instant Feedback'
       },
       comingSoon: 'Coming Soon',
-      questionsAvailable: '100 Questions Available',
+      questionsAvailable: '128 Questions Available',
       readingExercises: 'Reading Comprehension Exercises',
       writingExercises: 'Writing Practice Exercises'
     },
@@ -85,7 +85,7 @@ export const translations = {
       incorrect: 'Incorrect',
       upgradeToPremium: {
         title: 'Upgrade to Premium',
-        description: 'Get unlimited quick quizzes, track your progress, and access all 100 civics questions.',
+        description: 'Get unlimited quick quizzes, track your progress, and access all 128 civics questions.',
         button: 'Upgrade Now'
       }
     },
@@ -97,7 +97,7 @@ export const translations = {
       features: {
         questionBank: {
           title: 'Full Question Bank Access',
-          description: 'Practice with all 100 official USCIS civics questions'
+          description: 'Practice with all 128 official USCIS civics questions'
         },
         progress: {
           title: 'Progress Tracking',
@@ -167,7 +167,7 @@ export const translations = {
       subtitle: '¿Listo para continuar tu viaje hacia la ciudadanía?',
       civicsTest: {
         title: '📚 Examen Cívico',
-        description: 'Practica las 100 preguntas cívicas para el examen de naturalización'
+        description: 'Practica las 128 preguntas cívicas para el examen de naturalización'
       },
       readingTest: {
         title: '✍️ Examen de Lectura',
@@ -196,7 +196,7 @@ export const translations = {
         feedback: 'Retroalimentación Instantánea'
       },
       comingSoon: 'Próximamente',
-      questionsAvailable: '100 Preguntas Disponibles',
+      questionsAvailable: '128 Preguntas Disponibles',
       readingExercises: 'Ejercicios de Comprensión Lectora',
       writingExercises: 'Ejercicios de Práctica de Escritura'
     },
@@ -213,7 +213,7 @@ export const translations = {
       incorrect: 'Incorrecto',
       upgradeToPremium: {
         title: 'Actualizar a Premium',
-        description: 'Obtén cuestionarios rápidos ilimitados, rastrea tu progreso y accede a todas las 100 preguntas cívicas.',
+        description: 'Obtén cuestionarios rápidos ilimitados, rastrea tu progreso y accede a todas las 128 preguntas cívicas.',
         button: 'Actualizar Ahora'
       }
     },
@@ -225,7 +225,7 @@ export const translations = {
       features: {
         questionBank: {
           title: 'Acceso Completo al Banco de Preguntas',
-          description: 'Practica con todas las 100 preguntas cívicas oficiales del USCIS'
+          description: 'Practica con todas las 128 preguntas cívicas oficiales del USCIS'
         },
         progress: {
           title: 'Seguimiento de Progreso',

@@ -22,7 +22,7 @@ export function getQuestionsForUser(userPlan: string, language: Language = 'en')
   const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
   
   if (userPlan === 'premium') {
-    // Premium users get all 100 questions in random order
+    // Premium users get all questions in random order
     return shuffled;
   } else {
     // Free users cannot access the full civics test - redirect to upgrade
