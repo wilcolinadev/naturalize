@@ -73,11 +73,14 @@ A modern bilingual web application to help users prepare for the U.S. Naturaliza
    AUTH0_DOMAIN=your-domain.auth0.com
    AUTH0_CLIENT_ID=your_auth0_client_id
    AUTH0_CLIENT_SECRET=your_auth0_client_secret
-   APP_BASE_URL=http://localhost:3000
+   AUTH0_BASE_URL=http://localhost:3000
+   AUTH0_ISSUER_BASE_URL=https://your-domain.auth0.com
+   AUTH0_POST_LOGIN_REDIRECT=/dashboard
    
    # Supabase Configuration (for database)
    NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
    ```
 
 4. Run the development server:

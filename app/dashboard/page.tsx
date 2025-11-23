@@ -36,7 +36,7 @@ export default async function ProtectedPage() {
       {/* Quick Navigation Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <Link 
-          href="/protected/practice" 
+          href="/dashboard/practice" 
           className="group relative p-6 border-2 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden bg-gradient-to-br from-blue-50/50 to-card dark:from-blue-950/20 dark:to-card hover:border-blue-300 dark:hover:border-blue-700"
         >
           <div className="flex items-start justify-between mb-4">
@@ -52,7 +52,7 @@ export default async function ProtectedPage() {
         </Link>
 
         <Link 
-          href="/protected/settings" 
+          href="/dashboard/settings" 
           className="group relative p-6 border-2 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden bg-gradient-to-br from-green-50/50 to-card dark:from-green-950/20 dark:to-card hover:border-green-300 dark:hover:border-green-700"
         >
           <div className="flex items-start justify-between mb-4">
@@ -92,7 +92,7 @@ export default async function ProtectedPage() {
               {t('dashboard.civicsTest.description')}
             </p>
             <Link 
-              href="/protected/practice/civics"
+              href="/dashboard/practice/civics"
               className="inline-flex w-full items-center justify-center rounded-xl text-sm font-semibold bg-gradient-to-r from-rose-500 to-rose-600 text-white hover:from-rose-600 hover:to-rose-700 h-11 px-6 transition-all duration-300 hover:shadow-lg"
             >
               {t('startQuiz')}
@@ -118,7 +118,7 @@ export default async function ProtectedPage() {
               {t('dashboard.writingTest.description')}
             </p>
             <Link 
-              href="/protected/practice/writing"
+              href="/dashboard/practice/writing"
               className="inline-flex w-full items-center justify-center rounded-xl text-sm font-semibold bg-gradient-to-r from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 h-11 px-6 transition-all duration-300 hover:shadow-lg"
             >
               {t('practiceWriting')}

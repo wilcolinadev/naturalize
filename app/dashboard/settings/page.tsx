@@ -20,7 +20,7 @@ export default async function SettingsPage() {
     <div className="flex-1 w-full flex flex-col gap-8 max-w-4xl mx-auto p-5">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/protected" className="hover:text-foreground">
+        <Link href="/dashboard" className="hover:text-foreground">
           {t('dashboard.title')}
         </Link>
         <span>/</span>

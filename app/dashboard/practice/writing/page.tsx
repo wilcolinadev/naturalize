@@ -33,6 +33,7 @@ export default function WritingPracticePage() {
   const [startTime, setStartTime] = useState<number>(Date.now());
   const [isPlaying, setIsPlaying] = useState(false);
   const [recentSentenceIds, setRecentSentenceIds] = useState<number[]>([]);
+  const [revealedIndices, setRevealedIndices] = useState<number[]>([]);
 
   const { t } = getTranslations(language);
 
@@ -76,6 +77,13 @@ export default function WritingPracticePage() {
       setLanguage(lang);
       loadRandomSentence(lang);
     });
+    
+    // Cleanup function: cancel any ongoing speech when component unmounts
+    return () => {
+      if (window.speechSynthesis) {
+        window.speechSynthesis.cancel();
+      }
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -102,6 +110,7 @@ export default function WritingPracticePage() {
           setStartTime(Date.now());
         }
         setShowHint(false);
+        setRevealedIndices([]);
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -155,13 +164,23 @@ export default function WritingPracticePage() {
   const playSentence = () => {
     if (!currentSentence || isPlaying) return;
     
+    // Check if speech synthesis is available
+    if (!window.speechSynthesis) {
+      console.error('Speech synthesis not supported');
+      return;
+    }
+    
     setIsPlaying(true);
     const utterance = new SpeechSynthesisUtterance(currentSentence.sentence);
     utterance.lang = language === 'en' ? 'en-US' : 'es-ES';
     utterance.rate = 0.85; // Slightly slower for clarity
+    utterance.volume = 1.0;
     
     utterance.onend = () => setIsPlaying(false);
-    utterance.onerror = () => setIsPlaying(false);
+    utterance.onerror = (e) => {
+      console.error('Speech synthesis error:', e);
+      setIsPlaying(false);
+    };
     
     window.speechSynthesis.cancel(); // Cancel any ongoing speech
     window.speechSynthesis.speak(utterance);
@@ -262,6 +281,7 @@ export default function WritingPracticePage() {
     setUserInput('');
     setIsSubmitted(false);
     setShowHint(false);
+    setRevealedIndices([]);
   };
 
   const getAccuracy = () => {
@@ -292,7 +312,7 @@ export default function WritingPracticePage() {
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
             <p className="text-red-500 mb-4">{t('writingTest.error')}</p>
-            <Link href="/protected/practice" className="text-primary hover:underline">
+            <Link href="/dashboard/practice" className="text-primary hover:underline">
               {t('writingTest.backToPractice')}
             </Link>
           </div>
@@ -333,7 +353,7 @@ export default function WritingPracticePage() {
             <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
           </button>
           <Link 
-            href="/protected/practice"
+            href="/dashboard/practice"
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Home className="h-5 w-5" />
@@ -372,7 +392,36 @@ export default function WritingPracticePage() {
           {!isSubmitted && (
             <div className="flex justify-center mb-4">
               <button
-                onClick={() => setShowHint(!showHint)}
+                onClick={() => {
+                  if (!showHint && currentSentence) {
+                    // Reveal random letters from the middle section (20%-80% of sentence)
+                    const sentence = currentSentence.sentence;
+                    const startPos = Math.floor(sentence.length * 0.2);
+                    const endPos = Math.floor(sentence.length * 0.8);
+                    const middleRange = endPos - startPos;
+                    
+                    // Reveal 20-30% of the middle section, with minimum of 2 letters
+                    const revealCount = Math.max(2, Math.floor(middleRange * 0.25));
+                    const revealed: number[] = [];
+                    
+                    // Safety check: prevent infinite loop on very short sentences
+                    let attempts = 0;
+                    const maxAttempts = sentence.length * 2;
+                    
+                    while (revealed.length < revealCount && attempts < maxAttempts) {
+                      const randomPos = startPos + Math.floor(Math.random() * middleRange);
+                      if (!revealed.includes(randomPos) && sentence[randomPos] !== ' ') {
+                        revealed.push(randomPos);
+                      }
+                      attempts++;
+                    }
+                    
+                    setRevealedIndices(revealed.sort((a, b) => a - b));
+                  } else {
+                    setRevealedIndices([]);
+                  }
+                  setShowHint(!showHint);
+                }}
                 className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Lightbulb className="h-4 w-4" />
@@ -391,23 +440,75 @@ export default function WritingPracticePage() {
             </div>
           )}
 
-          {/* Text Input */}
+          {/* Letter-by-Letter Input */}
           <div className="mb-6">
-            <label className="block text-sm font-medium mb-2">
+            <label className="block text-sm font-medium mb-4">
               {t('writingTest.writePrompt')}
             </label>
+            <div className="flex flex-wrap gap-1 mb-4 justify-center max-w-full overflow-x-auto">
+              {currentSentence.sentence.split('').map((char, index) => {
+                const userChar = userInput[index] || '';
+                const isSpace = char === ' ';
+                const isRevealed = showHint && revealedIndices.includes(index);
+                const isCorrect = isSubmitted && userChar.toLowerCase() === char.toLowerCase();
+                const isIncorrect = isSubmitted && userChar && userChar.toLowerCase() !== char.toLowerCase();
+                
+                return (
+                  <div
+                    key={`${currentSentence.id}-${index}`}
+                    className={`
+                      ${isSpace ? 'w-2 sm:w-3' : 'w-7 h-10 sm:w-8 sm:h-12'}
+                      flex items-center justify-center
+                      ${!isSpace && 'border-2 rounded'}
+                      ${!isSpace && !isSubmitted && !isRevealed && 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800'}
+                      ${!isSpace && isRevealed && !isSubmitted && 'border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20'}
+                      ${!isSpace && isCorrect && 'border-green-500 bg-green-50 dark:bg-green-900/20'}
+                      ${!isSpace && isIncorrect && 'border-red-500 bg-red-50 dark:bg-red-900/20'}
+                      text-base sm:text-lg font-mono
+                      transition-colors
+                      flex-shrink-0
+                    `}
+                    role="presentation"
+                    aria-label={!isSpace ? `Letter ${index + 1}` : undefined}
+                  >
+                    {!isSpace && (
+                      <span className={`
+                        ${isRevealed ? 'text-yellow-700 dark:text-yellow-300 font-semibold' : ''}
+                        ${isCorrect ? 'text-green-700 dark:text-green-300' : ''}
+                        ${isIncorrect ? 'text-red-700 dark:text-red-300' : ''}
+                      `}>
+                        {isRevealed ? char : (isSubmitted ? (userChar || '_') : (userChar || ''))}
+                      </span>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
             <input
               type="text"
               value={userInput}
-              onChange={(e) => setUserInput(e.target.value)}
+              onChange={(e) => {
+                const newValue = e.target.value;
+                // Limit to sentence length
+                if (newValue.length <= currentSentence.sentence.length) {
+                  setUserInput(newValue);
+                }
+              }}
               disabled={isSubmitted}
               placeholder={t('writingTest.typePlaceholder')}
-              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 disabled:bg-muted text-lg"
+              className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary disabled:opacity-50 disabled:bg-muted text-base sm:text-lg"
               onKeyDown={(e) => {
                 if (e.key === 'Enter' && !isSubmitted && userInput.trim()) {
                   handleSubmit();
                 }
               }}
+              maxLength={currentSentence.sentence.length}
+              autoFocus
+              aria-label={t('writingTest.writePrompt')}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck="false"
             />
           </div>
 

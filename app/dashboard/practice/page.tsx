@@ -26,7 +26,7 @@ export default async function PracticePage() {
     <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
       {/* Breadcrumb */}
       <div className="flex items-center gap-2 text-sm text-muted-foreground">
-        <Link href="/protected" className="hover:text-foreground">
+        <Link href="/dashboard" className="hover:text-foreground">
           {t('dashboard.title')}
         </Link>
         <span>/</span>
@@ -94,7 +94,7 @@ export default async function PracticePage() {
             </p>
             <div className="space-y-4">
               <Link 
-                href="/protected/practice/quick-quiz"
+                href="/dashboard/practice/quick-quiz"
                 className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-md py-3 px-4 text-sm hover:from-orange-600 hover:to-red-600 inline-flex items-center justify-center font-medium shadow-sm hover:shadow-md transition-all"
               >
                 {t('practice.quickQuiz.start')}
@@ -118,7 +118,7 @@ export default async function PracticePage() {
             </p>
             <div className="space-y-4">
               <Link 
-                href="/protected/practice/civics"
+                href="/dashboard/practice/civics"
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 text-white rounded-md py-3 px-4 text-sm hover:from-blue-600 hover:to-indigo-600 inline-flex items-center justify-center font-medium shadow-sm hover:shadow-md transition-all"
               >
                 {t('startQuiz')}
@@ -169,7 +169,7 @@ export default async function PracticePage() {
             </p>
             <div className="space-y-4">
               <Link 
-                href="/protected/practice/writing"
+                href="/dashboard/practice/writing"
                 className="block w-full bg-gradient-to-r from-purple-500 to-violet-500 text-white rounded-md py-3 px-4 text-sm font-medium shadow-sm hover:from-purple-600 hover:to-violet-600 transition-all text-center"
               >
                 {t('practiceWriting')}

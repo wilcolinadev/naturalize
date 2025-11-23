@@ -7,17 +7,17 @@ import { cn } from '@/lib/utils'
 
 export const navItems = [
   {
-    href: '/protected',
+    href: '/dashboard',
     label: 'Dashboard',
     icon: Home,
   },
   {
-    href: '/protected/practice',
+    href: '/dashboard/practice',
     label: 'Practice',
     icon: BookOpen,
   },
   {
-    href: '/protected/settings',
+    href: '/dashboard/settings',
     label: 'Settings',
     icon: Settings,
   },

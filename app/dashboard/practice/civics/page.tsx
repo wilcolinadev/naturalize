@@ -145,7 +145,7 @@ export default function CivicsQuizPage() {
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
             <p className="text-red-500 mb-4">Unable to load quiz. Please try again.</p>
-            <Link href="/protected/practice" className="text-primary hover:underline">
+            <Link href="/dashboard/practice" className="text-primary hover:underline">
               Back to Practice
             </Link>
           </div>
@@ -168,7 +168,7 @@ export default function CivicsQuizPage() {
               The full civics test is available to premium users only. Upgrade to access all 128 questions and track your progress.
             </p>
             <Link
-              href="/protected/upgrade"
+              href="/dashboard/upgrade"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors"
             >
               <Crown className="h-5 w-5" />

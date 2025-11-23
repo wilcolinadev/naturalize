@@ -102,7 +102,7 @@ export default function QuickQuizPage() {
         <div className="flex items-center justify-center py-12">
           <div className="text-center">
             <p className="text-red-500 mb-4">{t('quickQuiz.error')}</p>
-            <Link href="/protected/practice" className="text-primary hover:underline">
+            <Link href="/dashboard/practice" className="text-primary hover:underline">
               {t('quickQuiz.backToPractice')}
             </Link>
           </div>
@@ -143,7 +143,7 @@ export default function QuickQuizPage() {
             <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
           </button>
           <Link 
-            href="/protected/practice"
+            href="/dashboard/practice"
             className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
           >
             <Home className="h-5 w-5" />
@@ -247,7 +247,7 @@ export default function QuickQuizPage() {
                 {t('quickQuiz.upgradeToPremium.description')}
               </p>
               <Link
-                href="/protected/upgrade"
+                href="/dashboard/upgrade"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors"
               >
                 <Crown className="h-5 w-5" />

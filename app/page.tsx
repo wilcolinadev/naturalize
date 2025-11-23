@@ -89,7 +89,7 @@ export default async function Home() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full max-w-md mx-auto animate-fade-in">
                 <Link
-                  href="/protected/practice"
+                  href="/dashboard/practice"
                   className="group relative w-full sm:w-auto text-center bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white px-10 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl shadow-lg hover:shadow-rose-500/50"
                 >
                   <span className="relative z-10">{t('startPracticing')}</span>
