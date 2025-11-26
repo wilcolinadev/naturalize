@@ -87,7 +87,24 @@ export const translations = {
         title: 'Upgrade to Premium',
         description: 'Get unlimited quick quizzes, track your progress, and access all 128 civics questions.',
         button: 'Upgrade Now'
-      }
+      },
+      limitWarning: 'You have answered {count} questions today. You have {remaining} question{plural} remaining.',
+      limitReachedInline: 'You have reached your daily limit of 10 questions. Upgrade to Premium for unlimited practice!',
+      upgradeButton: 'Upgrade to Premium',
+      questionsToday: '{count} / 10 questions today',
+      dailyLimitReached: 'Daily Limit Reached',
+      dailyLimitMessage: 'You have answered {count} questions today. Free accounts are limited to 10 questions per day. Upgrade to Premium for unlimited practice!'
+    },
+
+    // Civics Test page
+    civicsTest: {
+      title: 'Civics Test',
+      dailyLimitReached: 'Daily Limit Reached',
+      dailyLimitMessage: 'You have answered {count} questions today. Free accounts are limited to 10 questions per day. Upgrade to Premium for unlimited practice!',
+      limitWarning: 'You have answered {count} questions today. You have {remaining} question{plural} remaining.',
+      limitReachedInline: 'You have reached your daily limit of 10 questions. Upgrade to Premium for unlimited practice!',
+      upgradeButton: 'Upgrade to Premium',
+      questionsToday: '{count} / 10 questions today'
     },
 
     // Writing Test page
@@ -128,7 +145,11 @@ export const translations = {
         tip3: 'Capitalization and punctuation matter',
         tip4: 'During the actual test, you have 3 chances to write 1 sentence correctly',
         tip5: 'Practice regularly to improve your spelling and grammar'
-      }
+      },
+      limitWarning: 'You have answered {count} questions today. You have {remaining} question{plural} remaining.',
+      limitReachedInline: 'You have reached your daily limit of 10 questions. Upgrade to Premium for unlimited practice!',
+      upgradeButton: 'Upgrade to Premium',
+      questionsToday: '{count} / 10 questions today'
     },
 
     // Premium section
@@ -256,7 +277,24 @@ export const translations = {
         title: 'Actualizar a Premium',
         description: 'Obtén cuestionarios rápidos ilimitados, rastrea tu progreso y accede a todas las 128 preguntas cívicas.',
         button: 'Actualizar Ahora'
-      }
+      },
+      limitWarning: 'Has respondido {count} preguntas hoy. Te quedan {remaining} pregunta{plural}.',
+      limitReachedInline: 'Has alcanzado tu límite diario de 10 preguntas. ¡Actualiza a Premium para práctica ilimitada!',
+      upgradeButton: 'Actualizar a Premium',
+      questionsToday: '{count} / 10 preguntas hoy',
+      dailyLimitReached: 'Límite Diario Alcanzado',
+      dailyLimitMessage: 'Has respondido {count} preguntas hoy. Las cuentas gratuitas están limitadas a 10 preguntas por día. ¡Actualiza a Premium para práctica ilimitada!'
+    },
+
+    // Civics Test page
+    civicsTest: {
+      title: 'Examen Cívico',
+      dailyLimitReached: 'Límite Diario Alcanzado',
+      dailyLimitMessage: 'Has respondido {count} preguntas hoy. Las cuentas gratuitas están limitadas a 10 preguntas por día. ¡Actualiza a Premium para práctica ilimitada!',
+      limitWarning: 'Has respondido {count} preguntas hoy. Te quedan {remaining} pregunta{plural}.',
+      limitReachedInline: 'Has alcanzado tu límite diario de 10 preguntas. ¡Actualiza a Premium para práctica ilimitada!',
+      upgradeButton: 'Actualizar a Premium',
+      questionsToday: '{count} / 10 preguntas hoy'
     },
 
     // Writing Test page
@@ -297,7 +335,11 @@ export const translations = {
         tip3: 'Las mayúsculas y la puntuación son importantes',
         tip4: 'Durante el examen real, tienes 3 oportunidades para escribir 1 oración correctamente',
         tip5: 'Practica regularmente para mejorar tu ortografía y gramática'
-      }
+      },
+      limitWarning: 'Has respondido {count} preguntas hoy. Te quedan {remaining} pregunta{plural}.',
+      limitReachedInline: 'Has alcanzado tu límite diario de 10 preguntas. ¡Actualiza a Premium para práctica ilimitada!',
+      upgradeButton: 'Actualizar a Premium',
+      questionsToday: '{count} / 10 preguntas hoy'
     },
 
     // Premium section

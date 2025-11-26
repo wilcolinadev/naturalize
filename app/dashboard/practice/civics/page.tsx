@@ -7,22 +7,22 @@ import { useUserContext } from '@/components/user-provider';
 import { TextToSpeech } from '@/components/text-to-speech';
 import { getQuestionsForUser, type CivicsQuestion } from '@/lib/questions';
 import { getCurrentLanguage, setLanguage as saveLanguage } from '@/lib/language-actions';
-import { updatePracticeStats } from '@/lib/supabase/users';
+import { updatePracticeStats, updateUserDailyUsage } from '@/lib/supabase/users';
+import { getTranslations } from '@/lib/translations';
 
 
 export default function CivicsQuizPage() {
-  const { supabaseUser, loading, error } = useUserContext();
+  const { supabaseUser, loading, error, refreshUser } = useUserContext();
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const [startTime, setStartTime] = useState<number>(Date.now());
+  const { t } = getTranslations(language);
   
-  
-  // State for triggering question reshuffling
-  const [restartKey, setRestartKey] = useState(0);
   
   // Store question IDs separately so we can keep the same questions when switching language
   const [questionIds, setQuestionIds] = useState<number[]>([]);
   
   // Memoize questions to prevent reshuffling on every render
+  // For free users, limit to 10 questions per day
   const CIVICS_QUESTIONS = useMemo(() => {
     if (!supabaseUser) return [];
     
@@ -30,21 +30,29 @@ export default function CivicsQuizPage() {
     
     // On first load or restart, capture the question IDs
     if (questionIds.length === 0 && questions.length > 0) {
-      setQuestionIds(questions.map(q => q.id));
+      // For free users, limit to 10 questions
+      const questionsToUse = supabaseUser.plan === 'free' 
+        ? questions.slice(0, 10) 
+        : questions;
+      setQuestionIds(questionsToUse.map(q => q.id));
     }
     
     // If we have stored IDs, reorder questions to match
     if (questionIds.length > 0 && questions.length > 0) {
-      return questionIds.map(id => questions.find(q => q.id === id)).filter(Boolean) as CivicsQuestion[];
+      const filtered = questionIds.map(id => questions.find(q => q.id === id)).filter(Boolean) as CivicsQuestion[];
+      // For free users, ensure we only show up to 10 questions
+      return supabaseUser.plan === 'free' ? filtered.slice(0, 10) : filtered;
     }
     
-    return questions;
-  }, [supabaseUser?.plan, restartKey, language, questionIds]);
+    // For free users, limit to 10 questions
+    return supabaseUser?.plan === 'free' ? questions.slice(0, 10) : questions;
+  }, [supabaseUser, language, questionIds]);
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [answers, setAnswers] = useState<(number | null)[]>(() => new Array(CIVICS_QUESTIONS.length).fill(null));
   const [showResults, setShowResults] = useState(false);
+  const [canAnswerQuestions, setCanAnswerQuestions] = useState<boolean>(true);
 
   // Load user's language preference and reset timer
   useEffect(() => {
@@ -52,13 +60,51 @@ export default function CivicsQuizPage() {
     setStartTime(Date.now());
   }, []);
 
+  // Check daily limit when user data changes
+  useEffect(() => {
+    if (supabaseUser) {
+      if (supabaseUser.plan === 'free') {
+        const today = new Date().toISOString().split('T')[0];
+        const isToday = supabaseUser.daily_question_usage.date === today;
+        const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+        setCanAnswerQuestions(dailyCount < 10);
+      } else {
+        setCanAnswerQuestions(true);
+      }
+    }
+  }, [supabaseUser]);
+
   // Reset answers and timer when questions change
   useEffect(() => {
     setAnswers(new Array(CIVICS_QUESTIONS.length).fill(null));
     setStartTime(Date.now());
   }, [CIVICS_QUESTIONS.length]);
 
-  const handleAnswerSelect = (answerIndex: number) => {
+  const handleAnswerSelect = async (answerIndex: number) => {
+    if (!supabaseUser) return;
+    
+    // For free users, check if they've reached the daily limit
+    if (supabaseUser.plan === 'free') {
+      const today = new Date().toISOString().split('T')[0];
+      const isToday = supabaseUser.daily_question_usage.date === today;
+      const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+      
+      if (dailyCount >= 10) {
+        setCanAnswerQuestions(false);
+        return;
+      }
+      
+      // Track usage when answering a new question (not revisiting)
+      if (answers[currentQuestion] === null) {
+        await updateUserDailyUsage(supabaseUser.auth0_id);
+        
+        // Refresh user context to update profile display and local state
+        if (refreshUser) {
+          await refreshUser();
+        }
+      }
+    }
+    
     setSelectedAnswer(answerIndex);
     const newAnswers = [...answers];
     newAnswers[currentQuestion] = answerIndex;
@@ -96,9 +142,8 @@ export default function CivicsQuizPage() {
   };
 
   const handleRestart = () => {
-    // Update restart key to trigger new question generation
-    setRestartKey(prev => prev + 1);
-    setQuestionIds([]); // Clear stored IDs to get new random questions
+    // Clear stored IDs to get new random questions
+    setQuestionIds([]);
     setCurrentQuestion(0);
     setSelectedAnswer(null);
     setShowResults(false);
@@ -154,7 +199,7 @@ export default function CivicsQuizPage() {
     );
   }
 
-  // No questions available (free users cannot access full civics test)
+  // No questions available
   if (CIVICS_QUESTIONS.length === 0) {
     return (
       <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
@@ -163,21 +208,59 @@ export default function CivicsQuizPage() {
             <div className="mb-6">
               <Lock className="h-12 w-12 text-primary mx-auto" />
             </div>
-            <h2 className="text-2xl font-bold mb-4">Premium Feature</h2>
+            <h2 className="text-2xl font-bold mb-4">No Questions Available</h2>
             <p className="text-muted-foreground mb-6">
-              The full civics test is available to premium users only. Upgrade to access all 128 questions and track your progress.
+              Unable to load questions. Please try again later.
             </p>
             <Link
-              href="/dashboard/upgrade"
+              href="/dashboard/practice"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors"
             >
-              <Crown className="h-5 w-5" />
-              Upgrade to Premium
+              Back to Practice
             </Link>
           </div>
         </div>
       </div>
     );
+  }
+
+  // Daily limit reached for free users
+  if (supabaseUser?.plan === 'free') {
+    const today = new Date().toISOString().split('T')[0];
+    const isToday = supabaseUser.daily_question_usage.date === today;
+    const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+    if (dailyCount >= 10 && !canAnswerQuestions) {
+      return (
+        <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
+          <div className="flex items-center justify-center py-12">
+            <div className="text-center max-w-lg">
+              <div className="mb-6">
+                <Lock className="h-12 w-12 text-primary mx-auto" />
+              </div>
+              <h2 className="text-2xl font-bold mb-6">{t('civicsTest.dailyLimitReached')}</h2>
+              <p className="text-muted-foreground mb-6">
+                {t('civicsTest.dailyLimitMessage').replace('{count}', dailyCount.toString())}
+              </p>
+            <Link
+              href="/dashboard/upgrade"
+              className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors"
+            >
+              <Crown className="h-5 w-5" />
+              {t('civicsTest.upgradeButton')}
+            </Link>
+            <div className="mt-4">
+              <Link
+                href="/dashboard/practice"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Back to Practice
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      );
+    }
   }
 
   // Show results
@@ -300,6 +383,16 @@ export default function CivicsQuizPage() {
           Civics Test
         </h1>
         <div className="flex items-center gap-4">
+          {supabaseUser?.plan === 'free' && (() => {
+            const today = new Date().toISOString().split('T')[0];
+            const isToday = supabaseUser.daily_question_usage.date === today;
+            const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+            return (
+              <span className="text-sm text-muted-foreground">
+                {t('civicsTest.questionsToday').replace('{count}', dailyCount.toString())}
+              </span>
+            );
+          })()}
           <span className="text-muted-foreground">
             Question {currentQuestion + 1} of {CIVICS_QUESTIONS.length}
           </span>
@@ -336,22 +429,71 @@ export default function CivicsQuizPage() {
           <div className="space-y-3">
             {CIVICS_QUESTIONS[currentQuestion].options.map((option, index) => {
               const isSelected = selectedAnswer === index;
+              const isDisabled = supabaseUser?.plan === 'free' && !canAnswerQuestions && answers[currentQuestion] === null;
               
               return (
                 <div
                   key={index}
-                  className={`p-4 border rounded-lg cursor-pointer transition-all ${
+                  className={`p-4 border rounded-lg transition-all ${
+                    isDisabled
+                      ? 'opacity-50 cursor-not-allowed'
+                      : 'cursor-pointer'
+                  } ${
                     isSelected
                       ? 'border-primary bg-primary/5'
-                      : 'hover:border-primary/50'
+                      : !isDisabled && 'hover:border-primary/50'
                   }`}
-                  onClick={() => handleAnswerSelect(index)}
+                  onClick={() => !isDisabled && handleAnswerSelect(index)}
                 >
                   {option}
                 </div>
               );
             })}
           </div>
+          
+          {/* Limit warning for free users */}
+          {supabaseUser?.plan === 'free' && (() => {
+            const today = new Date().toISOString().split('T')[0];
+            const isToday = supabaseUser.daily_question_usage.date === today;
+            const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+            if (dailyCount >= 9 && dailyCount < 10) {
+              return (
+                <div className="mt-4 p-3 bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                    ⚠️ {t('civicsTest.limitWarning')
+                      .replace('{count}', dailyCount.toString())
+                      .replace('{remaining}', (10 - dailyCount).toString())
+                      .replace('{plural}', 10 - dailyCount === 1 ? '' : 's')}
+                  </p>
+                </div>
+              );
+            }
+            return null;
+          })()}
+          
+          {/* Limit reached message */}
+          {supabaseUser?.plan === 'free' && (() => {
+            const today = new Date().toISOString().split('T')[0];
+            const isToday = supabaseUser.daily_question_usage.date === today;
+            const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+            if (dailyCount >= 10 && !canAnswerQuestions) {
+              return (
+            <div className="mt-4 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
+              <p className="text-sm text-red-800 dark:text-red-200 mb-3">
+                {t('civicsTest.limitReachedInline')}
+              </p>
+              <Link
+                href="/dashboard/upgrade"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors text-sm"
+              >
+                <Crown className="h-4 w-4" />
+                {t('civicsTest.upgradeButton')}
+              </Link>
+            </div>
+              );
+            }
+            return null;
+          })()}
 
           {/* Navigation */}
           <div className="flex items-center justify-between mt-6">

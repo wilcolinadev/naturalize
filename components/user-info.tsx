@@ -26,11 +26,6 @@ export function UserInfo() {
     );
   }
 
-  const today = new Date().toISOString().split('T')[0];
-  const isToday = supabaseUser.daily_question_usage.date === today;
-  const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
-  const maxQuestions = supabaseUser.plan === 'premium' ? '∞' : '5';
-
   return (
     <Card>
       <CardHeader>
@@ -48,18 +43,6 @@ export function UserInfo() {
           <Badge variant={supabaseUser.plan === 'premium' ? 'default' : 'secondary'}>
             {supabaseUser.plan.charAt(0).toUpperCase() + supabaseUser.plan.slice(1)}
           </Badge>
-        </div>
-
-        <div>
-          <p className="text-sm font-medium">Today&apos;s Questions:</p>
-          <p className="text-sm text-gray-600">
-            {dailyCount} / {maxQuestions} questions used
-          </p>
-          {supabaseUser.plan === 'free' && dailyCount >= 5 && (
-            <p className="text-sm text-red-600 mt-1">
-              Daily limit reached. Upgrade to Premium for unlimited questions!
-            </p>
-          )}
         </div>
 
         <div>

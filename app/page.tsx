@@ -7,12 +7,20 @@ import { getCurrentLanguage } from "@/lib/language-actions";
 import { auth0 } from "@/lib/auth0";
 import { BookOpen, CheckCircle, BarChart, Globe2, Crown } from "lucide-react";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
   const language = await getCurrentLanguage();
   const { t } = getTranslations(language);
   const session = await auth0.getSession();
-  const userName = session?.user?.name || session?.user?.email;
+  
+  // Redirect logged-in users to dashboard
+  if (session) {
+    redirect('/dashboard');
+  }
+  
+  // No session at this point (users are redirected above)
+  const userName = null;
 
   return (
     <main className="min-h-screen flex flex-col items-center bg-background">

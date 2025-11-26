@@ -1,11 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Volume2, CheckCircle, XCircle, RotateCcw, Home, Languages, PenTool, Lightbulb } from "lucide-react";
+import { Volume2, CheckCircle, XCircle, RotateCcw, Home, Languages, PenTool, Lightbulb, Crown } from "lucide-react";
 import Link from "next/link";
 import { useUserContext } from '@/components/user-provider';
 import { getCurrentLanguage, setLanguage as saveLanguage } from '@/lib/language-actions';
-import { updatePracticeStats } from '@/lib/supabase/users';
+import { updatePracticeStats, updateUserDailyUsage } from '@/lib/supabase/users';
 import { getTranslations } from '@/lib/translations';
 import writingDataEn from '@/lib/writing-sentences.json';
 import writingDataEs from '@/lib/writing-sentences-es.json';
@@ -24,7 +24,7 @@ type AnswerState = {
 };
 
 export default function WritingPracticePage() {
-  const { supabaseUser, loading, error } = useUserContext();
+  const { supabaseUser, loading, error, refreshUser } = useUserContext();
   const [language, setLanguage] = useState<'en' | 'es'>('en');
   const [currentSentence, setCurrentSentence] = useState<WritingSentence | null>(null);
   const [userInput, setUserInput] = useState('');
@@ -34,6 +34,7 @@ export default function WritingPracticePage() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [recentSentenceIds, setRecentSentenceIds] = useState<number[]>([]);
   const [revealedIndices, setRevealedIndices] = useState<number[]>([]);
+  const [canAnswerQuestions, setCanAnswerQuestions] = useState<boolean>(true);
 
   const { t } = getTranslations(language);
 
@@ -73,10 +74,13 @@ export default function WritingPracticePage() {
 
   useEffect(() => {
     // Load user's language preference and get first sentence
-    getCurrentLanguage().then((lang) => {
+    const loadData = async () => {
+      const lang = await getCurrentLanguage();
       setLanguage(lang);
       loadRandomSentence(lang);
-    });
+    };
+    
+    loadData();
     
     // Cleanup function: cancel any ongoing speech when component unmounts
     return () => {
@@ -86,6 +90,20 @@ export default function WritingPracticePage() {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Check daily limit when user data changes
+  useEffect(() => {
+    if (supabaseUser) {
+      if (supabaseUser.plan === 'free') {
+        const today = new Date().toISOString().split('T')[0];
+        const isToday = supabaseUser.daily_question_usage.date === today;
+        const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+        setCanAnswerQuestions(dailyCount < 10);
+      } else {
+        setCanAnswerQuestions(true);
+      }
+    }
+  }, [supabaseUser]);
 
   // When language changes, load the same sentence ID in the new language
   // and restore any saved answer state for that language
@@ -250,6 +268,18 @@ export default function WritingPracticePage() {
   const handleSubmit = async () => {
     if (!userInput.trim() || !currentSentence || !supabaseUser) return;
     
+    // For free users, check if they've reached the daily limit
+    if (supabaseUser.plan === 'free') {
+      const today = new Date().toISOString().split('T')[0];
+      const isToday = supabaseUser.daily_question_usage.date === today;
+      const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+      
+      if (dailyCount >= 10) {
+        setCanAnswerQuestions(false);
+        return;
+      }
+    }
+    
     setIsSubmitted(true);
     
     const similarity = calculateSimilarity(userInput, currentSentence.sentence);
@@ -268,6 +298,14 @@ export default function WritingPracticePage() {
       total_study_time_minutes: timeSpentMinutes,
       score_percentage: similarity
     });
+    
+    // Update daily usage (counts all question types together)
+    await updateUserDailyUsage(supabaseUser.auth0_id);
+    
+    // Refresh user context to update profile display and local state
+    if (refreshUser) {
+      await refreshUser();
+    }
   };
 
   const handleNextSentence = () => {
@@ -344,6 +382,16 @@ export default function WritingPracticePage() {
           {t('writingTest.title')}
         </h1>
         <div className="flex items-center gap-3">
+          {supabaseUser?.plan === 'free' && (() => {
+            const today = new Date().toISOString().split('T')[0];
+            const isToday = supabaseUser.daily_question_usage.date === today;
+            const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+            return (
+              <span className="text-sm text-muted-foreground">
+                {t('writingTest.questionsToday').replace('{count}', dailyCount.toString())}
+              </span>
+            );
+          })()}
           <button
             onClick={handleLanguageToggle}
             className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
@@ -512,11 +560,55 @@ export default function WritingPracticePage() {
             />
           </div>
 
+          {/* Limit warning for free users */}
+          {supabaseUser?.plan === 'free' && !isSubmitted && (() => {
+            const today = new Date().toISOString().split('T')[0];
+            const isToday = supabaseUser.daily_question_usage.date === today;
+            const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+            if (dailyCount >= 9 && dailyCount < 10) {
+              return (
+                <div className="mb-4 p-3 bg-yellow-50 dark:bg-yellow-950/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
+                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                    ⚠️ {t('writingTest.limitWarning')
+                      .replace('{count}', dailyCount.toString())
+                      .replace('{remaining}', (10 - dailyCount).toString())
+                      .replace('{plural}', 10 - dailyCount === 1 ? '' : 's')}
+                  </p>
+                </div>
+              );
+            }
+            return null;
+          })()}
+          
+          {/* Limit reached message */}
+          {supabaseUser?.plan === 'free' && (() => {
+            const today = new Date().toISOString().split('T')[0];
+            const isToday = supabaseUser.daily_question_usage.date === today;
+            const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
+            if (dailyCount >= 10 && !canAnswerQuestions) {
+              return (
+            <div className="mb-4 p-4 bg-red-50 dark:bg-red-950/20 border border-red-200 dark:border-red-800 rounded-lg">
+              <p className="text-sm text-red-800 dark:text-red-200 mb-3">
+                {t('writingTest.limitReachedInline')}
+              </p>
+              <Link
+                href="/dashboard/upgrade"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 rounded-lg font-medium transition-colors text-sm"
+              >
+                <Crown className="h-4 w-4" />
+                {t('writingTest.upgradeButton')}
+              </Link>
+            </div>
+              );
+            }
+            return null;
+          })()}
+
           {/* Submit Button */}
           {!isSubmitted && (
             <button
               onClick={handleSubmit}
-              disabled={!userInput.trim()}
+              disabled={!userInput.trim() || (supabaseUser?.plan === 'free' && !canAnswerQuestions)}
               className="w-full bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-3 rounded-lg font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {t('writingTest.checkAnswer')}

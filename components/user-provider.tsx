@@ -8,12 +8,13 @@ interface UserContextType {
   supabaseUser: SupabaseUser | null;
   loading: boolean;
   error: string | null;
+  refreshUser: () => Promise<void>;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export function UserProvider({ children }: { children: ReactNode }) {
-  const { supabaseUser, loading, error } = useSupabaseUser();
+  const { supabaseUser, loading, error, refreshUser } = useSupabaseUser();
 
   console.log('🔄 UserProvider render:', {
     hasSupabaseUser: !!supabaseUser,
@@ -25,6 +26,7 @@ export function UserProvider({ children }: { children: ReactNode }) {
     supabaseUser,
     loading,
     error,
+    refreshUser,
   };
 
   return (

@@ -25,7 +25,7 @@ export function getQuestionsForUser(userPlan: string, language: Language = 'en')
     // Premium users get all questions in random order
     return shuffled;
   } else {
-    // Free users cannot access the full civics test - redirect to upgrade
-    return [];
+    // Free users can access questions (daily limit enforced in the page)
+    return shuffled;
   }
 } 
