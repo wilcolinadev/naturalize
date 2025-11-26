@@ -377,40 +377,45 @@ export default function CivicsQuizPage() {
   return (
     <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
       {/* Header */}
-      <div className="flex items-center justify-between pt-8">
-        <h1 className="text-3xl font-bold flex items-center gap-3">
-          <BookOpen className="h-8 w-8" />
-          Civics Test
-        </h1>
-        <div className="flex items-center gap-4">
+      <div className="flex flex-col gap-3 pt-8">
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-2 sm:gap-3">
+            <BookOpen className="h-6 w-6 sm:h-8 sm:w-8" />
+            <span className="truncate">Civics Test</span>
+          </h1>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={handleLanguageToggle}
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
+              title={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
+            >
+              <Languages className="h-4 w-4" />
+              <span className="text-xs sm:text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
+            </button>
+            <button
+              onClick={handleRestart}
+              className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors p-1.5"
+              title="Restart"
+            >
+              <RotateCcw className="h-5 w-5" />
+              <span className="hidden sm:inline text-sm">Restart</span>
+            </button>
+          </div>
+        </div>
+        <div className="flex items-center justify-between text-xs sm:text-sm text-muted-foreground">
+          <span>
+            Question {currentQuestion + 1} of {CIVICS_QUESTIONS.length}
+          </span>
           {supabaseUser?.plan === 'free' && (() => {
             const today = new Date().toISOString().split('T')[0];
             const isToday = supabaseUser.daily_question_usage.date === today;
             const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
             return (
-              <span className="text-sm text-muted-foreground">
-                {t('civicsTest.questionsToday').replace('{count}', dailyCount.toString())}
+              <span className="whitespace-nowrap">
+                {dailyCount} / 10 today
               </span>
             );
           })()}
-          <span className="text-muted-foreground">
-            Question {currentQuestion + 1} of {CIVICS_QUESTIONS.length}
-          </span>
-          <button
-            onClick={handleLanguageToggle}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
-            title={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
-          >
-            <Languages className="h-4 w-4" />
-            <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
-          </button>
-          <button
-            onClick={handleRestart}
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          >
-            <RotateCcw className="h-5 w-5" />
-            Restart
-          </button>
         </div>
       </div>
 

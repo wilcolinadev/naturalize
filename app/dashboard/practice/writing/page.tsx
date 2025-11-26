@@ -376,36 +376,37 @@ export default function WritingPracticePage() {
   return (
     <div className="flex-1 w-full flex flex-col gap-8 max-w-5xl mx-auto px-5">
       {/* Header */}
-      <div className="flex items-center justify-between pt-8">
-        <h1 className="text-3xl font-bold flex items-center gap-3">
-          <PenTool className="h-8 w-8" />
-          {t('writingTest.title')}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-8">
+        <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-2 sm:gap-3">
+          <PenTool className="h-6 w-6 sm:h-8 sm:w-8" />
+          <span className="truncate">{t('writingTest.title')}</span>
         </h1>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center justify-between sm:justify-end gap-2 sm:gap-3">
           {supabaseUser?.plan === 'free' && (() => {
             const today = new Date().toISOString().split('T')[0];
             const isToday = supabaseUser.daily_question_usage.date === today;
             const dailyCount = isToday ? supabaseUser.daily_question_usage.count : 0;
             return (
-              <span className="text-sm text-muted-foreground">
-                {t('writingTest.questionsToday').replace('{count}', dailyCount.toString())}
+              <span className="text-xs sm:text-sm text-muted-foreground whitespace-nowrap">
+                {dailyCount} / 10
               </span>
             );
           })()}
           <button
             onClick={handleLanguageToggle}
-            className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
+            className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 rounded-lg border border-border hover:bg-accent transition-colors"
             title={`Switch to ${language === 'en' ? 'Spanish' : 'English'}`}
           >
             <Languages className="h-4 w-4" />
-            <span className="text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
+            <span className="text-xs sm:text-sm font-medium">{language === 'en' ? 'ES' : 'EN'}</span>
           </button>
           <Link 
             href="/dashboard/practice"
-            className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+            className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors p-1.5 sm:p-0"
+            title={t('writingTest.backToPractice')}
           >
             <Home className="h-5 w-5" />
-            {t('writingTest.backToPractice')}
+            <span className="hidden sm:inline text-sm">{t('writingTest.backToPractice')}</span>
           </Link>
         </div>
       </div>

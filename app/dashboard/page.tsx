@@ -99,17 +99,17 @@ export default async function ProtectedPage() {
             </Link>
           </div>
 
-          <div className="group p-8 border-2 rounded-2xl bg-gradient-to-br from-green-50/50 to-card dark:from-green-950/10 dark:to-card hover:shadow-xl hover:scale-105 transition-all duration-300 hover:border-green-300 dark:hover:border-green-700 opacity-75">
+          <div className="group p-8 border-2 rounded-2xl bg-gradient-to-br from-green-50/50 to-card dark:from-green-950/10 dark:to-card hover:shadow-xl hover:scale-105 transition-all duration-300 hover:border-green-300 dark:hover:border-green-700">
             <h3 className="text-xl font-bold mb-3 flex items-center gap-2">{t('dashboard.readingTest.title')}</h3>
             <p className="text-sm text-foreground/70 mb-6 leading-relaxed">
               {t('dashboard.readingTest.description')}
             </p>
-            <button 
-              disabled
-              className="inline-flex w-full items-center justify-center rounded-xl text-sm font-semibold bg-muted text-muted-foreground h-11 px-6 cursor-not-allowed"
+            <Link 
+              href="/dashboard/practice/reading"
+              className="inline-flex w-full items-center justify-center rounded-xl text-sm font-semibold bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 h-11 px-6 transition-all duration-300 hover:shadow-lg"
             >
               {t('practiceReading')}
-            </button>
+            </Link>
           </div>
 
           <div className="group p-8 border-2 rounded-2xl bg-gradient-to-br from-blue-50/50 to-card dark:from-blue-950/10 dark:to-card hover:shadow-xl hover:scale-105 transition-all duration-300 hover:border-blue-300 dark:hover:border-blue-700">

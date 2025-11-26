@@ -130,10 +130,7 @@ export default async function PracticePage() {
           </div>
 
           {/* Reading Test */}
-          <div className="relative p-6 border rounded-lg hover:shadow-lg transition-shadow bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800 opacity-75">
-            <div className="absolute top-4 right-4 bg-yellow-500 dark:bg-yellow-600 text-white text-xs px-2 py-1 rounded-full font-semibold">
-              {t('practice.comingSoon')}
-            </div>
+          <div className="p-6 border rounded-lg hover:shadow-lg transition-shadow bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border-green-200 dark:border-green-800">
             <div className="flex items-center gap-3 mb-6">
               <div className="p-3 bg-green-100 dark:bg-green-900/50 rounded-lg">
                 <FileText className="h-6 w-6 text-green-600 dark:text-green-400" />
@@ -144,12 +141,12 @@ export default async function PracticePage() {
               {t('dashboard.readingTest.description')}
             </p>
             <div className="space-y-4">
-              <button 
-                disabled 
-                className="w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-md py-3 px-4 text-sm font-medium shadow-sm opacity-50 cursor-not-allowed"
+              <Link 
+                href="/dashboard/practice/reading"
+                className="block w-full bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-md py-3 px-4 text-sm font-medium shadow-sm hover:from-green-600 hover:to-emerald-600 transition-all text-center"
               >
                 {t('practiceReading')}
-              </button>
+              </Link>
               <div className="text-xs text-muted-foreground text-center">
                 {t('practice.readingExercises')}
               </div>

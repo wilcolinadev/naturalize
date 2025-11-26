@@ -152,6 +152,53 @@ export const translations = {
       questionsToday: '{count} / 10 questions today'
     },
 
+    // Reading Test page
+    readingTest: {
+      title: 'Reading Test Practice',
+      loading: 'Loading reading practice...',
+      error: 'Unable to load reading practice. Please try again.',
+      loadingSentence: 'Loading sentence...',
+      backToPractice: 'Back to Practice',
+      notSupported: 'Speech Recognition Not Supported',
+      notSupportedMessage: 'Your browser does not support speech recognition. Please use Chrome, Edge, or Safari for the best experience.',
+      micPermission: 'Microphone permission is required. Please allow microphone access and try again.',
+      instructions: {
+        title: 'How it works:',
+        step1: 'Read the sentence displayed above out loud',
+        step2: 'Click the microphone button to start listening',
+        step3: 'Speak clearly and read the sentence',
+        step4: 'Click "Check Answer" to see your accuracy (80% or higher to pass)'
+      },
+      readPrompt: 'Read this sentence out loud:',
+      listenToPronunciation: 'Listen to Pronunciation',
+      playing: 'Playing...',
+      startListening: 'Start Listening',
+      stopListening: 'Stop Listening',
+      listening: 'Listening... Speak now',
+      yourReading: 'Your reading:',
+      checkAnswer: 'Check Answer',
+      greatJob: 'Great job!',
+      keepPracticing: 'Keep practicing!',
+      passMessage: 'You passed! You need 80% or higher.',
+      failMessage: 'You need 80% or higher to pass. Try again!',
+      correctAnswer: 'Correct answer:',
+      nextSentence: 'Next Sentence',
+      tipsTitle: 'Reading Test Tips',
+      tips: {
+        tip1: 'Speak clearly and at a normal pace',
+        tip2: 'Make sure your microphone is working and not muted',
+        tip3: 'Read the entire sentence before checking your answer',
+        tip4: 'During the actual test, you have 3 chances to read 1 sentence correctly',
+        tip5: 'Practice regularly to improve your pronunciation and reading fluency'
+      },
+      limitWarning: 'You have answered {count} questions today. You have {remaining} question{plural} remaining.',
+      limitReachedInline: 'You have reached your daily limit of 10 questions. Upgrade to Premium for unlimited practice!',
+      upgradeButton: 'Upgrade to Premium',
+      questionsToday: '{count} / 10 questions today',
+      dailyLimitReached: 'Daily Limit Reached',
+      dailyLimitMessage: 'You have answered {count} questions today. Free accounts are limited to 10 questions per day. Upgrade to Premium for unlimited practice!'
+    },
+
     // Premium section
     premium: {
       title: 'Premium Benefits',
@@ -340,6 +387,53 @@ export const translations = {
       limitReachedInline: 'Has alcanzado tu límite diario de 10 preguntas. ¡Actualiza a Premium para práctica ilimitada!',
       upgradeButton: 'Actualizar a Premium',
       questionsToday: '{count} / 10 preguntas hoy'
+    },
+
+    // Reading Test page
+    readingTest: {
+      title: 'Práctica de Examen de Lectura',
+      loading: 'Cargando práctica de lectura...',
+      error: 'No se pudo cargar la práctica de lectura. Por favor, inténtalo de nuevo.',
+      loadingSentence: 'Cargando oración...',
+      backToPractice: 'Volver a Práctica',
+      notSupported: 'Reconocimiento de Voz No Compatible',
+      notSupportedMessage: 'Tu navegador no admite reconocimiento de voz. Por favor, usa Chrome, Edge o Safari para la mejor experiencia.',
+      micPermission: 'Se requiere permiso del micrófono. Por favor, permite el acceso al micrófono e inténtalo de nuevo.',
+      instructions: {
+        title: 'Cómo funciona:',
+        step1: 'Lee la oración mostrada arriba en voz alta',
+        step2: 'Haz clic en el botón del micrófono para comenzar a escuchar',
+        step3: 'Habla claramente y lee la oración',
+        step4: 'Haz clic en "Verificar Respuesta" para ver tu precisión (80% o más para aprobar)'
+      },
+      readPrompt: 'Lee esta oración en voz alta:',
+      listenToPronunciation: 'Escuchar Pronunciación',
+      playing: 'Reproduciendo...',
+      startListening: 'Comenzar a Escuchar',
+      stopListening: 'Dejar de Escuchar',
+      listening: 'Escuchando... Habla ahora',
+      yourReading: 'Tu lectura:',
+      checkAnswer: 'Verificar Respuesta',
+      greatJob: '¡Excelente trabajo!',
+      keepPracticing: '¡Sigue practicando!',
+      passMessage: '¡Aprobaste! Necesitas un 80% o más.',
+      failMessage: 'Necesitas un 80% o más para aprobar. ¡Inténtalo de nuevo!',
+      correctAnswer: 'Respuesta correcta:',
+      nextSentence: 'Siguiente Oración',
+      tipsTitle: 'Consejos para el Examen de Lectura',
+      tips: {
+        tip1: 'Habla claramente y a un ritmo normal',
+        tip2: 'Asegúrate de que tu micrófono funcione y no esté silenciado',
+        tip3: 'Lee la oración completa antes de verificar tu respuesta',
+        tip4: 'Durante el examen real, tienes 3 oportunidades para leer 1 oración correctamente',
+        tip5: 'Practica regularmente para mejorar tu pronunciación y fluidez de lectura'
+      },
+      limitWarning: 'Has respondido {count} preguntas hoy. Te quedan {remaining} pregunta{plural}.',
+      limitReachedInline: 'Has alcanzado tu límite diario de 10 preguntas. ¡Actualiza a Premium para práctica ilimitada!',
+      upgradeButton: 'Actualizar a Premium',
+      questionsToday: '{count} / 10 preguntas hoy',
+      dailyLimitReached: 'Límite Diario Alcanzado',
+      dailyLimitMessage: 'Has respondido {count} preguntas hoy. Las cuentas gratuitas están limitadas a 10 preguntas por día. ¡Actualiza a Premium para práctica ilimitada!'
     },
 
     // Premium section
